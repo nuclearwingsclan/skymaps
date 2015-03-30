@@ -3,5 +3,12 @@
   "version": "0.0.0",
   "description": "",
   "author": "Artyom 'Sleepwalker' Fedosov <mail@asleepwalker.ru>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nuclearwingsclan/maps.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nuclearwingsclan/maps/issues"
+  },
   "license": "MIT"
 }

@@ -4,6 +4,10 @@
   "authors": [
     "Artyom 'Sleepwalker' Fedosov <mail@asleepwalker.ru>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nuclearwingsclan/maps.git"
+  },
   "license": "MIT",
   "private": true,
   "ignore": [
