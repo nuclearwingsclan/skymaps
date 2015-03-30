@@ -1,6 +1,6 @@
-#Карты Неба от «Nuclear Wings»
+#Карты Неба
 
-Сервис «Карты Неба». http://maps.nuclearwings.ru/
+Сервис «Карты Неба» от «Nuclear Wings». http://maps.nuclearwings.ru/
 
 ## License
 
