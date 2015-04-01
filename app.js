@@ -1,24 +1,33 @@
-var zoom = 3,
-	tileSize = 256,
-	bounds = L.latLngBounds([[-120, 100], [0, 0]]);
+var mapParams = processParams({
+		width: 1184,
+		height: 873
+	});
 
 var map = new L.Map('map', {
 	zoomControl: false,
 	crs: L.CRS.Simple,
-	maxBounds: bounds,
+	maxBounds: mapParams.mapBounds,
 	attributionControl: false
 });
 
-L.tileLayer('maps/index/index/z{z}/{x}x{y}.jpg', {
-	maxZoom: zoom,
+L.tileLayer('maps/index/index/z{z}/{x}x{y}.png', {
+	maxZoom: 3,
 	minZoom: 1.5, // Fit bounds
 	continuousWorld: true,
-	bounds: bounds
+	bounds: mapParams.tileBounds
 }).addTo(map);
 
-map.setView([-1, 1], 3);
+map.setView(mapParams.center, 3);
 
 map.on('drag', function() {
-	map.panInsideBounds(bounds, { animate: false });
+	map.panInsideBounds(mapParams.mapBounds, { animate: false });
 });
 
+function processParams(params) {
+	var zoom = Math.pow(2, params.zoom || 3);
+	return {
+		mapBounds: L.latLngBounds([[-(params.height / zoom), params.width / zoom], [0, 0]]),
+		tileBounds: L.latLngBounds([[-((params.height - 1) / zoom), (params.width - 1) / zoom], [0, 0]]),
+		center: [-((params.center ? params.center.y : params.height / 2) / zoom), (params.center ? params.center.x : params.width / 2) / zoom]
+	};
+}
