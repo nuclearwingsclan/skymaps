@@ -1,7 +1,30 @@
 var mapParams = processParams({
-		width: 1184,
-		height: 873
-	});
+	width: 1184,
+	height: 873
+});
+
+var MapsRouter = Backbone.Router.extend({
+	routes: {
+		'': 'index',
+		'!/': 'index',
+		'!/:region/:map/': 'loadMap'
+	},
+	index: function() {
+		this.loadMap('index', 'index');
+	},
+	loadMap: function(region, map) {
+		$.ajax({
+			dataType: 'json',
+			url: '/maps/' + region + '/' + map + '/mapdata.json',
+			success: function(data) {
+				mapParams = processParams(data.map);
+			}
+		});
+	}
+});
+
+var mapsRouter = new MapsRouter();
+Backbone.history.start();
 
 var map = new L.Map('map', {
 	zoomControl: false,

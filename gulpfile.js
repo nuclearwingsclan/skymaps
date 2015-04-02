@@ -6,7 +6,7 @@ gulp.task('tiles', function() {
 		.pipe(shell([
 			'rm -rf <%= getDirectory(file.path) %>/z3',
 			'mkdir <%= getDirectory(file.path) %>/z3',
-			'convert <%= file.path %> -crop 256x256 -set filename:tile "%[fx:page.x/256]x%[fx:page.y/256]" "<%= getDirectory(file.path) %>/z3/%[filename:tile].jpg"'
+			'convert <%= file.path %> -crop 256x256 -set filename:tile "%[fx:page.x/256]x%[fx:page.y/256]" "<%= getDirectory(file.path) %>/z3/%[filename:tile].png"'
 		], {
 			templateData: {
 				getDirectory: function(s) {
