@@ -17,7 +17,7 @@ var MapsRouter = Backbone.Router.extend({
 			dataType: 'json',
 			url: '/maps/' + region + '/' + map + '/mapdata.json',
 			success: function(data) {
-				mapParams = processParams(data.map);
+				mapParams = processParams(data.meta);
 			}
 		});
 	}
@@ -52,7 +52,6 @@ function processParams(params) {
 	return {
 		mapBounds: L.latLngBounds([[-(params.height / zoom), params.width / zoom], [0, 0]]),
 		tileBounds: L.latLngBounds([[-((params.height - 1) / zoom), (params.width - 1) / zoom], [0, 0]]),
-		center: [0, 0]
-		//center: [-((params.center ? params.center.y : params.height / 2) / zoom), (params.center ? params.center.x : params.width / 2) / zoom]
+		center: [-((params.center ? params.center.y : params.height / 2) / zoom), (params.center ? params.center.x : params.width / 2) / zoom]
 	};
 }
