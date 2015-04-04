@@ -1,6 +1,6 @@
 var mapParams = processParams({
-	width: 1184,
-	height: 873
+	width: 2000,
+	height: 1333
 });
 
 var MapsRouter = Backbone.Router.extend({
@@ -33,11 +33,12 @@ var map = new L.Map('map', {
 	attributionControl: false
 });
 
-L.tileLayer('maps/index/index/z{z}/{x}x{y}.png', {
+L.tileLayer('maps/bs/index/tiles/{z}-{x}-{y}.png', {
 	maxZoom: 3,
-	minZoom: 1.5, // Fit bounds
+	minZoom: 0,
 	continuousWorld: true,
-	bounds: mapParams.tileBounds
+	bounds: mapParams.tileBounds,
+	zoomReverse: true
 }).addTo(map);
 
 map.setView(mapParams.center, 3);
@@ -51,6 +52,7 @@ function processParams(params) {
 	return {
 		mapBounds: L.latLngBounds([[-(params.height / zoom), params.width / zoom], [0, 0]]),
 		tileBounds: L.latLngBounds([[-((params.height - 1) / zoom), (params.width - 1) / zoom], [0, 0]]),
-		center: [-((params.center ? params.center.y : params.height / 2) / zoom), (params.center ? params.center.x : params.width / 2) / zoom]
+		center: [0, 0]
+		//center: [-((params.center ? params.center.y : params.height / 2) / zoom), (params.center ? params.center.x : params.width / 2) / zoom]
 	};
 }
