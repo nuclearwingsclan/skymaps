@@ -6,4 +6,6 @@ gulp.task('tiles', function() {
 		.pipe(shell([ 'sh maps/tiles.sh <%= file.path %>' ]));
 });
 
-//gulp.task('mapdata', function() {});
+gulp.task('mapdata', shell.task([
+	'php update.php'
+]));
