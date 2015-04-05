@@ -2,8 +2,8 @@ define(['backbone'], function(Backbone) {
 	'use strict';
 
 	var Router = Backbone.Router.extend({
-		initialize: function(mapModel) {
-			this.mapModel = mapModel;
+		initialize: function(appModel) {
+			this.appModel = appModel;
 		},
 		routes: {
 			'': 'index',
@@ -12,8 +12,8 @@ define(['backbone'], function(Backbone) {
 		index: function() {
 			this.loadMap('pf', 'index');
 		},
-		loadMap: function(region, map) {
-			this.mapModel.load(region, map);
+		loadMap: function(region, level) {
+			this.appModel.load(region, level);
 		}
 	});
 

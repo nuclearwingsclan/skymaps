@@ -19,12 +19,12 @@ require.config({
 	}
 });
 
-require(['backbone', 'models/map', 'views/map', 'router'], function(Backbone, MapModel, MapView, Router) {
+require(['backbone', 'models/app', 'views/app', 'router'], function(Backbone, AppModel, AppView, Router) {
 	'use strict';
 
-	var mapModel = new MapModel(),
-		mapView = new MapView({ model: mapModel }),
-		router = new Router(mapModel);
+	var appModel = new AppModel(),
+		appView = new AppView({ model: appModel }),
+		router = new Router(appModel);
 
 	Backbone.history.start({ pushState: true, root: '/' });
 });

@@ -1,15 +1,15 @@
 define(['backbone'], function(Backbone) {
 	'use strict';
 
-	var MapModel = Backbone.Model.extend({
-		load: function(region, map) {
+	var AppModel = Backbone.Model.extend({
+		load: function(region, level) {
 			this.set('location', {
 				region: region,
-				map: map
+				level: level
 			});
 		}
 	});
 
-	return MapModel;
+	return AppModel;
 
 });
