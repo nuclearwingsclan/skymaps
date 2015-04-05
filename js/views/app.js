@@ -20,8 +20,13 @@ define(['backbone', 'leaflet', 'views/map'], function(Backbone, L, MapView) {
 		},
 		load: function() {
 			var mapView = new MapView({ model: this.model }),
-				mapInstance = mapView.getInstance();
-			mapInstance.addTo(this.getInstance());
+				map = mapView.getInstance(),
+				container = this.getInstance();
+			map.addTo(container);
+			this.listenTo(this.model, 'change:location', function() {
+				container.removeLayer(map);
+				map.remove();
+			});
 		},
 		_setParams: function() {
 			var instance = this.getInstance(),
