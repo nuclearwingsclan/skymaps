@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="bower_components/leaflet/dist/leaflet.css">
-		<link rel="stylesheet" type="text/css" href="structure.css">
+		<link rel="stylesheet" type="text/css" href="/bower_components/leaflet/dist/leaflet.css">
+		<link rel="stylesheet" type="text/css" href="/structure.css">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 	</head>
 	<body>
 		<div id="map">
 			<div class="shadow"></div>
 		</div>
 
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/leaflet/dist/leaflet.js"></script>
-		<script src="bower_components/underscore/underscore-min.js"></script>
-		<script src="bower_components/backbone/backbone.js"></script>
-		<script src="bower_components/backbone-query-parameters/backbone.queryparams.min.js"></script>
-		<script src="app.js"></script>
+		<script src="/bower_components/requirejs/require.js" data-main="/js/app"></script>
 	</body>
 </html>
