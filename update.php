@@ -177,7 +177,17 @@
 					}
 				}
 			}
-			$objects[] = $line;
+
+			$geojson = array(
+				'type' => 'Feature',
+				'geometry' => array(
+					'type' => 'Point',
+					'coordinates' => [$line['x']/8, -($line['y']/8)]
+				),
+				'properties' => $line
+			);
+
+			$objects[] = $geojson;
 		}
 		$mapdata = array(
 			'meta' => $meta,
