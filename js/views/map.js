@@ -43,8 +43,18 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 			};
 		},
 		configureContainer: function(params) {
-			this.container.setMaxBounds(params.bounds);
-			this.container.setView(params.center, params.zoom);
+			var container = this.container;
+			container.setMaxBounds(params.bounds);
+			container.setView(params.center, params.zoom);
+
+			// Weird stuff to avaid panning out of bounds
+			var hardBoundsFunc = function() {
+				container.panInsideBounds(params.bounds, { animate: false });
+			};
+			container.on('drag', hardBoundsFunc);
+			this.listenTo(this.model, 'change:location', function() {
+				container.off('drag', hardBoundsFunc);
+			});
 		},
 		destroy: function() {
 			this.remove();
