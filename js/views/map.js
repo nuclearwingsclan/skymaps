@@ -30,22 +30,19 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 			});
 		},
 		processMapParams: function(meta) {
-			var zoom = meta.zoom || 3,
-				zoomScale = Math.pow(2, zoom),
-				width = meta.size.width,
+			var width = meta.size.width,
 				height = meta.size.height,
-				center = meta.center ? [ meta.center.y, meta.center.x ] : [ height / 2, width / 2 ];
+				center = meta.center || { x: width / 2, y: height / 2 };
 
 			return {
-				bounds: L.latLngBounds([[-(height / zoomScale), width / zoomScale], [0, 0]]),
-				center: [ -(center[0] / zoomScale), center[1] / zoomScale ],
-				zoom: zoom
+				bounds: L.latLngBounds([[-height, width], [0, 0]]),
+				center: [ -center.y, center.x ]
 			};
 		},
 		configureContainer: function(params) {
 			var container = this.container;
 			container.setMaxBounds(params.bounds);
-			container.setView(params.center, params.zoom);
+			container.setView(params.center, 0);
 
 			// Weird stuff to avaid panning out of bounds
 			var hardBoundsFunc = function() {

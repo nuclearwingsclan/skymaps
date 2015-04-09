@@ -5,9 +5,9 @@ define(['backbone', 'leaflet', 'views/map'], function(Backbone, L, MapView) {
 		el: $('#map'),
 		initialize: function() {
 			this.leafletMap = new L.Map('map', {
-				zoomControl: false,
+				attributionControl: false,
 				crs: L.CRS.Simple,
-				attributionControl: false
+				zoomControl: false
 			});
 			this.listenTo(this.model, 'change:location', this.open);
 		},

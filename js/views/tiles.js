@@ -5,7 +5,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 		initialize: function(options) {
 			var tiles = L.tileLayer('/maps/' + options.location.region + '/' + options.location.level + '/tiles/{z}-{x}-{y}.png', {
 				bounds: options.params.bounds,
-				maxZoom: 3,
+				maxZoom: 0,
 				minZoom: 0,
 				continuousWorld: true,
 				zoomReverse: true

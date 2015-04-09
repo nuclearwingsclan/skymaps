@@ -182,7 +182,7 @@
 				'type' => 'Feature',
 				'geometry' => array(
 					'type' => 'Point',
-					'coordinates' => [$line['x']/8, -($line['y']/8)]
+					'coordinates' => [$line['x'], -($line['y'])]
 				),
 				'properties' => $line
 			);
