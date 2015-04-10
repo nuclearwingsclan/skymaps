@@ -19,6 +19,8 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 		}
 	});
 
-	return HoleView;
+	return {
+		HoleView: HoleView
+	};
 
 });
