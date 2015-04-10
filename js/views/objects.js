@@ -1,9 +1,23 @@
-define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
+define(['underscore', 'backbone', 'leaflet', 'views/objects/hole'], function(_, Backbone, L, HoleView) {
 	'use strict';
 
 	var ObjectsView = Backbone.View.extend({
 		initialize: function(options) {
-			var objects = L.geoJson(options.objects).addTo(options.container);
+			var model = this.model;
+			var objects = L.geoJson(options.objects, {
+				onEachFeature: function(item, object) {
+					var params = {
+						appModel: model,
+						data: item.properties,
+						position: item.geometry.coordinates,
+						object: object
+					};
+
+					switch (item.properties.type) {
+						case 'hole': new HoleView(params); break;
+					}
+				}
+			}).addTo(options.container);
 
 			this.options = options;
 			this.objectsLayer = objects;
