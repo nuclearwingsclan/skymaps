@@ -15,6 +15,7 @@ define([
 				onEachFeature: function(item, object) {
 					var params = {
 						appModel: model,
+						container: options.container,
 						data: item.properties,
 						position: item.geometry.coordinates,
 						object: object
@@ -22,8 +23,8 @@ define([
 
 					switch (item.properties.type) {
 						case 'hole': new hole.HoleView(params); break;
-						/*case 'wormhole': new hole.WormholeView(params); break;
-						case 'maphole': new hole.MapholeView(params); break;
+						case 'wormhole': new hole.WormholeView(params); break;
+						/*case 'maphole': new hole.MapholeView(params); break;
 						case 'locationhole': new hole.LocationholeView(params); break;
 						case 'instance': new hole.InstanceView(params); break;*/
 						case 'boss': new boss.BossView(params); break;
