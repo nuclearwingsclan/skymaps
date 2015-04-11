@@ -7,7 +7,6 @@
 
 html,
 body,
-.wrapper,
 #map {
 	height: 100%;
 	width: 100%;
@@ -18,10 +17,10 @@ body,
 	box-sizing: border-box;
 	border-style: solid;
 	border-width: 11px;
-	-moz-border-image: url(i/frame.png) 11 round repeat;
-	-webkit-border-image: url(i/frame.png) 11 round repeat;
-	-o-border-image: url(i/frame.png) 11 round repeat;
-	border-image: url(i/frame.png) 11 fill round repeat;
+	-moz-border-image: url(i/borders.png) 11 round repeat;
+	-webkit-border-image: url(i/borders.png) 11 round repeat;
+	-o-border-image: url(i/borders.png) 11 round repeat;
+	border-image: url(i/borders.png) 11 fill round repeat;
 	position: relative;
 }
 
@@ -35,5 +34,34 @@ body,
 	pointer-events: none;
 	position: absolute;
 	top: 0;
-	z-index: 100000;
+	z-index: 10000;
+}
+
+.corners div {
+	background: url(i/corners.png) no-repeat;
+	content: '';
+	height: 33px;
+	position: fixed;
+	width: 31px;
+	z-index: 10001;
+}
+.corners .top-left {
+	background-position: 0 0;
+	left: 0;
+	top: 0;
+}
+.corners .top-right {
+	background-position: -31px 0;
+	right: 0;
+	top: 0;
+}
+.corners .bottom-left {
+	background-position: 0 -33px;
+	bottom: 0;
+	left: 0;
+}
+.corners .bottom-right {
+	background-position: -31px -33px;
+	bottom: 0;
+	right: 0;
 }
