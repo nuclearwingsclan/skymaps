@@ -3,6 +3,7 @@ require.config({
 		'backbone': '../bower_components/backbone/backbone',
 		'jquery': '../bower_components/jquery/dist/jquery.min',
 		'leaflet': '../bower_components/leaflet/dist/leaflet',
+		'leaflet.label': '../bower_components/Leaflet.label/dist/leaflet.label',
 		'underscore': '../bower_components/underscore/underscore-min'
 	},
 	shim: {
@@ -15,6 +16,9 @@ require.config({
 		},
 		'leaflet': {
 			exports: 'L'
+		},
+		'leaflet.label': {
+			deps: ['leaflet']
 		}
 	}
 });

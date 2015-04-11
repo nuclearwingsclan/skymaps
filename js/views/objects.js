@@ -25,8 +25,8 @@ define([
 						/*case 'wormhole': new hole.WormholeView(params); break;
 						case 'maphole': new hole.MapholeView(params); break;
 						case 'locationhole': new hole.LocationholeView(params); break;
-						case 'instance': new hole.InstanceView(params); break;
-						case 'boss': new boss.BossView(params); break;*/
+						case 'instance': new hole.InstanceView(params); break;*/
+						case 'boss': new boss.BossView(params); break;
 						case 'label': new label.LabelView(params); break;
 						case 'quest': new label.QuestView(params); break;
 						case 'flager': new label.FlagerView(params); break;
