@@ -26,8 +26,12 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 							objects: data.objects
 						});
 					_this.configureContainer(params);
+					_this.setCaption(data.meta.caption);
 				}
 			});
+		},
+		setCaption: function(caption) {
+			$('.caption').text(caption);
 		},
 		processMapParams: function(meta) {
 			var width = meta.size.width,

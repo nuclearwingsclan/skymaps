@@ -65,3 +65,18 @@ body,
 	bottom: 0;
 	right: 0;
 }
+
+.caption {
+	background: url(i/caption.png) no-repeat;
+	color: #111;
+	font: bold 17px 'Helvetica', 'Arial', sans-serif;
+	height: 36px;
+	left: 50%;
+	line-height: 34px;
+	margin-left: -225px;
+	position: fixed;
+	text-align: center;
+	top: 20px;
+	width: 450px;
+	z-index: 1000000;
+}
