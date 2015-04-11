@@ -9,8 +9,8 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			this.params = params;
 		},
 		markerIcon: L.icon({
-			iconUrl: 'i/hole.png',
-			iconRetinaUrl: 'i/hole-2x.png',
+			iconUrl: '/i/objects/hole.png',
+			iconRetinaUrl: '/i/objects/hole-2x.png',
 			iconSize: [35, 35],
 			iconAnchor: [0, 0]
 		}),

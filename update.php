@@ -53,6 +53,7 @@
 					if ($object['var4']) $line['link'] = $object['var4'];
 				}
 				else if ($object['type'] == 'riba') {
+					$line['type'] = 'fish';
 					if ($object['var3']) $line['list'] = array_map('trim', explode(',', $object['var3']));
 				}
 				else if ($object['type'] == 'quest') {

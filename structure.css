@@ -18,10 +18,10 @@ body,
 	box-sizing: border-box;
 	border-style: solid;
 	border-width: 11px;
-	-moz-border-image: url(frame.png) 11 round repeat;
-	-webkit-border-image: url(frame.png) 11 round repeat;
-	-o-border-image: url(frame.png) 11 round repeat;
-	border-image: url(frame.png) 11 fill round repeat;
+	-moz-border-image: url(i/frame.png) 11 round repeat;
+	-webkit-border-image: url(i/frame.png) 11 round repeat;
+	-o-border-image: url(i/frame.png) 11 round repeat;
+	border-image: url(i/frame.png) 11 fill round repeat;
 	position: relative;
 }
 
