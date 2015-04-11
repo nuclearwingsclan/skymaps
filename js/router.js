@@ -4,6 +4,7 @@ define(['backbone'], function(Backbone) {
 	var Router = Backbone.Router.extend({
 		initialize: function(appModel) {
 			this.appModel = appModel;
+			appModel.on('change:location', this.navigate, this);
 		},
 		routes: {
 			'': 'index',
@@ -14,6 +15,10 @@ define(['backbone'], function(Backbone) {
 		},
 		loadMap: function(region, level) {
 			this.appModel.load(region, level);
+		},
+		navigate: function() {
+			var location = this.appModel.get('location');
+			Backbone.history.navigate(location.region + '/' + location.level + '/');
 		}
 	});
 
