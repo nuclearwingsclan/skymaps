@@ -82,7 +82,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			iconSize: [30, 30]
 		}),*/
 		popupContent: function(data) {
-			return data.list.join('<br>');
+			return _.template($('#fish-popup').html())(data);
 		}
 	});
 
