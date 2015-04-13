@@ -10,12 +10,17 @@ define(['backbone', 'leaflet', 'views/map'], function(Backbone, L, MapView) {
 				zoomControl: false
 			});
 			this.listenTo(this.model, 'change:location', this.open);
+			this.listenTo(this.model, 'change:center', this.center);
 		},
 		open: function() {
 			var mapView = new MapView({
 				container: this.leafletMap,
 				model: this.model
 			});
+		},
+		center: function() {
+			var center = this.model.get('center');
+			this.leafletMap.setView([ -center.y, center.x ], 0);
 		}
 	});
 

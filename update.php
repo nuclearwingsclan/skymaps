@@ -99,7 +99,7 @@
 					}
 					$line['goto'] = array(
 						'x' => (int)$exit['var1'],
-						'y' => -(int)$exit['var2']
+						'y' => (int)$exit['var2']
 					);
 
 					if ($object['type'] == 'blackhole') $line['type'] = 'wormhole';

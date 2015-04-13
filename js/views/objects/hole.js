@@ -6,6 +6,11 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			params.object.setIcon(this.markerIcon);
 			this.listenTo(params.object, 'click', this.onClick);
 
+			if (typeof this.onMouseOver != 'undefined' && typeof this.onMouseOut != 'undefined') {
+				this.listenTo(params.object, 'mouseover', this.onMouseOver);
+				this.listenTo(params.object, 'mouseout', this.onMouseOut);
+			}
+
 			this.params = params;
 		},
 		markerIcon: L.icon({
@@ -15,35 +20,31 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			iconAnchor: [0, 0]
 		}),
 		onClick: function() {
-			var p = this.params;
-			p.appModel.load(p.data.region, p.data.map, p.data.goto);
+			var data = this.params.data;
+			this.params.appModel.load(data.region, data.map, data.center);
 		}
 	});
 
 	var WormholeView = HoleView.extend({
-		initialize: function(params) {
-			this.__proto__.initialize(params);
-
-			var holeArrow = this.holeArrow(params);
-			this.listenTo(params.object, 'mouseover', function() {
-				holeArrow.setStyle({ opacity: 0.9 });
-			});
-			this.listenTo(params.object, 'mouseout', function() {
-				holeArrow.setStyle({ opacity: 0 });
-			});
+		onClick: function() {
+			this.params.appModel.center(this.params.data.goto);
 		},
-		holeArrow: function(params) {
-			var points = [
-					new L.LatLng(params.position[1] - 17, params.position[0] + 17),
-					new L.LatLng(params.data.goto.y - 17, params.data.goto.x + 17)
-				],
-				options = {
+		onMouseOver: function() {
+			this.holeArrow = L.polyline([
+					new L.LatLng(this.params.position[1] - 17, this.params.position[0] + 17),
+					new L.LatLng(-this.params.data.goto.y - 17, this.params.data.goto.x + 17)
+				], {
 					color: 'white',
 					noClip: true,
-					opacity: 0,
+					opacity: 0.9,
 					weight: 4
-				};
-			return L.polyline(points, options).addTo(params.container);
+				})
+				.addTo(this.params.container);
+		},
+		onMouseOut: function(params) {
+			if (typeof this.holeArrow != 'undefined') {
+				this.params.container.removeLayer(this.holeArrow);
+			}
 		}
 	});
 

@@ -5,6 +5,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 		initialize: function(options) {
 			this.container = options.container;
 			this.load(this.model.get('location'));
+
 			this.listenTo(this.model, 'change:location', this.destroy);
 		},
 		load: function(location) {
