@@ -38,9 +38,9 @@ define([
 						/*case 'flag': new flag.FlagView(params); break;
 						case 'barrier': new flag.BarrierView(params); break;
 						case 'beacon': new flag.BeaconView(params); break;
-						case 'stream': new flag.StreamView(params); break;
+						case 'stream': new flag.StreamView(params); break;*/
 						case 'station': new station.StationView(params); break;
-						case 'city': new station.CityView(params); break;
+						/*case 'city': new station.CityView(params); break;
 						case 'instances': new station.InstancesView(params); break;*/
 					}
 				}

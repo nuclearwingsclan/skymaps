@@ -94,6 +94,18 @@
 			<% } %>
 		</script>
 
+		<script id="station-popup" type="text/template">
+			<h2><%= caption %></h2>
+			<% if (typeof(list) !== 'undefined') { %>
+				Перелёты:
+				<ol>
+					<% _.each(list, function(item) { %>
+						<li><%= item.caption %></li>
+					<% }); %>
+				</ol>
+			<% } %>
+		</script>
+
 		<script src="/bower_components/requirejs/require.js" data-main="/js/app"></script>
 	</body>
 </html>
