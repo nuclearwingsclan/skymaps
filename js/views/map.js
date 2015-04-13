@@ -32,6 +32,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 		},
 		setCaption: function(caption) {
 			$('.caption').text(caption);
+			$('title').html(caption + ' — ' + this.model.get('defaultCaption'));
 		},
 		processMapParams: function(meta) {
 			var width = meta.size.width,
