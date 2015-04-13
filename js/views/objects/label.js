@@ -17,7 +17,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			popupAnchor:  [17, 0]
 		}),
 		popupContent: function(data) {
-			return data.text;
+			return _.template($('#label-popup').html())(data);
 		},
 		onClick: function() {
 			this.params.object.openPopup();
@@ -33,7 +33,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			popupAnchor:  [17, 0]
 		}),
 		popupContent: function(data) {
-			return data.tip;
+			return _.template($('#quest-popup').html())(data);
 		}
 	});
 

@@ -19,6 +19,20 @@
 			<div class="bottom-right"></div>
 		</div>
 
+		<script id="label-popup" type="text/template">
+			<%= text %>
+			<% if (typeof(link) !== 'undefined') { %>
+				<br><a href="http://nuclearwings.ru/?page=<%= link %>" target="_blank">Узнать больше...</a>
+			<% } %>
+		</script>
+
+		<script id="quest-popup" type="text/template">
+			<%= tip %>
+			<% if (typeof(link) !== 'undefined') { %>
+				<br><a href="http://nuclearwings.ru/?page=<%= link %>" target="_blank">Узнать больше...</a>
+			<% } %>
+		</script>
+
 		<script src="/bower_components/requirejs/require.js" data-main="/js/app"></script>
 	</body>
 </html>
