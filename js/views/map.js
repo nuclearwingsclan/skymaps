@@ -37,7 +37,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 		processMapParams: function(meta) {
 			var width = meta.size.width,
 				height = meta.size.height,
-				center = meta.center || { x: width / 2, y: height / 2 };
+				center = this.model.get('center') || meta.center || { x: width / 2, y: height / 2 };
 
 			return {
 				bounds: L.latLngBounds([[-height, width], [0, 0]]),

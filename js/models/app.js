@@ -5,11 +5,17 @@ define(['backbone'], function(Backbone) {
 		initialize: function() {
 			this.set('defaultCaption', $('title').html());
 		},
-		load: function(region, level) {
-			this.set('location', {
-				region: region,
-				level: level
+		load: function(region, level, center) {
+			this.set({
+				location: {
+					region: region,
+					level: level
+				},
+				center: center
 			});
+		},
+		center: function(center) {
+			this.set('center', center);
 		}
 	});
 

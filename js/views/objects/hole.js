@@ -15,7 +15,8 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			iconAnchor: [0, 0]
 		}),
 		onClick: function() {
-			this.params.appModel.load(this.params.data.region, this.params.data.map);
+			var p = this.params;
+			p.appModel.load(p.data.region, p.data.map, p.data.goto);
 		}
 	});
 
