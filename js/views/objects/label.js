@@ -46,7 +46,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			popupAnchor:  [21, 0]
 		}),
 		popupContent: function(data) {
-			return data.easy + '<br>' + data.hard;
+			return _.template($('#flager-popup').html())(data);
 		}
 	});
 
