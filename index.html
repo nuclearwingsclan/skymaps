@@ -57,6 +57,21 @@
 			<% } %>
 		</script>
 
+		<script id="factory-popup" type="text/template">
+			<h2>«<%= caption %>»</h2>
+			<% if (typeof(production) !== 'undefined') { %>
+				Производит:
+				<ol>
+					<% _.each(production, function(item) { %>
+						<li><%= item %></li>
+					<% }); %>
+				</ol>
+			<% } %>
+			<% if (typeof(link) !== 'undefined') { %>
+				<br><a href="http://nuclearwings.ru/?page=<%= link %>" target="_blank">Список заводов региона</a>
+			<% } %>
+		</script>
+
 		<script src="/bower_components/requirejs/require.js" data-main="/js/app"></script>
 	</body>
 </html>
