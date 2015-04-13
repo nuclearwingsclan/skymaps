@@ -92,7 +92,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			iconSize: [40, 40]
 		}),*/
 		popupContent: function(data) {
-			return data.caption;
+			return _.template($('#npc-popup').html())(data);
 		}
 	});
 
