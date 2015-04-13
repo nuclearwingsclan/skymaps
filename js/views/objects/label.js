@@ -59,7 +59,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			popupAnchor:  [15, 0]
 		}),
 		popupContent: function(data) {
-			return data.list.join('<br>');
+			return _.template($('#master-popup').html())(data);
 		}
 	});
 
