@@ -2,7 +2,7 @@ var gulp = require('gulp'),
 	shell = require('gulp-shell');
 
 gulp.task('tiles', function() {
-	return gulp.src('maps/**/map.jpg', { read: false })
+	return gulp.src('skymaps-data/**/map.jpg', { read: false })
 		.pipe(shell([
 			'echo "Processing <%= file.path %>..."',
 			'rm -rf $(dirname <%= file.path %>)/tiles; mkdir $(dirname <%= file.path %>)/tiles',
@@ -11,5 +11,5 @@ gulp.task('tiles', function() {
 });
 
 gulp.task('mapdata', shell.task([
-	'php update.php'
+	'php skymaps-data/update.php'
 ]));
