@@ -1,7 +1,7 @@
 define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	'use strict';
 
-	var TilesView = Backbone.View.extend({
+	return Backbone.View.extend({
 		initialize: function(options) {
 			var tiles = L.tileLayer('/maps/' + options.location.region + '/' + options.location.level + '/tiles/{x}-{y}.png', {
 				bounds: options.params.bounds,
@@ -20,7 +20,5 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			this.remove();
 		}
 	});
-
-	return TilesView;
 
 });

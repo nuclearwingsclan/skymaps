@@ -1,7 +1,7 @@
 define(['backbone', 'leaflet', 'views/map'], function(Backbone, L, MapView) {
 	'use strict';
 
-	var ContainerView = Backbone.View.extend({
+	return Backbone.View.extend({
 		el: $('#map'),
 		initialize: function() {
 			this.leafletMap = new L.Map('map', {
@@ -23,7 +23,5 @@ define(['backbone', 'leaflet', 'views/map'], function(Backbone, L, MapView) {
 			this.leafletMap.setView([ -center.y, center.x ], 0);
 		}
 	});
-
-	return ContainerView;
 
 });

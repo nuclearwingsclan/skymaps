@@ -1,7 +1,7 @@
 define(['backbone'], function(Backbone) {
 	'use strict';
 
-	var Router = Backbone.Router.extend({
+	return Backbone.Router.extend({
 		initialize: function(appModel) {
 			this.appModel = appModel;
 			appModel.on('change:location', this.navigate, this);
@@ -21,7 +21,5 @@ define(['backbone'], function(Backbone) {
 			Backbone.history.navigate(location.region + '/' + location.level + '/');
 		}
 	});
-
-	return Router;
 
 });

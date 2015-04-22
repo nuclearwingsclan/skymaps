@@ -1,7 +1,7 @@
 define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], function(_, Backbone, L, TilesView, ObjectsView) {
 	'use strict';
 
-	var MapView = Backbone.View.extend({
+	return Backbone.View.extend({
 		initialize: function(options) {
 			this.container = options.container;
 			this.load(this.model.get('location'));
@@ -23,6 +23,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 						}),
 						objects = new ObjectsView({
 							container: _this.container,
+							meta: data.meta,
 							model: _this.model,
 							objects: data.objects
 						});
@@ -63,7 +64,5 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 			this.remove();
 		}
 	});
-
-	return MapView;
 
 });

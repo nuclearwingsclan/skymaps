@@ -45,7 +45,7 @@ define([
 ) {
 	'use strict';
 
-	var ObjectsView = Backbone.View.extend({
+	return Backbone.View.extend({
 		initialize: function(options) {
 			var model = this.model;
 			var objects = L.geoJson(options.objects, {
@@ -54,6 +54,7 @@ define([
 						appModel: model,
 						container: options.container,
 						data: item.properties,
+						meta: options.meta,
 						position: item.geometry.coordinates,
 						object: object
 					};
@@ -61,8 +62,8 @@ define([
 					switch (item.properties.type) {
 						case 'hole': new HoleView(params); break;
 						case 'wormhole': new WormholeView(params); break;
-						/*case 'maphole': new MapholeView(params); break;
-						case 'locationhole': new LocationholeView(params); break;
+						case 'maphole': new MapholeView(params); break;
+						/*case 'locationhole': new LocationholeView(params); break;
 						case 'instance': new InstanceView(params); break;*/
 						case 'boss': new BossView(params); break;
 						case 'label': new LabelView(params); break;
@@ -92,7 +93,5 @@ define([
 			this.remove();
 		}
 	});
-
-	return ObjectsView;
 
 });
