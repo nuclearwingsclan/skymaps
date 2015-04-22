@@ -11,7 +11,6 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 		},
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/station.png',
-			iconRetinaUrl: '/i/objects/station-2x.png',
 			iconSize: [50, 50],
 			iconAnchor: [0, 0]
 		}),

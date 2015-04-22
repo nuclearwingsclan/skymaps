@@ -10,7 +10,6 @@ define(['underscore', 'backbone', 'leaflet', 'leaflet.label'], function(_, Backb
 		},
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/boss.png',
-			iconRetinaUrl: '/i/objects/boss-2x.png',
 			iconSize: [13, 15],
 			iconAnchor: [0, 0]
 		})

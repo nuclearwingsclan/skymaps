@@ -11,7 +11,6 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 		},
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/label.png',
-			iconRetinaUrl: '/i/objects/label-2x.png',
 			iconSize: [35, 35],
 			iconAnchor: [0, 0],
 			popupAnchor:  [17, 0]
@@ -27,7 +26,6 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	var QuestView = LabelView.extend({
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/quest.png',
-			iconRetinaUrl: '/i/objects/quest-2x.png',
 			iconSize: [34, 30],
 			iconAnchor: [0, 0],
 			popupAnchor:  [17, 0]
@@ -40,7 +38,6 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	var FlagerView = LabelView.extend({
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/flager.png',
-			iconRetinaUrl: '/i/objects/flager-2x.png',
 			iconSize: [42, 62],
 			iconAnchor: [0, 0],
 			popupAnchor:  [21, 0]
@@ -53,7 +50,6 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	var MasterView = LabelView.extend({
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/master.png',
-			iconRetinaUrl: '/i/objects/master-2x.png',
 			iconSize: [30, 30],
 			iconAnchor: [0, 0],
 			popupAnchor:  [15, 0]
@@ -66,7 +62,6 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	var FactoryView = LabelView.extend({
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/factory.png',
-			iconRetinaUrl: '/i/objects/factory-2x.png',
 			iconSize: [35, 35],
 			iconAnchor: [0, 0],
 			popupAnchor:  [17, 0]
