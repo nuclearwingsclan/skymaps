@@ -1,11 +1,48 @@
 define([
 	'underscore', 'backbone', 'leaflet',
 	'views/objects/hole',
+	'views/objects/wormhole',
+	'views/objects/maphole',
+	'views/objects/locationhole',
+	'views/objects/instance',
 	'views/objects/boss',
 	'views/objects/label',
+	'views/objects/quest',
+	'views/objects/flager',
+	'views/objects/master',
+	'views/objects/factory',
+	'views/objects/fish',
+	'views/objects/npc',
 	'views/objects/flag',
-	'views/objects/station'
-], function(_, Backbone, L, hole, boss, label, flag, station) {
+	'views/objects/barrier',
+	'views/objects/beacon',
+	'views/objects/stream',
+	'views/objects/station',
+	'views/objects/city',
+	'views/objects/instances'
+], function(
+	_, Backbone, L,
+	HoleView,
+	WormholeView,
+	MapholeView,
+	LocationholeView,
+	InstanceView,
+	BossView,
+	LabelView,
+	QuestView,
+	FlagerView,
+	MasterView,
+	FactoryView,
+	FishView,
+	NpcView,
+	FlagView,
+	BarrierView,
+	BeaconView,
+	StreamView,
+	StationView,
+	CityView,
+	InstancesView
+) {
 	'use strict';
 
 	var ObjectsView = Backbone.View.extend({
@@ -22,26 +59,26 @@ define([
 					};
 
 					switch (item.properties.type) {
-						case 'hole': new hole.HoleView(params); break;
-						case 'wormhole': new hole.WormholeView(params); break;
-						/*case 'maphole': new hole.MapholeView(params); break;
-						case 'locationhole': new hole.LocationholeView(params); break;
-						case 'instance': new hole.InstanceView(params); break;*/
-						case 'boss': new boss.BossView(params); break;
-						case 'label': new label.LabelView(params); break;
-						case 'quest': new label.QuestView(params); break;
-						case 'flager': new label.FlagerView(params); break;
-						case 'master': new label.MasterView(params); break;
-						case 'factory': new label.FactoryView(params); break;
-						case 'fish': new label.FishView(params); break;
-						case 'npc': new label.NpcView(params); break;
-						/*case 'flag': new flag.FlagView(params); break;
-						case 'barrier': new flag.BarrierView(params); break;
-						case 'beacon': new flag.BeaconView(params); break;
-						case 'stream': new flag.StreamView(params); break;*/
-						case 'station': new station.StationView(params); break;
-						/*case 'city': new station.CityView(params); break;
-						case 'instances': new station.InstancesView(params); break;*/
+						case 'hole': new HoleView(params); break;
+						case 'wormhole': new WormholeView(params); break;
+						/*case 'maphole': new MapholeView(params); break;
+						case 'locationhole': new LocationholeView(params); break;
+						case 'instance': new InstanceView(params); break;*/
+						case 'boss': new BossView(params); break;
+						case 'label': new LabelView(params); break;
+						case 'quest': new QuestView(params); break;
+						case 'flager': new FlagerView(params); break;
+						case 'master': new MasterView(params); break;
+						case 'factory': new FactoryView(params); break;
+						case 'fish': new FishView(params); break;
+						case 'npc': new NpcView(params); break;
+						/*case 'flag': new FlagView(params); break;
+						case 'barrier': new BarrierView(params); break;
+						case 'beacon': new BeaconView(params); break;
+						case 'stream': new StreamView(params); break;*/
+						case 'station': new StationView(params); break;
+						/*case 'city': new CityView(params); break;
+						case 'instances': new InstancesView(params); break;*/
 					}
 				}
 			}).addTo(options.container);

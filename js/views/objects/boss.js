@@ -1,7 +1,7 @@
 define(['underscore', 'backbone', 'leaflet', 'leaflet.label'], function(_, Backbone, L) {
 	'use strict';
 
-	var BossView = Backbone.View.extend({
+	return Backbone.View.extend({
 		initialize: function(params) {
 			params.object.setIcon(this.markerIcon);
 			params.object.bindLabel(params.data.caption, { noHide: true });
@@ -14,9 +14,5 @@ define(['underscore', 'backbone', 'leaflet', 'leaflet.label'], function(_, Backb
 			iconAnchor: [0, 0]
 		})
 	});
-
-	return {
-		BossView: BossView
-	};
 
 });

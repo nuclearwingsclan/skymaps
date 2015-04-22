@@ -1,7 +1,7 @@
 define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	'use strict';
 
-	var StationView = Backbone.View.extend({
+	return Backbone.View.extend({
 		initialize: function(params) {
 			params.object.setIcon(this.markerIcon);
 			params.object.bindPopup(this.popupContent(params.data));
@@ -21,9 +21,5 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			this.params.object.openPopup();
 		}
 	});
-
-	return {
-		StationView: StationView
-	};
 
 });
