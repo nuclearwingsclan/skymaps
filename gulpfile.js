@@ -1,6 +1,24 @@
 var gulp = require('gulp'),
 	shell = require('gulp-shell');
 
+gulp.task('assets', function() {
+	return gulp.src([
+			'bower_components/leaflet/dist/leaflet.css',
+			'bower_components/Leaflet.label/dist/leaflet.label.css',
+			'bower_components/requirejs/require.js',
+			'bower_components/backbone/backbone.js',
+			'bower_components/jquery/dist/jquery.min.js',
+			'bower_components/leaflet/dist/leaflet.js',
+			'bower_components/Leaflet.label/dist/leaflet.label.js',
+			'bower_components/underscore/underscore-min.js'
+		]).pipe(gulp.dest('public/assets/'));
+});
+
+gulp.task('data', function() {
+	return gulp.src('skymaps-data/*/*/{mapdata.json,tiles/**/*,minimap.jpg}')
+		.pipe(gulp.dest('public/maps/'));
+});
+
 gulp.task('tiles', function() {
 	return gulp.src('skymaps-data/**/map.jpg', { read: false })
 		.pipe(shell([

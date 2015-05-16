@@ -1,10 +1,10 @@
 require.config({
 	paths: {
-		'backbone': '../bower_components/backbone/backbone',
-		'jquery': '../bower_components/jquery/dist/jquery.min',
-		'leaflet': '../bower_components/leaflet/dist/leaflet',
-		'leaflet.label': '../bower_components/Leaflet.label/dist/leaflet.label',
-		'underscore': '../bower_components/underscore/underscore-min'
+		'backbone': '../assets/backbone',
+		'jquery': '../assets/jquery.min',
+		'leaflet': '../assets/leaflet',
+		'leaflet.label': '../assets/leaflet.label',
+		'underscore': '../assets/underscore-min'
 	},
 	shim: {
 		'backbone': {

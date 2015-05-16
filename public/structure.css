@@ -22,6 +22,7 @@ body,
 	-o-border-image: url(i/borders.png) 11 round repeat;
 	border-image: url(i/borders.png) 11 fill round repeat;
 	position: relative;
+	transition: .35s;
 }
 
 .shadow {
