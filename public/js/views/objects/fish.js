@@ -2,10 +2,12 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/label'], function(_,
 	'use strict';
 
 	return LabelView.extend({
-		/*markerIcon: L.icon({
-			opacity: 1,
-			iconSize: [30, 30]
-		}),*/
+		markerIcon: L.icon({
+			iconUrl: '/i/objects/fish.svg',
+			iconSize: [40, 40],
+			iconAnchor: [5, 4],
+			popupAnchor:  [15, -2]
+		}),
 		popupContent: function(data) {
 			return _.template($('#fish-popup').html())(data);
 		}
