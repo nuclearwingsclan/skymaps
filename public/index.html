@@ -55,7 +55,7 @@
 				</ol>
 			<% } %>
 			<% if (typeof(link) !== 'undefined') { %>
-				<br><a href="http://nuclearwings.ru/?page=<%= link %>" target="_blank">Список мастерских региона</a>
+				<a href="http://nuclearwings.ru/?page=<%= link %>" target="_blank">Список мастерских региона</a>
 			<% } %>
 		</script>
 
@@ -70,7 +70,7 @@
 				</ol>
 			<% } %>
 			<% if (typeof(link) !== 'undefined') { %>
-				<br><a href="http://nuclearwings.ru/?page=<%= link %>" target="_blank">Список заводов региона</a>
+				<a href="http://nuclearwings.ru/?page=<%= link %>" target="_blank">Список заводов региона</a>
 			<% } %>
 		</script>
 
@@ -84,7 +84,7 @@
 					<% }); %>
 				</ol>
 			<% } %>
-			<br><a href="http://nuclearwings.ru/?page=library/fishing" target="_blank">Узнать больше...</a>
+			<a href="http://nuclearwings.ru/?page=library/fishing" target="_blank">Узнать больше...</a>
 		</script>
 
 		<script id="npc-popup" type="text/template">
@@ -94,15 +94,14 @@
 			<% } %>
 		</script>
 
-		<script id="station-popup" type="text/template">
-			<h2><%= caption %></h2>
+		<script id="station-dialog" type="text/template">
 			<% if (typeof(list) !== 'undefined') { %>
-				Перелёты:
-				<ol>
-					<% _.each(list, function(item) { %>
-						<li><%= item.caption %></li>
-					<% }); %>
-				</ol>
+				<div class="streams">
+					<p class="streams-heading">Перелёты:</p>
+					<ul class="streams-list"></ul>
+				</div>
+			<% } else { %>
+				<p class="streams-heading">Перелётов нет.</p>
 			<% } %>
 		</script>
 
