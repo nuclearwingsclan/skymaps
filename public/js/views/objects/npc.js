@@ -4,8 +4,8 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/label'], function(_,
 	return LabelView.extend({
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/npc.svg',
-			iconSize: [50, 18],
-			iconAnchor: [6, 19],
+			iconSize: [52, 20],
+			iconAnchor: [7, 20],
 			popupAnchor:  [19, -19]
 		}),
 		popupContent: function(data) {

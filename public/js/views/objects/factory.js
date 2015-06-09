@@ -3,10 +3,10 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/label'], function(_,
 
 	return LabelView.extend({
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/factory.png',
-			iconSize: [35, 35],
-			iconAnchor: [0, 0],
-			popupAnchor:  [17, 0]
+			iconUrl: '/i/objects/factory.svg',
+			iconSize: [58, 58],
+			iconAnchor: [11, 11],
+			popupAnchor:  [19, -4]
 		}),
 		popupContent: function(data) {
 			return _.template($('#factory-popup').html())(data);

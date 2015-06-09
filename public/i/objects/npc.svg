@@ -5,13 +5,13 @@
 ]>
 <svg version="1.1"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="50px" height="18px" viewBox="3.581 4.613 50 18" style="enable-background:new 3.581 4.613 50 18;"
+	 x="0px" y="0px" width="52px" height="20px" viewBox="2.581 3.613 52 20" enable-background="new 2.581 3.613 52 20"
 	 xml:space="preserve">
 <defs>
 </defs>
 <g>
 	
-		<image style="overflow:visible;opacity:0.2;" width="239" height="114" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAAB1CAYAAAB03bzEAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA
+		<image overflow="visible" opacity="0.25" width="239" height="114" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAAB1CAYAAAB03bzEAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAEtVJREFUeNrsnYmO4zoORSkv6f7/
 v30VW3qYwQSjZnOVZMeJKcBIqlKr4+N7SUoUQIwYMWLEiBEjRowYMWLEiBEjRowYXzJSnIJbvqcl
 TlOAHOM737+AOy6EGBd5z9IgaAPqADnGSe9TanxPi/O1gDpAjjH4/UkdgGtgFufHMQLkGI73JTle
@@ -102,16 +102,16 @@ iBEjRowYMWL8d/wrwACjvm0VYbRqUAAAAABJRU5ErkJggg==" transform="matrix(0.24 0 0 0.2
 	<g>
 		<g>
 			<g>
-				<line style="fill:#FFFC00;" x1="28.092" y1="7.613" x2="7.581" y2="19.613"/>
+				<line fill="#FFFC00" x1="28.092" y1="7.613" x2="7.581" y2="19.613"/>
 				<g>
-					<path style="fill:#FFFC00;" d="M27.285,6.231c-6.837,4-13.674,8-20.511,12c-1.779,1.041-0.17,3.808,1.615,2.764
+					<path fill="#FFFC00" d="M27.285,6.231c-6.837,4-13.674,8-20.511,12c-1.779,1.041-0.17,3.808,1.615,2.764
 						c6.837-4,13.674-8,20.511-12C30.68,7.953,29.07,5.187,27.285,6.231L27.285,6.231z"/>
 				</g>
 			</g>
 			<g>
-				<line style="fill:#FFFC00;" x1="49.581" y1="19.613" x2="29.069" y2="7.613"/>
+				<line fill="#FFFC00" x1="49.581" y1="19.613" x2="29.069" y2="7.613"/>
 				<g>
-					<path style="fill:#FFFC00;" d="M50.389,18.231c-6.837-4-13.675-8-20.512-12c-1.785-1.044-3.395,1.722-1.615,2.763
+					<path fill="#FFFC00" d="M50.389,18.231c-6.837-4-13.675-8-20.512-12c-1.785-1.044-3.395,1.722-1.615,2.763
 						c6.837,4,13.675,8,20.512,12C50.559,22.039,52.168,19.272,50.389,18.231L50.389,18.231z"/>
 				</g>
 			</g>

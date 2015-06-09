@@ -82,6 +82,25 @@ body,
 	z-index: 1000000;
 }
 
+.leaflet-label {
+	margin-top: 11px;
+	margin-left: 9px;
+	border: none;
+	background: rgba(0,0,0,0.5);
+	color: white;
+	border-radius: 0;
+	padding-left: 1px;
+}
+.leaflet-label:before {
+	border: none;
+	position: absolute;
+	top: 0;
+	left: -9px;
+	width: 9px;
+	height: 100%;
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(0,0,0,0.5) 90%);
+}
+
 .leaflet-popup-content-wrapper {
 	background: rgba(0,0,0,0.6);
 	color: white;
