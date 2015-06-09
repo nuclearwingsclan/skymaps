@@ -10,8 +10,8 @@ define(['underscore', 'backbone', 'leaflet', 'leaflet.label'], function(_, Backb
 		},
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/boss.svg',
-			iconSize: [25, 25],
-			iconAnchor: [5, 5]
+			iconSize: [27, 27],
+			iconAnchor: [6, 6]
 		})
 	});
 
