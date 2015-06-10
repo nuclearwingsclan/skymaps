@@ -3,9 +3,9 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/label'], function(_,
 
 	return LabelView.extend({
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/quest.png',
-			iconSize: [34, 30],
-			iconAnchor: [0, 0],
+			iconUrl: '/i/objects/quest.svg',
+			iconSize: [52, 52],
+			iconAnchor: [19, 19],
 			popupAnchor:  [17, 0]
 		}),
 		popupContent: function(data) {
