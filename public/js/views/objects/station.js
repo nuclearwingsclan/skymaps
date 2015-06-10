@@ -3,16 +3,23 @@ define(['underscore', 'backbone', 'leaflet', 'views/dialog'], function(_, Backbo
 
 	return Backbone.View.extend({
 		initialize: function(params) {
-			params.object.setIcon(this.markerIcon);
+			console.log(params.object);
+			params.object.setIcon(this.markerIcon(120));
 			this.listenTo(params.object, 'click', this.onClick);
 
 			this.params = params;
 		},
-		markerIcon: L.icon({
-			iconUrl: '/i/objects/station.png',
-			iconSize: [50, 50],
-			iconAnchor: [0, 0]
-		}),
+		markerIcon: function(size) {
+			var originalSize = 120,
+				innerPadding = 10 * 2,
+				outerSize = size + (innerPadding * 2);
+
+			return L.icon({
+				iconUrl: '/i/objects/station.svg',
+				iconSize: [outerSize, outerSize],
+				iconAnchor: [size / 2, size / 2]
+			});
+		},
 		dialogContent: function(data) {
 			return _.template($('#station-dialog').html())(data);
 		},
