@@ -10,13 +10,13 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			this.params = params;
 		},
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/label.png',
-			iconSize: [35, 35],
+			iconUrl: '/i/objects/note.svg',
+			iconSize: [50, 50],
 			iconAnchor: [0, 0],
 			popupAnchor:  [17, 0]
 		}),
 		popupContent: function(data) {
-			return _.template($('#label-popup').html())(data);
+			return _.template($('#note-popup').html())(data);
 		},
 		onClick: function() {
 			this.params.object.openPopup();

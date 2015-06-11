@@ -6,7 +6,7 @@ define([
 	'views/objects/locationhole',
 	'views/objects/instance',
 	'views/objects/boss',
-	'views/objects/label',
+	'views/objects/note',
 	'views/objects/quest',
 	'views/objects/flager',
 	'views/objects/master',
@@ -28,7 +28,7 @@ define([
 	LocationholeView,
 	InstanceView,
 	BossView,
-	LabelView,
+	NoteView,
 	QuestView,
 	FlagerView,
 	MasterView,
@@ -66,7 +66,7 @@ define([
 						/*case 'locationhole': new LocationholeView(params); break;*/
 						case 'instance': new InstanceView(params); break;
 						case 'boss': new BossView(params); break;
-						case 'label': new LabelView(params); break;
+						case 'note': new NoteView(params); break;
 						case 'quest': new QuestView(params); break;
 						case 'flager': new FlagerView(params); break;
 						case 'master': new MasterView(params); break;

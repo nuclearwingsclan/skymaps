@@ -1,7 +1,7 @@
-define(['underscore', 'backbone', 'leaflet', 'views/objects/label'], function(_, Backbone, L, LabelView) {
+define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, Backbone, L, NoteView) {
 	'use strict';
 
-	return LabelView.extend({
+	return NoteView.extend({
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/quest.svg',
 			iconSize: [52, 52],
