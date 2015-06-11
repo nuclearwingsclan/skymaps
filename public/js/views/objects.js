@@ -78,8 +78,8 @@ define([
 						case 'beacon': new BeaconView(params); break;
 						case 'stream': new StreamView(params); break;*/
 						case 'station': new StationView(params); break;
-						/*case 'city': new CityView(params); break;
-						case 'instances': new InstancesView(params); break;*/
+						/*case 'city': new CityView(params); break;*/
+						case 'instances': new InstancesView(params); break;
 					}
 				}
 			}).addTo(options.container);

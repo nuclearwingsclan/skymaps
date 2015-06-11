@@ -92,6 +92,9 @@
 			<% if (typeof(npc) !== 'undefined') { %>
 				NPC: <%= npc %>
 			<% } %>
+			<% if (typeof(link) !== 'undefined') { %>
+				<br><a href="http://nuclearwings.ru/?page=<%= link %>" target="_blank">Узнать больше...</a>
+			<% } %>
 		</script>
 
 		<script id="station-dialog" type="text/template">
@@ -102,6 +105,17 @@
 				</div>
 			<% } else { %>
 				<p class="streams-heading">Перелётов нет.</p>
+			<% } %>
+		</script>
+
+		<script id="instances-dialog" type="text/template">
+			<% if (typeof(list) !== 'undefined') { %>
+				<div class="streams">
+					<p class="streams-heading">Инстансы:</p>
+					<ul class="streams-list"></ul>
+				</div>
+			<% } else { %>
+				<p class="streams-heading">Инстансов нет.</p>
 			<% } %>
 		</script>
 

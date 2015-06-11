@@ -14,7 +14,7 @@ gulp.task('assets', function() {
 		]).pipe(gulp.dest('public/assets/'));
 });
 
-gulp.task('data', function() {
+gulp.task('update', ['fetch'], function() {
 	return gulp.src('skymaps-data/*/*/{mapdata.json,tiles/**/*,minimap.jpg}')
 		.pipe(gulp.dest('public/maps/'));
 });
@@ -28,6 +28,6 @@ gulp.task('tiles', function() {
 		]));
 });
 
-gulp.task('mapdata', shell.task([
+gulp.task('fetch', shell.task([
 	'php skymaps-data/update.php'
 ]));

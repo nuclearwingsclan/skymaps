@@ -3,7 +3,6 @@ define(['underscore', 'backbone', 'leaflet', 'views/dialog'], function(_, Backbo
 
 	return Backbone.View.extend({
 		initialize: function(params) {
-			console.log(params.object);
 			params.object.setIcon(this.markerIcon(120));
 			this.listenTo(params.object, 'click', this.onClick);
 
