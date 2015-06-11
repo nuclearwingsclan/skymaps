@@ -14,9 +14,9 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			this.params = params;
 		},
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/hole.png',
-			iconSize: [35, 35],
-			iconAnchor: [0, 0]
+			iconUrl: '/i/objects/hole.svg',
+			iconSize: [50, 50],
+			iconAnchor: [7, 7]
 		}),
 		onClick: function() {
 			var data = this.params.data;
