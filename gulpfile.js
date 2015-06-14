@@ -15,17 +15,19 @@ gulp.task('assets', function() {
 });
 
 gulp.task('update', ['fetch'], function() {
-	return gulp.src('skymaps-data/*/*/{mapdata.json,tiles/**/*,minimap.jpg}')
+	return gulp.src('skymaps-data/*/*/mapdata.json')
 		.pipe(gulp.dest('public/maps/'));
 });
 
 gulp.task('tiles', function() {
-	return gulp.src('skymaps-data/**/map.jpg', { read: false })
+	gulp.src('skymaps-data/**/map.jpg', { read: false })
 		.pipe(shell([
 			'echo "Processing <%= file.path %>..."',
 			'rm -rf $(dirname <%= file.path %>)/tiles; mkdir $(dirname <%= file.path %>)/tiles',
 			'convert <%= file.path %> -crop 256x256 -set filename:tile "%[fx:page.x/256]-%[fx:page.y/256]" -background none -extent 256x256 "$(dirname <%= file.path %>)/tiles/%[filename:tile].png"'
 		]));
+	return gulp.src('skymaps-data/*/*/{tiles/**/*,minimap.jpg}')
+		.pipe(gulp.dest('public/maps/'));
 });
 
 gulp.task('fetch', shell.task([
