@@ -12,7 +12,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/note.svg',
 			iconSize: [50, 50],
-			iconAnchor: [0, 0],
+			iconAnchor: [5, 5],
 			popupAnchor:  [17, 0]
 		}),
 		popupContent: function(data) {

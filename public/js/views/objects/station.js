@@ -3,20 +3,15 @@ define(['underscore', 'backbone', 'leaflet', 'views/dialog'], function(_, Backbo
 
 	return Backbone.View.extend({
 		initialize: function(params) {
-			params.object.setIcon(this.markerIcon(120));
+			params.object.setIcon(this.markerIcon(params.data.size));
 			this.listenTo(params.object, 'click', this.onClick);
 
 			this.params = params;
 		},
 		markerIcon: function(size) {
-			var originalSize = 120,
-				innerPadding = 10 * 2,
-				outerSize = size + (innerPadding * 2);
-
 			return L.icon({
 				iconUrl: '/i/objects/station.svg',
-				iconSize: [outerSize, outerSize],
-				iconAnchor: [size / 2, size / 2]
+				iconSize: [size, size]
 			});
 		},
 		dialogContent: function(data) {

@@ -5,7 +5,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/quest.svg',
 			iconSize: [52, 52],
-			iconAnchor: [10, 10],
+			iconAnchor: [12, 12],
 			popupAnchor:  [17, 0]
 		}),
 		popupContent: function(data) {

@@ -19,7 +19,8 @@ define([
 	'views/objects/stream',
 	'views/objects/station',
 	'views/objects/city',
-	'views/objects/instances'
+	'views/objects/instances',
+	'views/objects/mobzone'
 ], function(
 	_, Backbone, L,
 	HoleView,
@@ -41,7 +42,8 @@ define([
 	StreamView,
 	StationView,
 	CityView,
-	InstancesView
+	InstancesView,
+	MobzoneView
 ) {
 	'use strict';
 
@@ -80,6 +82,7 @@ define([
 						case 'station': new StationView(params); break;
 						case 'city': new CityView(params); break;
 						case 'instances': new InstancesView(params); break;
+						//case 'mobzone': new MobzoneView(params); break;
 					}
 				}
 			}).addTo(options.container);
