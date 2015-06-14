@@ -19,13 +19,7 @@ gulp.task('update', ['fetch'], function() {
 		.pipe(gulp.dest('public/maps/'));
 });
 
-gulp.task('tiles', function() {
-	gulp.src('skymaps-data/**/map.jpg', { read: false })
-		.pipe(shell([
-			'echo "Processing <%= file.path %>..."',
-			'rm -rf $(dirname <%= file.path %>)/tiles; mkdir $(dirname <%= file.path %>)/tiles',
-			'convert <%= file.path %> -crop 256x256 -set filename:tile "%[fx:page.x/256]-%[fx:page.y/256]" -background none -extent 256x256 "$(dirname <%= file.path %>)/tiles/%[filename:tile].png"'
-		]));
+gulp.task('tiles', ['slice'], function() {
 	return gulp.src('skymaps-data/*/*/{tiles/**/*,minimap.jpg}')
 		.pipe(gulp.dest('public/maps/'));
 });
@@ -33,3 +27,12 @@ gulp.task('tiles', function() {
 gulp.task('fetch', shell.task([
 	'php skymaps-data/update.php'
 ]));
+
+gulp.task('slice', function() {
+	return gulp.src('skymaps-data/**/map.jpg', { read: false })
+		.pipe(shell([
+			'echo "Processing <%= file.path %>..."',
+			'rm -rf $(dirname <%= file.path %>)/tiles; mkdir $(dirname <%= file.path %>)/tiles',
+			'convert <%= file.path %> -crop 256x256 -set filename:tile "%[fx:page.x/256]-%[fx:page.y/256]" -background none -extent 256x256 "$(dirname <%= file.path %>)/tiles/%[filename:tile].png"'
+		]));
+});
