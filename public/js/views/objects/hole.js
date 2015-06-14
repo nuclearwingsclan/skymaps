@@ -20,7 +20,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 		}),
 		onClick: function() {
 			var data = this.params.data;
-			this.params.appModel.load(data.region, data.map, data.center);
+			this.params.appModel.load(data.region, data.map, data.goto);
 		}
 	});
 
