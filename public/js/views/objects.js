@@ -13,9 +13,9 @@ define([
 	'views/objects/factory',
 	'views/objects/fish',
 	'views/objects/npc',
+	'views/objects/beacon',
 	'views/objects/flag',
 	'views/objects/barrier',
-	'views/objects/beacon',
 	'views/objects/stream',
 	'views/objects/station',
 	'views/objects/city',
@@ -35,9 +35,9 @@ define([
 	FactoryView,
 	FishView,
 	NpcView,
+	BeaconView,
 	FlagView,
 	BarrierView,
-	BeaconView,
 	StreamView,
 	StationView,
 	CityView,
@@ -63,7 +63,7 @@ define([
 						case 'hole': new HoleView(params); break;
 						case 'wormhole': new WormholeView(params); break;
 						case 'maphole': new MapholeView(params); break;
-						/*case 'locationhole': new LocationholeView(params); break;*/
+						//case 'locationhole': new LocationholeView(params); break;
 						case 'instance': new InstanceView(params); break;
 						case 'boss': new BossView(params); break;
 						case 'note': new NoteView(params); break;
@@ -73,12 +73,12 @@ define([
 						case 'factory': new FactoryView(params); break;
 						case 'fish': new FishView(params); break;
 						case 'npc': new NpcView(params); break;
-						/*case 'flag': new FlagView(params); break;
-						case 'barrier': new BarrierView(params); break;
 						case 'beacon': new BeaconView(params); break;
-						case 'stream': new StreamView(params); break;*/
+						case 'flag': new FlagView(params); break;
+						case 'barrier': new BarrierView(params); break;
+						//case 'stream': new StreamView(params); break;
 						case 'station': new StationView(params); break;
-						/*case 'city': new CityView(params); break;*/
+						//case 'city': new CityView(params); break;
 						case 'instances': new InstancesView(params); break;
 					}
 				}
