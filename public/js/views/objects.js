@@ -63,7 +63,7 @@ define([
 						case 'hole': new HoleView(params); break;
 						case 'wormhole': new WormholeView(params); break;
 						case 'maphole': new MapholeView(params); break;
-						//case 'locationhole': new LocationholeView(params); break;
+						case 'locationhole': new LocationholeView(params); break;
 						case 'instance': new InstanceView(params); break;
 						case 'boss': new BossView(params); break;
 						case 'note': new NoteView(params); break;
