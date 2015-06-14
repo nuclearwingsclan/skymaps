@@ -7,7 +7,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/flag'], function(_, 
 			iconSize: [46, 46],
 			iconAnchor: [1, 0],
 			popupAnchor:  [18, -5]
-		});
+		})
 	});
 
 });
