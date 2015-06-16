@@ -248,3 +248,22 @@ body,
 .streams-list li:hover {
 	background: rgba(255,255,255,0.1);
 }
+.streams-list li.icon {
+	padding-left: 24px;
+	position: relative;
+}
+.streams-list li.icon:before {
+	content: '';
+	height: 19px;
+	left: 2px;
+	margin-top: -9px;
+	position: absolute;
+	top: 50%;
+	width: 19px;
+}
+.streams-list li.icon.station:before {
+	background: url(i/icons/stream-station.png) no-repeat;
+}
+.streams-list li.icon.sky:before {
+	background: url(i/icons/stream-sky.png) no-repeat;
+}

@@ -28,6 +28,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/dialog'], function(_, Backbo
 				_.each(this.params.data.list, function(item) {
 					$('<li>')
 						.html(item.caption)
+						.addClass('icon ' + item.type)
 						.click(function() {
 							app.load(item.region, item.map, { x: item.x, y: item.y });
 							dialog.close();
