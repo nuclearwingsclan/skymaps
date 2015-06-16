@@ -4,9 +4,13 @@ require.config({
 		'jquery': '../assets/jquery.min',
 		'leaflet': '../assets/leaflet',
 		'leaflet.label': '../assets/leaflet.label',
-		'underscore': '../assets/underscore-min'
+		'underscore': '../assets/underscore-min',
+		'tinyscrollbar': '../assets/jquery.tinyscrollbar.min'
 	},
 	shim: {
+		'jquery': {
+			exports: '$'
+		},
 		'backbone': {
 			deps: ['underscore', 'jquery'],
 			exports: 'Backbone'
@@ -19,6 +23,9 @@ require.config({
 		},
 		'leaflet.label': {
 			deps: ['leaflet']
+		},
+		'tinyscrollbar': {
+			deps: ['jquery']
 		}
 	}
 });

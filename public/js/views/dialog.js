@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'leaflet'], function($, _, Backbone, L) {
+define(['jquery', 'underscore', 'backbone', 'leaflet', 'tinyscrollbar'], function($, _, Backbone, L, tinyscrollbar) {
 	'use strict';
 
 	return function(options) {
@@ -24,6 +24,8 @@ define(['jquery', 'underscore', 'backbone', 'leaflet'], function($, _, Backbone,
 
 		this.open = function() {
 			$dialog.appendTo('body');
+			console.log($body.outerHeight());
+			$body.tinyscrollbar();
 			return this;
 		};
 

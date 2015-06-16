@@ -171,7 +171,6 @@ body,
 }
 .dialog-body {
 	height: 150px;
-	overflow: auto;
 }
 .dialog-close-button {
 	background-color: rgba(124, 0, 0, 1);
@@ -186,6 +185,50 @@ body,
 	top: 8px;
 	right: 8px;
 	width: 14px;
+}
+
+.ui-scrollbar {
+	position: relative;
+}
+.ui-scrollbar .scrollbar {
+	position: absolute;
+	right: -7px;
+}
+.ui-scrollbar .scrollbar.disable {
+	display: none;
+}
+.ui-scrollbar .track {
+	background: #eee;
+	border-radius: 7px;
+	height: 100%;
+	position: relative;
+	width: 7px;
+}
+.ui-scrollbar .thumb {
+	background: #229fff;
+	border: 0;
+	border-radius: 7px;
+	height: 0;
+	left: 0;
+	overflow: hidden;
+	outline: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	transition: top, 0.1s;
+	width: 7px;
+}
+.ui-scrollbar .thumb:active {
+	background: #008DF9;
+	transition: none;
+}
+.ui-scrollbar .viewport {
+	position: relative;
+	overflow: hidden;
+}
+.ui-scrollbar .overview {
+	position: absolute;
+	width: 96.5%;
 }
 
 .streams-heading {
