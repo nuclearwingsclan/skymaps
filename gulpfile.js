@@ -10,6 +10,8 @@ gulp.task('assets', function() {
 			'bower_components/jquery/dist/jquery.min.js',
 			'bower_components/leaflet/dist/leaflet.js',
 			'bower_components/Leaflet.label/dist/leaflet.label.js',
+			'bower_components/rrose/rrose-src.js',
+			'bower_components/rrose/leaflet.rrose.css',
 			'bower_components/underscore/underscore-min.js',
 			'bower_components/tinyscrollbar/lib/jquery.tinyscrollbar.min.js'
 		]).pipe(gulp.dest('public/assets/'));

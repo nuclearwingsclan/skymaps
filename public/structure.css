@@ -101,37 +101,37 @@ body,
 	background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(0,0,0,0.5) 90%);
 }
 
-.leaflet-popup-content-wrapper {
+.leaflet-rrose-content-wrapper {
 	background: rgba(0,0,0,0.6);
-	color: white;
-	font-family: "Helvetica", "Arial", sans-serif;
-	font-size: 12px;
-	font-weight: bold;
 	box-shadow: 0 3px 10px rgba(0,0,0,0.25), inset 0 0 15px rgba(0,0,0,0.2);
 }
-.leaflet-popup-tip {
+.leaflet-rrose-tip {
 	background: rgba(0,0,0,0.55);
 }
-.leaflet-popup-close-button {
+.leaflet-rrose-close-button {
 	color: #eee;
 }
-.leaflet-popup-close-button:hover {
+.leaflet-rrose-close-button:hover {
 	color: #ccc;
 }
-.leaflet-popup-content h2 {
+.leaflet-rrose-content {
+	color: white;
+	font: bold 12px/1.4 "Helvetica", "Arial", sans-serif;
+}
+.leaflet-rrose-content h2 {
 	color: #6BFF74;
 	font-size: 16px;
 	margin-bottom: 3px;
 	text-align: center;
 }
-.leaflet-popup-content a {
+.leaflet-rrose-content a {
 	color: #4FBFFF;
 }
-.leaflet-popup-content a:hover {
+.leaflet-rrose-content a:hover {
 	color: #83C7EE;
 }
-.leaflet-popup-content ul,
-.leaflet-popup-content ol {
+.leaflet-rrose-content ul,
+.leaflet-rrose-content ol {
 	list-style-position: inside;
 	margin-bottom: 3px;
 }

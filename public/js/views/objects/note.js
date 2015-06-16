@@ -1,11 +1,12 @@
-define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
+define(['underscore', 'backbone', 'leaflet', 'rrose'], function(_, Backbone, L) {
 	'use strict';
 
 	return Backbone.View.extend({
 		initialize: function(params) {
 			params.object.setIcon(this.markerIcon);
-			params.object.bindPopup(this.popupContent(params.data));
+			params.object.bindPopup(this.popup(params.data));
 			this.listenTo(params.object, 'click', this.onClick);
+			this.listenTo(params.container, 'drag', this.updatePopup);
 
 			this.params = params;
 		},
@@ -15,6 +16,19 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			iconAnchor: [5, 5],
 			popupAnchor:  [17, 0]
 		}),
+		popup: function(data) {
+			return new L.Rrose({
+				autoPan: false,
+				x_bound: 180,
+				y_bound: 120
+			}).setContent(this.popupContent(data));
+		},
+		updatePopup: function() {
+			var popup = this.params.object.getPopup();
+			if (popup._isOpen) {
+				popup.updateDirection();
+			}
+		},
 		popupContent: function(data) {
 			return _.template($('#note-popup').html())(data);
 		},

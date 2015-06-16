@@ -23,6 +23,7 @@
     "backbone": "~1.1.2",
     "requirejs": "~2.1.17",
     "Leaflet.label": "~0.2.1",
+    "rrose": "asleepwalker/rrose#~0.1.1",
     "tinyscrollbar": "asleepwalker/tinyscrollbar#~2.1.7"
   }
 }

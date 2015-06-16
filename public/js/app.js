@@ -5,7 +5,8 @@ require.config({
 		'leaflet': '../assets/leaflet',
 		'leaflet.label': '../assets/leaflet.label',
 		'underscore': '../assets/underscore-min',
-		'tinyscrollbar': '../assets/jquery.tinyscrollbar.min'
+		'tinyscrollbar': '../assets/jquery.tinyscrollbar.min',
+		'rrose': '../assets/rrose-src'
 	},
 	shim: {
 		'jquery': {
@@ -22,6 +23,9 @@ require.config({
 			exports: 'L'
 		},
 		'leaflet.label': {
+			deps: ['leaflet']
+		},
+		'rrose': {
 			deps: ['leaflet']
 		},
 		'tinyscrollbar': {
