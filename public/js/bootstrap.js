@@ -34,11 +34,11 @@ require.config({
 	}
 });
 
-require(['backbone', 'models/app', 'views/container', 'router'], function(Backbone, AppModel, ContainerView, Router) {
+require(['backbone', 'models/app', 'views/app', 'router'], function(Backbone, AppModel, AppView, Router) {
 	'use strict';
 
 	var appModel = new AppModel(),
-		containerView = new ContainerView({ model: appModel }),
+		appView = new AppView({ model: appModel }),
 		router = new Router(appModel);
 
 	Backbone.history.start({ pushState: true, root: '/' });
