@@ -26,7 +26,6 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/wormhole'], function
 
 			this.holeArrow = L.layerGroup([minimap, arrow])
 				.addTo(this.params.container);
-			
 		}
 	});
 

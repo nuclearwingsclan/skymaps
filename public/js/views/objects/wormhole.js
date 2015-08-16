@@ -8,7 +8,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/hole'], function(_, 
 		onMouseOver: function() {
 			this.holeArrow = L.polyline([
 					new L.LatLng(this.params.position[1] - 17, this.params.position[0] + 17),
-					new L.LatLng(-this.params.data.goto.y - 17, this.params.data.goto.x + 17)
+					new L.LatLng(-this.params.data.goto.y, this.params.data.goto.x)
 				], {
 					color: 'white',
 					noClip: true,
