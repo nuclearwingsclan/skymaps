@@ -28,13 +28,22 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 							objects: data.objects
 						});
 					_this.configureContainer(params);
-					_this.setCaption(data.meta.caption);
+					_this.setMeta(data.meta);
+					
 				}
 			});
 		},
+		setMeta: function(meta) {
+			this.setCaption(meta.caption);
+			this.setMapInfo({ author: meta.navigator, date: meta.date });
+		},
 		setCaption: function(caption) {
-			$('.caption').text(caption);
+			$('#map .caption').text(caption);
 			$('title').html(caption + ' — ' + this.model.get('defaultCaption'));
+		},
+		setMapInfo: function(data) {
+			var content = _.template($('#map-meta').html())(data);
+			$('#map .meta').html(content);
 		},
 		processMapParams: function(meta) {
 			var width = meta.size.width,

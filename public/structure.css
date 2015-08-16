@@ -67,7 +67,7 @@ body,
 	right: 0;
 }
 
-.caption {
+#map .caption {
 	background: url(i/caption.png) no-repeat;
 	color: #111;
 	font: bold 17px 'Helvetica', 'Arial', sans-serif;
@@ -80,6 +80,18 @@ body,
 	top: 20px;
 	width: 450px;
 	z-index: 1000000;
+}
+#map .meta {
+	background: rgba(0, 0, 0, 0.5);
+	bottom: 10px;
+	color: white;
+	font: bold 12px 'Helvetica', 'Arial', sans-serif;
+	padding: 6px 14px 6px 20px;
+	position: absolute;
+	z-index: 100000;
+}
+#map .meta .date {
+	margin-left: 7px;
 }
 
 .leaflet-label {

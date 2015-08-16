@@ -14,6 +14,10 @@
 		<div id="map">
 			<div class="shadow"></div>
 			<div class="caption">Карта Неба</div>
+			<div class="meta">
+				<span class="navigator">Навигатор: AS_Super</span>
+				<span class="date">Дата: 14.02.2011</span>
+			</div>
 		</div>
 		<div class="corners">
 			<div class="top-left"></div>
@@ -21,6 +25,11 @@
 			<div class="bottom-left"></div>
 			<div class="bottom-right"></div>
 		</div>
+
+		<script id="map-meta" type="text/template">
+			<span class="navigator">Навигатор: <%= author %></span>
+			<span class="date">Дата: <%= date %></span>
+		</script>
 
 		<script id="note-popup" type="text/template">
 			<%= text %>
@@ -131,6 +140,6 @@
 			<% } %>
 		</script>
 
-		<script src="/assets/require.js" data-main="/js/app"></script>
+		<script src="/assets/require.js" data-main="/js/bootstrap"></script>
 	</body>
 </html>
