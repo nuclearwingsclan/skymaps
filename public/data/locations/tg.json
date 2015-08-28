@@ -1,0 +1,82 @@
+{
+	"locations": {
+		"derevnya": {
+			"caption": "Деревня отшельников",
+			"position": [1, 8]
+		},
+		"index": {
+			"caption": "Тихая Гавань",
+			"position": [0, 0]
+		},
+		"labirint1": {
+			"caption": "Лабиринт Облаков, ур.1",
+			"position": [-1, 2]
+		},
+		"labirint2": {
+			"caption": "Лабиринт Облаков, ур.2",
+			"position": [-1, 4]
+		},
+		"labirint3": {
+			"caption": "Лабиринт Облаков, ур.3",
+			"position": [-1, 6]
+		},
+		"labirint4": {
+			"caption": "Лабиринт Облаков, ур.4",
+			"position": [-1, 8]
+		},
+		"labirint5": {
+			"caption": "Лабиринт Облаков, ур.5",
+			"position": [-1, 10]
+		},
+		"lozhbina": {
+			"caption": "Медовая Ложбина",
+			"position": [3, 1]
+		},
+		"luzhayka": {
+			"caption": "Цветочная Лужайка",
+			"position": [-2, -1]
+		},
+		"malomed": {
+			"caption": "Малый Медовый лабиринт",
+			"position": [3, 4]
+		},
+		"medoviy1": {
+			"caption": "Большой Медовый лабиринт, ур.1",
+			"position": [1, 4]
+		},
+		"medoviy2": {
+			"caption": "Большой Медовый лабиринт, ур.2",
+			"position": [1, 6]
+		},
+		"opasniyrayon": {
+			"caption": "Опасный Район",
+			"position": [2, -1]
+		},
+		"promzona": {
+			"caption": "Старая промзона",
+			"position": [-3, 1]
+		},
+		"prostranstvo": {
+			"caption": "Пространство Вариантов",
+			"position": [1, 2]
+		}
+	},
+	"holes": [
+		["index", "luzhayka"],
+		["index", "promzona"],
+		["index", "labirint1"],
+		["index", "prostranstvo"],
+		["index", "lozhbina"],
+		["index", "opasniyrayon"],
+		["promzona", "labirint1"],
+		["labirint1", "labirint2"],
+		["labirint2", "labirint3"],
+		["labirint3", "labirint4"],
+		["labirint4", "labirint5"],
+		["prostranstvo", "malomed"],
+		["prostranstvo", "medoviy1"],
+		["medoviy1", "medoviy2"],
+		["medoviy2", "derevnya"]
+	],
+	"streams": []
+}

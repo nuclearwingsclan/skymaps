@@ -1,0 +1,27 @@
+{
+	"tg": {
+		"caption": "Тихая Гавань",
+		"codename": "gavane",
+		"default": "index"
+	},
+	"pf": {
+		"caption": "Периферия",
+		"codename": "rimland",
+		"default": "index"
+	},
+	"pr": {
+		"caption": "Поющий Риф",
+		"codename": "reef",
+		"default": "index"
+	},
+	"bs": {
+		"caption": "Бастион",
+		"codename": "bastion",
+		"default": "index"
+	},
+	"os": {
+		"caption": "Осколки",
+		"codename": "oskolki",
+		"default": "index"
+	}
+}
