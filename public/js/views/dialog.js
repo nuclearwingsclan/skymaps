@@ -24,7 +24,6 @@ define(['jquery', 'underscore', 'backbone', 'leaflet', 'tinyscrollbar'], functio
 
 		this.open = function() {
 			$dialog.appendTo('body');
-			console.log($body.outerHeight());
 			$body.tinyscrollbar();
 			return this;
 		};

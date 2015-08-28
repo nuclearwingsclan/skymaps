@@ -1,4 +1,4 @@
-define(['backbone', 'leaflet', 'views/map'], function(Backbone, L, MapView) {
+define(['backbone', 'leaflet', 'views/map', 'views/navigator'], function(Backbone, L, MapView, NavigatorView) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -8,6 +8,9 @@ define(['backbone', 'leaflet', 'views/map'], function(Backbone, L, MapView) {
 				attributionControl: false,
 				crs: L.CRS.Simple,
 				zoomControl: false
+			});
+			this.mapNavigator = new NavigatorView({
+				model: this.model
 			});
 			this.listenTo(this.model, 'change:location', this.open);
 			this.listenTo(this.model, 'change:center', this.center);

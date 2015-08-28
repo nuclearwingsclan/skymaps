@@ -24,6 +24,14 @@ body,
 	position: relative;
 	transition: .35s;
 }
+#navigator {
+	background: rgba(255, 255, 255, 0.8);
+	bottom: 25px;
+	height: 200px;
+	position: absolute;
+	right: 30px;
+	width: 160px;
+}
 
 .shadow {
 	bottom: 0;
