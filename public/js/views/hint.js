@@ -16,6 +16,8 @@ define(['jquery'], function($) {
 			$hint.hide();
 			$(window).off('mousemove', hintOnMusemove);
 		});
+
+		return this;
 	};
 	var hintOnMusemove = function(e) {
 		$hint.css({

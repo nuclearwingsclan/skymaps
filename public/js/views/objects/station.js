@@ -37,6 +37,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/dialog'], function(_, Backbo
 							app.load(item.region, item.map, { x: item.x, y: item.y });
 							dialog.close();
 						})
+						.hint(item.region + '/' + item.map)
 						.appendTo($list);
 				});
 			}

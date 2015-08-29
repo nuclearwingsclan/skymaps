@@ -34,12 +34,19 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 
 			_.each(data.locations, function(level, url) {
 				var marker = this.makeNavigatorMarker(level.position, level.abbr, level.features ? ' ' + level.features.join(' ') : '');
-				marker.label._onMouseClick = function() {
+				marker.setHint(level.caption);
+
+				marker.on('click', function() {
 					model.set('location', {
 						region: model.get('location').region,
 						level: url
 					});
-				};
+				});
+
+				marker.label.on('click', function() { marker.fire('click'); });
+				marker.label.on('mouseover', function() { marker.fire('mouseover'); });
+				marker.label.on('mouseout', function() { marker.fire('mouseout'); });
+
 				locations.push(marker);
 			}, this);
 
@@ -92,8 +99,11 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			this.options.navigator.setView([0, 0], 0);
 		},
 		center: function(level) {
-			var levelPosition = this.regionData.locations[level].position;
-			var newNavigatorCenter = this.calculateMarkerPosition(levelPosition);
+			var newNavigatorCenter = [0, 0];
+			if (this.regionData.locations[level]) {
+				var levelPosition = this.regionData.locations[level].position;
+				newNavigatorCenter = this.calculateMarkerPosition(levelPosition);
+			}
 			this.options.navigator.panTo(newNavigatorCenter);
 			this.options.navigator.panInsideBounds(this.options.navigator.getBounds());
 		}
