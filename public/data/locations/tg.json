@@ -2,62 +2,77 @@
 	"locations": {
 		"derevnya": {
 			"caption": "Деревня отшельников",
+			"abbr": "Де",
 			"position": [1, 8]
 		},
 		"index": {
 			"caption": "Тихая Гавань",
+			"abbr": "ТГ",
 			"position": [0, 0]
 		},
 		"labirint1": {
 			"caption": "Лабиринт Облаков, ур.1",
+			"abbr": "Л1",
 			"position": [-1, 2]
 		},
 		"labirint2": {
 			"caption": "Лабиринт Облаков, ур.2",
+			"abbr": "Л2",
 			"position": [-1, 4]
 		},
 		"labirint3": {
 			"caption": "Лабиринт Облаков, ур.3",
+			"abbr": "Л3",
 			"position": [-1, 6]
 		},
 		"labirint4": {
 			"caption": "Лабиринт Облаков, ур.4",
+			"abbr": "Л4",
 			"position": [-1, 8]
 		},
 		"labirint5": {
 			"caption": "Лабиринт Облаков, ур.5",
+			"abbr": "Л5",
 			"position": [-1, 10]
 		},
 		"lozhbina": {
 			"caption": "Медовая Ложбина",
+			"abbr": "Ме",
 			"position": [3, 1]
 		},
 		"luzhayka": {
 			"caption": "Цветочная Лужайка",
+			"abbr": "Лу",
 			"position": [-2, -1]
 		},
 		"malomed": {
 			"caption": "Малый Медовый лабиринт",
+			"abbr": "ММ",
 			"position": [3, 4]
 		},
 		"medoviy1": {
 			"caption": "Большой Медовый лабиринт, ур.1",
+			"abbr": "М1",
 			"position": [1, 4]
 		},
 		"medoviy2": {
 			"caption": "Большой Медовый лабиринт, ур.2",
+			"abbr": "М2",
 			"position": [1, 6]
 		},
 		"opasniyrayon": {
 			"caption": "Опасный Район",
+			"abbr": "ОР",
 			"position": [2, -1]
 		},
 		"promzona": {
 			"caption": "Старая промзона",
+			"abbr": "СП",
 			"position": [-3, 1]
 		},
 		"prostranstvo": {
 			"caption": "Пространство Вариантов",
+			"abbr": "ПВ",
 			"position": [1, 2]
 		}
 	},

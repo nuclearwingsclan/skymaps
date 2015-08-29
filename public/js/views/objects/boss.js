@@ -4,7 +4,7 @@ define(['underscore', 'backbone', 'leaflet', 'leaflet.label'], function(_, Backb
 	return Backbone.View.extend({
 		initialize: function(params) {
 			params.object.setIcon(this.markerIcon);
-			params.object.bindLabel(params.data.caption, { noHide: true });
+			params.object.bindLabel(params.data.caption, { noHide: true, className: 'boss-label' });
 
 			this.params = params;
 		},
