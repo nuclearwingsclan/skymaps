@@ -302,6 +302,9 @@ body,
     box-shadow: 0 0 7px rgba(0,0,0,0.2);
     font-size: 11px;
 }
+.navigator-label.station {
+	background: #FFCD68;
+}
 .navigator-label:before {
 	display: none;
 }

@@ -8,12 +8,14 @@
 		"index": {
 			"caption": "Тихая Гавань",
 			"abbr": "ТГ",
-			"position": [0, 0]
+			"position": [0, 0],
+			"features": ["station"]
 		},
 		"labirint1": {
 			"caption": "Лабиринт Облаков, ур.1",
 			"abbr": "Л1",
-			"position": [-1, 2]
+			"position": [-1, 2],
+			"features": ["station"]
 		},
 		"labirint2": {
 			"caption": "Лабиринт Облаков, ур.2",
@@ -28,7 +30,8 @@
 		"labirint4": {
 			"caption": "Лабиринт Облаков, ур.4",
 			"abbr": "Л4",
-			"position": [-1, 8]
+			"position": [-1, 8],
+			"features": ["station"]
 		},
 		"labirint5": {
 			"caption": "Лабиринт Облаков, ур.5",
@@ -48,12 +51,14 @@
 		"malomed": {
 			"caption": "Малый Медовый лабиринт",
 			"abbr": "ММ",
-			"position": [3, 4]
+			"position": [3, 4],
+			"features": ["station"]
 		},
 		"medoviy1": {
 			"caption": "Большой Медовый лабиринт, ур.1",
 			"abbr": "М1",
-			"position": [1, 4]
+			"position": [1, 4],
+			"features": ["station"]
 		},
 		"medoviy2": {
 			"caption": "Большой Медовый лабиринт, ур.2",
@@ -63,7 +68,8 @@
 		"opasniyrayon": {
 			"caption": "Опасный Район",
 			"abbr": "ОР",
-			"position": [2, -1]
+			"position": [2, -1],
+			"features": ["station"]
 		},
 		"promzona": {
 			"caption": "Старая промзона",
@@ -93,5 +99,12 @@
 		["medoviy1", "medoviy2"],
 		["medoviy2", "derevnya"]
 	],
-	"streams": []
+	"streams": [
+		["index", "opasniyrayon"],
+		["index", "promzona"],
+		["index", "medoviy2"],
+		["labirint2", "promzona"],
+		["labirint2", "labirint4"],
+		["labirint4", "index"]
+	]
 }
