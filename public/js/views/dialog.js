@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'leaflet', 'tinyscrollbar'], function($, _, Backbone, L, tinyscrollbar) {
+define(['jquery', 'tinyscrollbar'], function($, tinyscrollbar) {
 	'use strict';
 
 	return function(options) {

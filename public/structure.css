@@ -12,6 +12,10 @@ body,
 	width: 100%;
 }
 
+body {
+	overflow: hidden;
+}
+
 #map {
 	background: #d6bb74;
 	box-sizing: border-box;
@@ -292,17 +296,17 @@ body,
 	width: 160px;
 }
 .navigator-label {
-    display: block;
-    width: 22px;
-    height: 22px;
-    padding: 0;
-    line-height: 22px;
-    text-align: center;
-    border-radius: 50%;
-    border-width: 2px;
-    background: rgb(239, 239, 239);
-    box-shadow: 0 0 7px rgba(0,0,0,0.2);
-    font-size: 11px;
+	display: block;
+	width: 22px;
+	height: 22px;
+	padding: 0;
+	line-height: 22px;
+	text-align: center;
+	border-radius: 50%;
+	border-width: 2px;
+	background: rgb(239, 239, 239);
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+	font-size: 11px;
 }
 .navigator-label.station {
 	background: #FFCD68;
@@ -330,4 +334,13 @@ body,
 }
 .navigator-label.active {
     box-shadow: 0 0 12px #CC4900;
+}
+
+#hint {
+	background: rgba(0, 0, 0, 0.6);
+	color: white;
+	font: bold 12px "Helvetica", "Arial", sans-serif;
+	padding: 4px 8px;
+	position: absolute;
+	z-index: 10000000;
 }
