@@ -10,7 +10,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 				url: '/data/locations/' + location.region + '.json',
 				success: function(data) {
 					_this.regionData = data;
-					_this.regionLayer = _this.build(data);
+					_this.regionLayer = _this.build(data, _this.model);
 					_this.setBounds();
 					_this.center(location.level);
 				}
@@ -18,30 +18,34 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 
 			this.options = options;
 		},
-		build: function(data) {
+		build: function(data, model) {
 			var holes = [];
 			var locations = [];
 			var streams = [];
 
-			for (var hole in data.holes) {
-				var points = data.holes[hole];
-				var start = this.calculateMarkerPosition(data.locations[points[0]].position);
-				var finish = this.calculateMarkerPosition(data.locations[points[1]].position);
+			_.each(data.holes, function(hole) {
+				var start = this.calculateMarkerPosition(data.locations[hole[0]].position);
+				var finish = this.calculateMarkerPosition(data.locations[hole[1]].position);
 				holes.push(L.polyline([start, finish], {
 					color: 'black',
 					weight: 4
 				}));
-			}
+			}, this);
 
-			for (var level in data.locations) {
-				var info = data.locations[level];
-				locations.push(this.makeNavigatorMarker(info.position, info.abbr, info.features ? ' ' + info.features.join(' ') : ''));
-			}
+			_.each(data.locations, function(level, url) {
+				var marker = this.makeNavigatorMarker(level.position, level.abbr, level.features ? ' ' + level.features.join(' ') : '');
+				marker.label._onMouseClick = function() {
+					model.set('location', {
+						region: model.get('location').region,
+						level: url
+					});
+				};
+				locations.push(marker);
+			}, this);
 
-			for (var stream in data.streams) {
-				var points = data.streams[stream];
-				var start = this.calculateMarkerPosition(data.locations[points[0]].position);
-				var finish = this.calculateMarkerPosition(data.locations[points[1]].position);
+			_.each(data.streams, function(stream) {
+				var start = this.calculateMarkerPosition(data.locations[stream[0]].position);
+				var finish = this.calculateMarkerPosition(data.locations[stream[1]].position);
 				start = [start[0] - 2, start[1] + 5];
 				finish = [finish[0] - 2, finish[1] + 5];
 				streams.push(L.polyline([start, finish], {
@@ -49,13 +53,13 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 					dashArray: '5',
 					weight: 2
 				}));
-			}
+			}, this);
 
 			var holesLayer = L.featureGroup(holes);
 			var locationsLayer = L.featureGroup(locations);
 			var streamsLayer = L.featureGroup(streams);
 
-			return L.layerGroup([holesLayer, locationsLayer, streamsLayer]).addTo(this.options.navigator);
+			return L.featureGroup([holesLayer, locationsLayer, streamsLayer]).addTo(this.options.navigator);
 		},
 		calculateMarkerPosition: function(position) {
 			return [-position[1] * 18, position[0] * 16];
@@ -64,8 +68,9 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			var marker = L.marker(this.calculateMarkerPosition(position));
 			marker.setIcon(this.markerIcon);
 			marker.bindLabel(caption, {
-				noHide: true,
 				className: 'navigator-label' + featuresClass,
+				clickable: true,
+				noHide: true,
 				offset: [-13, -13]
 			});
 			return marker;
