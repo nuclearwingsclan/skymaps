@@ -50,8 +50,12 @@ define(['underscore', 'backbone', 'leaflet', 'views/scheme'], function(_, Backbo
 				this.scheme.center(level);
 			}
 		},
-		show: function() {},
-		hide: function() {}
+		show: function() {
+			this.$el.show();
+		},
+		hide: function() {
+			this.$el.hide();
+		}
 	});
 
 });
