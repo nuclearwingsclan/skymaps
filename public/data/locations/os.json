@@ -1,0 +1,283 @@
+{
+	"locations": {
+		"bespredel": {
+			"caption": "Беспредельщина",
+			"abbr": "Бс",
+			"position": [-1, -1],
+			"features": ["station", "masters", "compose"]
+		},
+		"rudniykray": {
+			"caption": "Рудный край",
+			"abbr": "РК",
+			"position": [0, -1],
+			"features": ["flagers", "masters", "compose"]
+		},
+		"goriruhladi": {
+			"caption": "Горы рухляди",
+			"abbr": "ГР",
+			"position": [1, -1],
+			"features": ["station", "masters", "compose"]
+		},
+		"ogorodes": {
+			"caption": "Огороды",
+			"abbr": "Ог",
+			"position": [-1, 0],
+			"features": ["flagers", "masters", "compose"]
+		},
+		"index": {
+			"caption": "Центр",
+			"abbr": "Цн",
+			"position": [0, 0],
+			"features": ["station", "masters", "compose"]
+		},
+		"razruha": {
+			"caption": "Разруха",
+			"abbr": "Рз",
+			"position": [1, 0],
+			"features": ["flagers", "masters", "compose"]
+		},
+		"nizini": {
+			"caption": "Низины",
+			"abbr": "Ни",
+			"position": [-1, 1],
+			"features": ["station", "masters", "compose"]
+		},
+		"stariygorod": {
+			"caption": "Старый город",
+			"abbr": "СГ",
+			"position": [0, 1],
+			"features": ["flagers", "masters", "compose"]
+		},
+		"dremuchie": {
+			"caption": "Дремучье",
+			"abbr": "Др",
+			"position": [1, 1],
+			"features": ["station", "masters", "compose"]
+		},
+		"voronka1": {
+			"caption": "Воронка, ур.1",
+			"abbr": "В1",
+			"position": [-2, -3]
+		},
+		"voronka2": {
+			"caption": "Воронка, ур.2",
+			"abbr": "В2",
+			"position": [0, -3]
+		},
+		"voronka3": {
+			"caption": "Воронка, ур.3",
+			"abbr": "В3",
+			"position": [2, -3],
+			"features": ["flagers"]
+		},
+		"ikarsa": {
+			"caption": "Лабиринт икаров А",
+			"abbr": "ИА",
+			"position": [3, -1]
+		},
+		"ikarsb": {
+			"caption": "Лабиринт икаров Б",
+			"abbr": "ИБ",
+			"position": [3, 1],
+			"features": ["station"]
+		},
+		"ikarsv": {
+			"caption": "Лабиринт икаров В",
+			"abbr": "ИВ",
+			"position": [3, 3]
+		},
+		"ikarsg": {
+			"caption": "Лабиринт икаров Г",
+			"abbr": "ИГ",
+			"position": [3, 5]
+		},
+		"ikarsd": {
+			"caption": "Лабиринт икаров Д",
+			"abbr": "ИД",
+			"position": [3, 7],
+			"features": ["station", "flagers"]
+		},
+		"ikarse": {
+			"caption": "Лабиринт икаров Е",
+			"abbr": "ИЕ",
+			"position": [3, 9]
+		},
+		"ikarszh": {
+			"caption": "Лабиринт икаров Ж",
+			"abbr": "ИЖ",
+			"position": [3, 11]
+		},
+		"drakken": {
+			"caption": "Логово Драккена",
+			"abbr": "ЛД",
+			"position": [3, 13]
+		},
+		"starviha": {
+			"caption": "Старый вихрь А",
+			"abbr": "СА",
+			"position": [0, 3]
+		},
+		"starvihb": {
+			"caption": "Старый вихрь Б",
+			"abbr": "СБ",
+			"position": [-1, 5],
+			"features": ["station"]
+		},
+		"starvihv": {
+			"caption": "Старый вихрь В",
+			"abbr": "СВ",
+			"position": [-1, 7],
+			"features": ["flagers"]
+		},
+		"starvihg": {
+			"caption": "Старый вихрь Г",
+			"abbr": "СГ",
+			"position": [-1, 9]
+		},
+		"starvihd": {
+			"caption": "Старый вихрь Д",
+			"abbr": "СД",
+			"position": [-1, 11],
+			"features": ["station", "flagers"]
+		},
+		"starvihe": {
+			"caption": "Старый вихрь Е",
+			"abbr": "СЕ",
+			"position": [-1, 13]
+		},
+		"starvihzh": {
+			"caption": "Старый вихрь Ж",
+			"abbr": "CЖ",
+			"position": [1, 5]
+		},
+		"starvihz": {
+			"caption": "Старый вихрь З",
+			"abbr": "СЗ",
+			"position": [1, 7],
+			"features": ["flagers"]
+		},
+		"starvihi": {
+			"caption": "Старый вихрь И",
+			"abbr": "СИ",
+			"position": [1, 9],
+			"features": ["station"]
+		},
+		"starvihy": {
+			"caption": "Старый вихрь Й",
+			"abbr": "СЙ",
+			"position": [1, 11],
+			"features": ["flagers"]
+		},
+		"starvihk": {
+			"caption": "Старый вихрь К",
+			"abbr": "СК",
+			"position": [1, 13]
+		},
+		"starvihl": {
+			"caption": "Старый вихрь Л",
+			"abbr": "СЛ",
+			"position": [1, 15],
+			"features": ["station", "flagers"]
+		},
+		"hramhlama": {
+			"caption": "Храм Хлама",
+			"abbr": "ХХ",
+			"position": [-1, 15]
+		},
+		"zarosli1": {
+			"caption": "Заросли, ур.1",
+			"abbr": "З1",
+			"position": [-2, 3]
+		},
+		"zarosli2": {
+			"caption": "Заросли, ур.2",
+			"abbr": "З2",
+			"position": [-3, 5],
+			"features": ["flagers"]
+		},
+		"zarosli3": {
+			"caption": "Заросли, ур.3",
+			"abbr": "З3",
+			"position": [-3, 7],
+			"features": ["station"]
+		},
+		"zarosli4": {
+			"caption": "Заросли, ур.4",
+			"abbr": "З4",
+			"position": [-3, 9]
+		},
+		"zarosli5": {
+			"caption": "Заросли, ур.5",
+			"abbr": "З5",
+			"position": [-3, 11],
+			"features": ["flagers"]
+		},
+		"zarosli6": {
+			"caption": "Заросли, ур.6",
+			"abbr": "З6",
+			"position": [-3, 13],
+			"features": ["station"]
+		},
+		"osshive": {
+			"caption": "Осиное гнездо",
+			"abbr": "Ос",
+			"position": [-5, 7]
+		},
+		"shtabnizov": {
+			"caption": "Штаб Низушников",
+			"abbr": "ШН",
+			"position": [-4, 3]
+		}
+	},
+	"holes": [
+		["index", "bespredel"],
+		["index", "rudniykray"],
+		["index", "ogorodes"],
+		["index", "razruha"],
+		["index", "stariygorod"],
+		["index", "dremuchie"],
+		["bespredel", "rudniykray"],
+		["bespredel", "ogorodes"],
+		["rudniykray", "goriruhladi"],
+		["ogorodes", "nizini"],
+		["razruha", "goriruhladi"],
+		["razruha", "dremuchie"],
+		["nizini", "stariygorod"],
+		["stariygorod", "dremuchie"],
+		["rudniykray", "voronka1"],
+		["voronka1", "voronka2"],
+		["voronka2", "voronka3"],
+		["goriruhladi", "ikarsa"],
+		["ikarsa", "ikarsb"],
+		["ikarsb", "ikarsv"],
+		["ikarsv", "ikarsg"],
+		["ikarsg", "ikarsd"],
+		["ikarsd", "ikarse"],
+		["ikarse", "ikarszh"],
+		["ikarszh", "drakken"],
+		["stariygorod", "starviha"],
+		["starviha", "starvihb"],
+		["starviha", "starvihzh"],
+		["starvihb", "starvihv"],
+		["starvihzh", "starvihz"],
+		["starvihv", "starvihg"],
+		["starvihz", "starvihi"],
+		["starvihg", "starvihd"],
+		["starvihg", "starvihy"],
+		["starvihi", "starvihy"],
+		["starvihd", "starvihe"],
+		["starvihy", "starvihk"],
+		["starvihk", "starvihl"],
+		["starvihe", "hramhlama"],
+		["starvihl", "hramhlama"],
+		["nizini", "shtabnizov"],
+		["nizini", "zarosli1"],
+		["zarosli2", "osshive"],
+		["zarosli1", "zarosli2"],
+		["zarosli2", "zarosli3"],
+		["zarosli3", "zarosli4"],
+		["zarosli4", "zarosli5"],
+		["zarosli5", "zarosli6"]
+	],
+	"streams": []
+}
