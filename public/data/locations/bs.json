@@ -1,0 +1,299 @@
+{
+	"locations": {
+		"index": {
+			"caption": "Бастион",
+			"abbr": "Бс",
+			"position": [0, 0],
+			"features": ["station", "flagers"]
+		},
+		"til": {
+			"caption": "Тыл",
+			"abbr": "Тл",
+			"position": [-2, 0]
+		},
+		"lager": {
+			"caption": "Лагерь Низушников",
+			"abbr": "ЛН",
+			"position": [2, 0],
+			"features": ["station"]
+		},
+		"zabitiy1": {
+			"caption": "Забытый вихрь, ур.1",
+			"abbr": "З1",
+			"position": [-3, 2],
+			"features": ["flagers"]
+		},
+		"zabitiy2": {
+			"caption": "Забытый вихрь, ур.2",
+			"abbr": "З2",
+			"position": [-3, 4],
+			"features": ["station"]
+		},
+		"zabitiy3": {
+			"caption": "Забытый вихрь, ур.3",
+			"abbr": "З3",
+			"position": [-5, 6],
+			"features": ["flagers"]
+		},
+		"hranilische8": {
+			"caption": "Восьмое Хранилище",
+			"abbr": "Х8",
+			"position": [-5, 4]
+		},
+		"krovaviy1": {
+			"caption": "Кровавый лаз, ур.1",
+			"abbr": "К1",
+			"position": [-1, 2]
+		},
+		"krovaviy2": {
+			"caption": "Кровавый лаз, ур.2",
+			"abbr": "К2",
+			"position": [-1, 4],
+			"features": ["station"]
+		},
+		"krovaviy3": {
+			"caption": "Кровавый лаз, ур.3",
+			"abbr": "К3",
+			"position": [-3, 6],
+			"features": ["flagers"]
+		},
+		"razriv1": {
+			"caption": "Разрыв, ур.1",
+			"abbr": "Р1",
+			"position": [1, 2]
+		},
+		"razriv2": {
+			"caption": "Разрыв, ур.2",
+			"abbr": "Р2",
+			"position": [1, 4]
+		},
+		"razriv3": {
+			"caption": "Разрыв, ур.3",
+			"abbr": "Р3",
+			"position": [1, 6],
+			"features": ["station", "flagers"]
+		},
+		"razriv4": {
+			"caption": "Разрыв, ур.4",
+			"abbr": "Р4",
+			"position": [1, 10],
+			"features": ["station"]
+		},
+		"razriv5": {
+			"caption": "Разрыв, ур.5",
+			"abbr": "Р5",
+			"position": [1, 12]
+		},
+		"razriv6": {
+			"caption": "Разрыв, ур.6",
+			"abbr": "Р6",
+			"position": [1, 14]
+		},
+		"razriv7": {
+			"caption": "Разрыв, ур.7",
+			"abbr": "Р7",
+			"position": [1, 16]
+		},
+		"razriv8": {
+			"caption": "Разрыв, ур.8",
+			"abbr": "Р8",
+			"position": [1, 18]
+		},
+		"razriv9": {
+			"caption": "Разрыв, ур.9",
+			"abbr": "Р9",
+			"position": [1, 20],
+			"features": ["station"]
+		},
+		"razriv10": {
+			"caption": "Разрыв, ур.10",
+			"abbr": "Р10",
+			"position": [1, 22]
+		},
+		"razriv11": {
+			"caption": "Разрыв, ур.11",
+			"abbr": "Р11",
+			"position": [1, 24]
+		},
+		"chervinie1": {
+			"caption": "Червиные норы, ур.1",
+			"abbr": "Ч1",
+			"position": [3, 2]
+		},
+		"chervinie2": {
+			"caption": "Червиные норы, ур.2",
+			"abbr": "Ч2",
+			"position": [3, 4],
+			"features": ["station", "flagers"]
+		},
+		"chervinie3": {
+			"caption": "Червиные норы, ур.3",
+			"abbr": "Ч3",
+			"position": [5, 6],
+			"features": ["flagers"]
+		},
+		"chervinie4": {
+			"caption": "Червиные норы, ур.4",
+			"abbr": "Ч4",
+			"position": [7, 10],
+			"features": ["station", "flagers"]
+		},
+		"chervinie5": {
+			"caption": "Червиные норы, ур.5",
+			"abbr": "Ч5",
+			"position": [5, 12]
+		},
+		"chervinie6": {
+			"caption": "Червиные норы, ур.6",
+			"abbr": "Ч6",
+			"position": [3, 14],
+			"features": ["flagers"]
+		},
+		"chervinie7": {
+			"caption": "Червиные норы, ур.7",
+			"abbr": "Ч7",
+			"position": [5, 14]
+		},
+		"chervinie8": {
+			"caption": "Червиные норы, ур.8",
+			"abbr": "Ч8",
+			"position": [7, 14]
+		},
+		"chervinie9": {
+			"caption": "Червиные норы, ур.9",
+			"abbr": "Ч9",
+			"position": [3, 16],
+			"features": ["station"]
+		},
+		"chervinie10": {
+			"caption": "Червиные норы, ур.10",
+			"abbr": "Ч10",
+			"position": [5, 16],
+			"features": ["station", "flagers"]
+		},
+		"chervinie11": {
+			"caption": "Червиные норы, ур.11",
+			"abbr": "Ч11",
+			"position": [7, 16],
+			"features": ["station"]
+		},
+		"laba": {
+			"caption": "Лабиринт А",
+			"abbr": "А",
+			"position": [-1, 6]
+		},
+		"labb": {
+			"caption": "Лабиринт Б",
+			"abbr": "Б",
+			"position": [-3, 8]
+		},
+		"labv": {
+			"caption": "Лабиринт В",
+			"abbr": "В",
+			"position": [-3, 10]
+		},
+		"labg": {
+			"caption": "Лабиринт Г",
+			"abbr": "Г",
+			"position": [-1, 8]
+		},
+		"labd": {
+			"caption": "Лабиринт Д",
+			"abbr": "Д",
+			"position": [-1, 10],
+			"features": ["station"]
+		},
+		"labe": {
+			"caption": "Лабиринт Е",
+			"abbr": "Е",
+			"position": [3, 6]
+		},
+		"labzh": {
+			"caption": "Лабиринт Ж",
+			"abbr": "Ж",
+			"position": [3, 10]
+		},
+		"labz": {
+			"caption": "Лабиринт З",
+			"abbr": "З",
+			"position": [3, 12]
+		},
+		"labi": {
+			"caption": "Лабиринт И",
+			"abbr": "И",
+			"position": [5, 10]
+		},
+		"vault": {
+			"caption": "Убежище Ксении",
+			"abbr": "УК",
+			"position": [3, 8],
+			"features": ["station"]
+		}
+	},
+	"holes": [
+		["index", "zabitiy1"],
+		["index", "krovaviy1"],
+		["index", "razriv1"],
+		["index", "chervinie1"],
+		["index", "lager"],
+		["zabitiy1", "hranilische8"],
+		["zabitiy1", "zabitiy2"],
+		["zabitiy2", "zabitiy3"],
+		["zabitiy3", "labv"],
+		["krovaviy1", "krovaviy2"],
+		["krovaviy2", "krovaviy3"],
+		["krovaviy2", "laba"],
+		["razriv1", "razriv2"],
+		["razriv2", "razriv3"],
+		["razriv3", "razriv4"],
+		["razriv4", "razriv5"],
+		["razriv5", "razriv6"],
+		["razriv6", "razriv7"],
+		["razriv7", "razriv8"],
+		["razriv8", "razriv9"],
+		["razriv9", "razriv10"],
+		["razriv10", "razriv11"],
+		["razriv3", "labzh"],
+		["chervinie1", "chervinie2"],
+		["chervinie2", "chervinie3"],
+		["chervinie2", "chervinie4"],
+		["chervinie4", "chervinie5"],
+		["chervinie5", "chervinie6"],
+		["chervinie5", "chervinie7"],
+		["chervinie5", "chervinie8"],
+		["chervinie6", "chervinie9"],
+		["chervinie7", "chervinie10"],
+		["chervinie8", "chervinie11"],
+		["chervinie2", "labe"],
+		["chervinie5", "labi"],
+		["laba", "labb"],
+		["laba", "labg"],
+		["labb", "labv"],
+		["labb", "labd"],
+		["labg", "labd"],
+		["labg", "labzh"],
+		["labd", "labz"],
+		["labe", "labv"],
+		["labe", "labi"],
+		["labzh", "labz"],
+		["labi", "labz"]
+	],
+	"streams": [
+		["index", "til"],
+		["index", "lager"],
+		["index", "chervinie5"],
+		["index", "chervinie2"],
+		["index", "krovaviy2"],
+		["index", "razriv3"],
+		["index", "zabitiy2"],
+		["index", "labd"],
+		["chervinie2", "chervinie4"],
+		["chervinie4", "chervinie9"],
+		["chervinie4", "chervinie10"],
+		["chervinie4", "chervinie11"],
+		["razriv3", "vault"],
+		["razriv3", "razriv4"],
+		["labd", "chervinie2"],
+		["labd", "krovaviy2"]
+	]
+}
