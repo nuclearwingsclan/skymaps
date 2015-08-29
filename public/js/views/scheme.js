@@ -46,12 +46,12 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			_.each(data.streams, function(stream) {
 				var start = this.calculateMarkerPosition(data.locations[stream[0]].position);
 				var finish = this.calculateMarkerPosition(data.locations[stream[1]].position);
-				start = [start[0] - 2, start[1] + 5];
-				finish = [finish[0] - 2, finish[1] + 5];
+				start = [start[0] - 3, start[1] + 6];
+				finish = [finish[0] - 3, finish[1] + 6];
 				streams.push(L.polyline([start, finish], {
 					color: 'orange',
 					dashArray: '5',
-					weight: 2
+					weight: 3
 				}));
 			}, this);
 

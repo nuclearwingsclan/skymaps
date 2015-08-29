@@ -1,0 +1,352 @@
+{
+	"locations": {
+		"acropol": {
+			"caption": "Ратный, Акрополь",
+			"abbr": "РА",
+			"position": [-7, 5]
+		},
+		"alcogolicovo": {
+			"caption": "Алкоголиково",
+			"abbr": "Ал",
+			"position": [-3, 0],
+			"features": ["station"]
+		},
+		"burelom1": {
+			"caption": "Лабиринт под Буреломом, ур.1",
+			"abbr": "Б1",
+			"position": [-3, 2]
+		},
+		"burelom2": {
+			"caption": "Лабиринт под Буреломом, ур.2",
+			"abbr": "Б2",
+			"position": [-3, 4],
+			"features": ["flagers"]
+		},
+		"burelom3": {
+			"caption": "Лабиринт под Буреломом, ур.3",
+			"abbr": "Б3",
+			"position": [-4, 6]
+		},
+		"index": {
+			"caption": "Периферия",
+			"abbr": "Пф",
+			"position": [0, 0],
+			"features": ["station", "masters", "flagers"]
+		},
+		"laba": {
+			"caption": "Лабиринт А",
+			"abbr": "А",
+			"position": [-2, 6],
+			"features": ["station"]
+		},
+		"labb": {
+			"caption": "Лабиринт Б",
+			"abbr": "Б",
+			"position": [-4, 8]
+		},
+		"labch": {
+			"caption": "Лабиринт Ч",
+			"abbr": "Ч",
+			"position": [3, 14],
+			"features": ["station"]
+		},
+		"labd": {
+			"caption": "Лабиринт Д",
+			"abbr": "Д",
+			"position": [-8, 12],
+			"features": ["station", "masters"]
+		},
+		"labe": {
+			"caption": "Лабиринт Е",
+			"abbr": "Е",
+			"position": [-4, 10],
+			"features": ["station"]
+		},
+		"labf": {
+			"caption": "Лабиринт Ф",
+			"abbr": "Ф",
+			"position": [2, 12],
+			"features": ["masters"]
+		},
+		"labg": {
+			"caption": "Лабиринт Г",
+			"abbr": "Г",
+			"position": [-6, 10]
+		},
+		"labh": {
+			"caption": "Лабиринт Х",
+			"abbr": "Х",
+			"position": [4, 12],
+			"features": ["masters"]
+		},
+		"labi": {
+			"caption": "Лабиринт И",
+			"abbr": "И",
+			"position": [0, 6],
+			"features": ["station"]
+		},
+		"labk": {
+			"caption": "Лабиринт К",
+			"abbr": "К",
+			"position": [2, 8],
+			"features": ["flagers"]
+		},
+		"labl": {
+			"caption": "Лабиринт Л",
+			"abbr": "Л",
+			"position": [-2, 10],
+			"features": ["station"]
+		},
+		"labm": {
+			"caption": "Лабиринт М",
+			"abbr": "М",
+			"position": [-2, 12],
+			"features": ["masters", "flagers"]
+		},
+		"labn": {
+			"caption": "Лабиринт Н",
+			"abbr": "Н",
+			"position": [-4, 14],
+			"features": ["masters"]
+		},
+		"labo": {
+			"caption": "Лабиринт О",
+			"abbr": "О",
+			"position": [-4, 16],
+			"features": ["station", "masters"]
+		},
+		"labp": {
+			"caption": "Лабиринт П",
+			"abbr": "П",
+			"position": [2, 16],
+			"features": ["masters", "flagers"]
+		},
+		"labr": {
+			"caption": "Лабиринт Р",
+			"abbr": "Р",
+			"position": [0, 10]
+		},
+		"labs": {
+			"caption": "Лабиринт С",
+			"abbr": "С",
+			"position": [0, 12],
+			"features": ["station", "masters", "flagers"]
+		},
+		"labsh": {
+			"caption": "Лабиринт Ш",
+			"abbr": "Ш",
+			"position": [1, 14],
+			"features": ["masters", "flagers"]
+		},
+		"labt": {
+			"caption": "Лабиринт Т",
+			"abbr": "Т",
+			"position": [4, 10],
+			"features": ["station"]
+		},
+		"labts": {
+			"caption": "Лабиринт Ц",
+			"abbr": "Ц",
+			"position": [6, 12],
+			"features": ["masters", "flagers"]
+		},
+		"labu": {
+			"caption": "Лабиринт У",
+			"abbr": "У",
+			"position": [2, 10],
+			"features": ["station", "flagers"]
+		},
+		"labv": {
+			"caption": "Лабиринт В",
+			"abbr": "В",
+			"position": [-2, 8],
+			"features": ["flagers"]
+		},
+		"laby": {
+			"caption": "Лабиринт Й",
+			"abbr": "Й",
+			"position": [0, 8]
+		},
+		"labz": {
+			"caption": "Лабиринт З",
+			"abbr": "З",
+			"position": [-4, 12]
+		},
+		"labzh": {
+			"caption": "Лабиринт Ж",
+			"abbr": "Ж",
+			"position": [-6, 12],
+			"features": ["masters", "flagers"]
+		},
+		"lezhbishe": {
+			"caption": "Лежбище злобоежей",
+			"abbr": "Ле",
+			"position": [-1, -2],
+			"features": ["station"]
+		},
+		"musorozhye": {
+			"caption": "Мусорожье",
+			"abbr": "Му",
+			"position": [1, -2],
+			"features": ["station"]
+		},
+		"npk1": {
+			"caption": "НПК, Производственный уровень 1",
+			"abbr": "Н1",
+			"position": [3, 2]
+		},
+		"npk2": {
+			"caption": "НПК, Производственный уровень 2",
+			"abbr": "Н2",
+			"position": [3, 4]
+		},
+		"npkadmin": {
+			"caption": "НПК, Административный уровень",
+			"abbr": "НА",
+			"position": [6, 8]
+		},
+		"npkcenter": {
+			"caption": "НПК, Центр разработки",
+			"abbr": "НЦ",
+			"position": [5, 6],
+			"features": ["station"]
+		},
+		"npkkpp": {
+			"caption": "НПК, КПП",
+			"abbr": "НК",
+			"position": [5, 4]
+		},
+		"npkresearch": {
+			"caption": "НПК, Исследовательский уровень",
+			"abbr": "НИ",
+			"position": [4, 8]
+		},
+		"npksvalka": {
+			"caption": "НПК, Свалка",
+			"abbr": "НС",
+			"position": [5, 2]
+		},
+		"okrug": {
+			"caption": "Особый Муниципальный Округ 4",
+			"abbr": "МО",
+			"position": [-1, 2],
+			"features": ["station"]
+		},
+		"spirt1": {
+			"caption": "Лабиринт под Спиртотроном, ур.1",
+			"abbr": "С1",
+			"position": [1, 2]
+		},
+		"spirt2": {
+			"caption": "Лабиринт под Спиртотроном, ур.2",
+			"abbr": "С2",
+			"position": [1, 4]
+		},
+		"spirt3": {
+			"caption": "Лабиринт под Спиртотроном, ур.3",
+			"abbr": "С3",
+			"position": [2, 6],
+			"features": ["flagers"]
+		},
+		"svalka": {
+			"caption": "Свалка",
+			"abbr": "Св",
+			"position": [-1, 4]
+		},
+		"tehnicheskiy": {
+			"caption": "Ратный, Технический уровень",
+			"abbr": "РТ",
+			"position": [-7, 3]
+		},
+		"toxfields": {
+			"caption": "Токсичные Поля",
+			"abbr": "ТП",
+			"position": [3, 0]
+		},
+		"zhiloy": {
+			"caption": "Ратный, Жилой уровень",
+			"abbr": "РЖ",
+			"position": [-7, 1],
+			"features": ["station"]
+		}
+	},
+	"holes": [
+		["index", "musorozhye"],
+		["index", "lezhbishe"],
+		["index", "alcogolicovo"],
+		["index", "toxfields"],
+		["index", "burelom1"],
+		["index", "spirt1"],
+		["index", "okrug"],
+		["index", "npk1"],
+		["okrug", "svalka"],
+		["npk1", "npk2"],
+		["npk2", "npksvalka"],
+		["npk2", "npkkpp"],
+		["npkkpp", "npkcenter"],
+		["npkcenter", "npkresearch"],
+		["npkcenter", "npkadmin"],
+		["npkadmin", "npkresearch"],
+		["burelom1", "burelom2"],
+		["burelom2", "burelom3"],
+		["burelom2", "laba"],
+		["spirt1", "spirt2"],
+		["spirt2", "spirt3"],
+		["spirt2", "labi"],
+		["laba", "labb"],
+		["laba", "labv"],
+		["labb", "labg"],
+		["labv", "labg"],
+		["labv", "labe"],
+		["labg", "labd"],
+		["labe", "labzh"],
+		["labe", "labz"],
+		["labz", "labn"],
+		["labn", "labo"],
+		["labi", "laby"],
+		["labi", "labk"],
+		["laby", "labl"],
+		["laby", "labr"],
+		["labk", "labu"],
+		["labk", "labt"],
+		["labl", "labz"],
+		["labl", "labm"],
+		["labl", "labs"],
+		["labr", "labs"],
+		["labu", "labf"],
+		["labt", "labh"],
+		["labt", "labts"],
+		["labs", "labsh"],
+		["labf", "labsh"],
+		["labh", "labch"],
+		["labsh", "labp"],
+		["labch", "labp"],
+		["zhiloy", "tehnicheskiy"],
+		["tehnicheskiy", "acropol"]
+	],
+	"streams": [
+		["index", "okrug"],
+		["index", "lezhbishe"],
+		["index", "musorozhye"],
+		["index", "alcogolicovo"],
+		["index", "npkcenter"],
+		["index", "zhiloy"],
+		["index", "laba"],
+		["index", "labi"],
+		["laba", "labe"],
+		["laba", "labd"],
+		["labi", "labl"],
+		["labi", "labt"],
+		["labi", "labu"],
+		["labe", "labo"],
+		["labe", "labl"],
+		["labl", "labs"],
+		["labl", "labo"],
+		["labu", "labs"],
+		["labu", "labt"],
+		["labu", "labch"],
+		["laba", "laba"],
+		["labt", "labch"],
+		["labs", "labch"]
+	]
+}

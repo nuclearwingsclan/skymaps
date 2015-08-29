@@ -283,7 +283,9 @@ body,
 #navigator {
 	background: rgba(255, 255, 255, 0.8);
 	bottom: 25px;
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.22);
+	border: 2px solid white;
+	border-radius: 2px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
 	height: 200px;
 	position: absolute;
 	right: 30px;
@@ -304,6 +306,24 @@ body,
 }
 .navigator-label.station {
 	background: #FFCD68;
+}
+.navigator-label.masters {
+	background: #68A5FF;
+}
+.navigator-label.flagers {
+	background: #6FFF6A;
+}
+.navigator-label.station.masters {
+	background: #9DFFFC;
+}
+.navigator-label.station.flagers {
+	background: #FFCD68;
+}
+.navigator-label.masters.flagers {
+	background: #FF8989;
+}
+.navigator-label.station.flagers.masters {
+	background: #FF5FF3;
 }
 .navigator-label:before {
 	display: none;
