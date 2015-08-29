@@ -1,0 +1,242 @@
+{
+	"locations": {
+		"bezdna1": {
+			"caption": "Бездна, ур.1",
+			"abbr": "Б1",
+			"position": [-2, 2]
+		},
+		"bezdna2": {
+			"caption": "Бездна, ур.2",
+			"abbr": "Б2",
+			"position": [-3, 4],
+			"features": ["station"]
+		},
+		"bezdna3": {
+			"caption": "Бездна, ур.3",
+			"abbr": "Б3",
+			"position": [-4, 6],
+			"features": ["flagers"]
+		},
+		"buhta": {
+			"caption": "Бухта Барахта",
+			"abbr": "ББ",
+			"position": [2, 0],
+			"features": ["station"]
+		},
+		"goreliy1": {
+			"caption": "Горелый омут, ур.1",
+			"abbr": "Г1",
+			"position": [2, 2]
+		},
+		"goreliy2": {
+			"caption": "Горелый омут, ур.2",
+			"abbr": "Г2",
+			"position": [3, 4],
+			"features": ["flagers"]
+		},
+		"goreliy3": {
+			"caption": "Горелый омут, ур.3",
+			"abbr": "Г3",
+			"position": [4, 6],
+			"features": ["station"]
+		},
+		"goreliy4": {
+			"caption": "Горелый омут, ур.4",
+			"abbr": "Г4",
+			"position": [6, 8]
+		},
+		"goreliy5": {
+			"caption": "Горелый омут, ур.5",
+			"abbr": "Г5",
+			"position": [6, 10],
+			"features": ["flagers"]
+		},
+		"index": {
+			"caption": "Поющий Риф",
+			"abbr": "ПР",
+			"position": [0, 0],
+			"features": ["station", "masters", "flagers"]
+		},
+		"laba": {
+			"caption": "Лабиринт А",
+			"abbr": "А",
+			"position": [0, 2]
+		},
+		"labb": {
+			"caption": "Лабиринт Б",
+			"abbr": "Б",
+			"position": [-1, 4],
+			"features": ["station", "flagers"]
+		},
+		"labd": {
+			"caption": "Лабиринт Д",
+			"abbr": "Д",
+			"position": [-2, 6],
+			"features": ["flagers"]
+		},
+		"labe": {
+			"caption": "Лабиринт Е",
+			"abbr": "Е",
+			"position": [2, 6]
+		},
+		"labf": {
+			"caption": "Лабиринт Ф",
+			"abbr": "Ф",
+			"position": [3, 14],
+			"features": ["masters", "flagers"]
+		},
+		"labg": {
+			"caption": "Лабиринт Г",
+			"abbr": "Г",
+			"position": [0, 6],
+			"features": ["flagers"]
+		},
+		"labi": {
+			"caption": "Лабиринт И",
+			"abbr": "И",
+			"position": [4, 8],
+			"features": ["station"]
+		},
+		"labk": {
+			"caption": "Лабиринт К",
+			"abbr": "К",
+			"position": [-4, 8],
+			"features": ["station", "flagers"]
+		},
+		"labl": {
+			"caption": "Лабиринт Л",
+			"abbr": "Л",
+			"position": [-2, 8],
+			"features": ["station"]
+		},
+		"labm": {
+			"caption": "Лабиринт М",
+			"abbr": "М",
+			"position": [-4, 10]
+		},
+		"labn": {
+			"caption": "Лабиринт Н",
+			"abbr": "Н",
+			"position": [-2, 10]
+		},
+		"labo": {
+			"caption": "Лабиринт О",
+			"abbr": "О",
+			"position": [0, 10]
+		},
+		"labp": {
+			"caption": "Лабиринт П",
+			"abbr": "П",
+			"position": [-3, 12],
+			"features": ["station", "masters", "flagers"]
+		},
+		"labr": {
+			"caption": "Лабиринт Р",
+			"abbr": "Р",
+			"position": [2, 10],
+			"features": ["station"]
+		},
+		"labs": {
+			"caption": "Лабиринт С",
+			"abbr": "С",
+			"position": [1, 12],
+			"features": ["masters"]
+		},
+		"labt": {
+			"caption": "Лабиринт Т",
+			"abbr": "Т",
+			"position": [3, 12],
+			"features": ["masters", "flagers"]
+		},
+		"labu": {
+			"caption": "Лабиринт У",
+			"abbr": "У",
+			"position": [-3, 14],
+			"features": ["masters"]
+		},
+		"labv": {
+			"caption": "Лабиринт В",
+			"abbr": "В",
+			"position": [1, 4],
+			"features": ["station"]
+		},
+		"laby": {
+			"caption": "Лабиринт Й",
+			"abbr": "Й",
+			"position": [4, 10]
+		},
+		"labz": {
+			"caption": "Лабиринт З",
+			"abbr": "З",
+			"position": [2, 8],
+			"features": ["flagers"]
+		},
+		"labzh": {
+			"caption": "Лабиринт Ж",
+			"abbr": "Ж",
+			"position": [0, 8],
+			"features": ["station"]
+		},
+		"zhemchuzhniy": {
+			"caption": "Жемчужный омут",
+			"abbr": "ЖО",
+			"position": [-2, 0],
+			"features": ["flagers"]
+		}
+	},
+	"holes": [
+		["index", "zhemchuzhniy"],
+		["index", "buhta"],
+		["index", "bezdna1"],
+		["index", "laba"],
+		["index", "goreliy1"],
+		["goreliy1", "goreliy2"],
+		["goreliy2", "goreliy3"],
+		["goreliy3", "goreliy4"],
+		["goreliy4", "goreliy5"],
+		["bezdna1", "bezdna2"],
+		["bezdna2", "bezdna3"],
+		["bezdna3", "labk"],
+		["bezdna3", "labl"],
+		["laba", "labb"],
+		["laba", "labv"],
+		["labb", "labd"],
+		["labb", "labg"],
+		["labv", "labe"],
+		["labd", "labl"],
+		["labg", "labzh"],
+		["labe", "labz"],
+		["labe", "labi"],
+		["labk", "labm"],
+		["labl", "labn"],
+		["labzh", "labo"],
+		["labz", "labr"],
+		["labi", "laby"],
+		["labm", "labp"],
+		["labn", "labp"],
+		["labo", "labs"],
+		["labr", "labs"],
+		["labr", "labt"],
+		["laby", "labt"],
+		["labp", "labu"],
+		["labt", "labf"]
+	],
+	"streams": [
+		["index", "buhta"],
+		["index", "goreliy3"],
+		["index", "bezdna2"],
+		["index", "labb"],
+		["index", "labv"],
+		["bezdna2", "labk"],
+		["bezdna2", "labl"],
+		["labb", "labzh"],
+		["labb", "labl"],
+		["labv", "labi"],
+		["labk", "labp"],
+		["labb", "labzh"],
+		["labl", "labp"],
+		["labi", "labr"],
+		["labb", "labzh"],
+		["labzh", "labr"]
+	]
+}

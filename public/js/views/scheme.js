@@ -57,7 +57,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 				finish = [finish[0] - 3, finish[1] + 6];
 				streams.push(L.polyline([start, finish], {
 					color: 'orange',
-					dashArray: '5',
+					dashArray: '7',
 					weight: 3
 				}));
 			}, this);
@@ -69,7 +69,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			return L.featureGroup([holesLayer, locationsLayer, streamsLayer]).addTo(this.options.navigator);
 		},
 		calculateMarkerPosition: function(position) {
-			return [-position[1] * 18, position[0] * 16];
+			return [-position[1] * 20, position[0] * 20];
 		},
 		makeNavigatorMarker: function(position, caption, featuresClass) {
 			var marker = L.marker(this.calculateMarkerPosition(position));
@@ -90,7 +90,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			var bounds = this.regionLayer.getLayers()[1].getBounds();
 
 			// Padding
-			bounds._northEast.lat += 40;
+			bounds._northEast.lat += 70;
 			bounds._northEast.lng += 80;
 			bounds._southWest.lat -= 90;
 			bounds._southWest.lng -= 80;

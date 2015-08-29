@@ -152,6 +152,32 @@ body {
 	margin-bottom: 3px;
 }
 
+.leaflet-rrose-content-wrapper {
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
+    border-radius:         10px;
+}
+.leaflet-rrose-content-wrapper-se {
+    -moz-border-radius:    0 10px 10px 10px;
+    -webkit-border-radius: 0 10px 10px 10px;
+    border-radius:         0 10px 10px 10px;
+}
+.leaflet-rrose-content-wrapper-sw {
+    -moz-border-radius:    10px 0 10px 10px;
+    -webkit-border-radius: 10px 0 10px 10px;
+    border-radius:         10px 0 10px 10px;
+}
+.leaflet-rrose-content-wrapper-nw, .leaflet-rrose-content-wrapper-w {
+    -moz-border-radius:    10px 10px 0 10px;
+    -webkit-border-radius: 10px 10px 0 10px;
+    border-radius:         10px 10px 0 10px;
+}
+.leaflet-rrose-content-wrapper-ne, .leaflet-rrose-content-wrapper-e {
+    -moz-border-radius:    10px 10px 10px 0;
+    -webkit-border-radius: 10px 10px 10px 0;
+    border-radius:         10px 10px 10px 0;
+}
+
 .dialog {
 	border: 6px solid rgba(0, 0, 0, 0.32);
 	border-radius: 6px;
@@ -297,14 +323,14 @@ body {
 }
 .navigator-label {
 	display: block;
-	width: 22px;
-	height: 22px;
+	width: 24px;
+	height: 24px;
 	padding: 0;
-	line-height: 22px;
+	line-height: 24px;
 	text-align: center;
 	border-radius: 50%;
 	border-width: 2px;
-	background: rgb(239, 239, 239);
+	background: #EFEFEF;
 	box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
 	font-size: 11px;
 }
@@ -315,13 +341,13 @@ body {
 	background: #68A5FF;
 }
 .navigator-label.flagers {
-	background: #6FFF6A;
+	background: #A9FF00;
 }
 .navigator-label.station.masters {
 	background: #9DFFFC;
 }
 .navigator-label.station.flagers {
-	background: #FFCD68;
+	background: #FEFF00;
 }
 .navigator-label.masters.flagers {
 	background: #FF8989;
