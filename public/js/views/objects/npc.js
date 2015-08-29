@@ -2,6 +2,9 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 	'use strict';
 
 	return NoteView.extend({
+		hintText: function(params) {
+			return params.data.caption;
+		},
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/npc.svg',
 			iconSize: [52, 20],

@@ -2,6 +2,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 	'use strict';
 
 	return NoteView.extend({
+		hintText: 'Флягеры',
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/flager.svg',
 			iconSize: [70, 90],

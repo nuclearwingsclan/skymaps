@@ -25,7 +25,7 @@ define(['jquery'], function($) {
 	};
 
 	$.extend($.prototype, { hint: addHint });
-	L.Marker.include({ hint: addHint });
+	L.Marker.include({ setHint: addHint });
 
 	return addHint;
 

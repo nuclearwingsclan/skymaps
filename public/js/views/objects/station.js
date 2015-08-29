@@ -4,9 +4,13 @@ define(['underscore', 'backbone', 'leaflet', 'views/dialog'], function(_, Backbo
 	return Backbone.View.extend({
 		initialize: function(params) {
 			params.object.setIcon(this.markerIcon(params.data.size));
+			params.object.setHint(typeof this.hintText == 'function' ? this.hintText(params) : this.hintText);
 			this.listenTo(params.object, 'click', this.onClick);
 
 			this.params = params;
+		},
+		hintText: function(params) {
+			return (!/платформа/i.test(params.data.caption) ? 'Платформа ' : '') + '«' + params.data.caption + '»';
 		},
 		markerIcon: function(size) {
 			return L.icon({

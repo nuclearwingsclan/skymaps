@@ -2,6 +2,9 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/hole'], function(_, 
 	'use strict';
 
 	return HoleView.extend({
+		hintText: function(params) {
+			return 'Регион «' + params.data.caption + '»';
+		},
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/locationhole.svg',
 			iconSize: [100, 100],

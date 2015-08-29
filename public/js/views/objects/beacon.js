@@ -2,6 +2,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 	'use strict';
 
 	return NoteView.extend({
+		hintText: 'Пиратский маяк',
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/beacon.svg',
 			iconSize: [40, 40],

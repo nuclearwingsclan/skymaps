@@ -339,8 +339,8 @@ body {
 #hint {
 	background: rgba(0, 0, 0, 0.6);
 	color: white;
-	font: bold 12px "Helvetica", "Arial", sans-serif;
-	padding: 4px 8px;
+	font: bold 11px/1 "Helvetica", "Arial", sans-serif;
+	padding: 4px 6px;
 	position: absolute;
 	z-index: 10000000;
 }

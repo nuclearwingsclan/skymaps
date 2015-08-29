@@ -4,6 +4,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	return Backbone.View.extend({
 		initialize: function(params) {
 			params.object.setIcon(this.markerIcon);
+			params.object.setHint(this.hintText);
 			this.params = params;
 		},
 		markerIcon: L.icon({

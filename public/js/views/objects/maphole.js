@@ -2,6 +2,9 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/wormhole'], function
 	'use strict';
 
 	return WormholeView.extend({
+		hintText: function(params) {
+			return '«Червиный» вихрь в ' + params.data.caption;
+		},
 		onClick: function() {
 			var data = this.params.data;
 			this.params.appModel.load(data.region, data.map, data.goto);

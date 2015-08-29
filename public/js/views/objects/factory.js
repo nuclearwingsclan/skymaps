@@ -2,6 +2,9 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 	'use strict';
 
 	return NoteView.extend({
+		hintText: function(params) {
+			return (!/завод/i.test(params.data.caption) ? 'Завод ' : '') + '«' + params.data.caption + '»';
+		},
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/factory.svg',
 			iconSize: [58, 58],

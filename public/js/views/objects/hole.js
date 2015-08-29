@@ -4,6 +4,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	return Backbone.View.extend({
 		initialize: function(params) {
 			params.object.setIcon(this.markerIcon);
+			params.object.setHint(typeof this.hintText == 'function' ? this.hintText(params) : this.hintText);
 			this.listenTo(params.object, 'click', this.onClick);
 
 			if (typeof this.onMouseOver != 'undefined' && typeof this.onMouseOut != 'undefined') {
@@ -12,6 +13,9 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			}
 
 			this.params = params;
+		},
+		hintText: function(params) {
+			return 'Вихрь в ' + params.data.caption;
 		},
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/hole.svg',

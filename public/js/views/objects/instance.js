@@ -2,6 +2,9 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/hole'], function(_, 
 	'use strict';
 
 	return HoleView.extend({
+		hintText: function(params) {
+			return (!/инстанс/i.test(params.data.caption) ? 'Инстанс ' : '') + '«' + params.data.caption + '»';
+		},
 		markerIcon: L.icon({
 			iconUrl: '/i/objects/instance.svg',
 			iconSize: [60, 60],

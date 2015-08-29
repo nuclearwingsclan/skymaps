@@ -2,6 +2,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/hole'], function(_, 
 	'use strict';
 
 	return HoleView.extend({
+		hintText: 'Червиный вихрь на эту же карту',
 		onClick: function() {
 			this.params.appModel.center(this.params.data.goto);
 		},
