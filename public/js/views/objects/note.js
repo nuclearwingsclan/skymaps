@@ -22,7 +22,7 @@ define(['underscore', 'backbone', 'leaflet', 'rrose'], function(_, Backbone, L) 
 			return new L.Rrose({
 				autoPan: false,
 				x_bound: 180,
-				y_bound: 120
+				y_bound: 130
 			}).setContent(this.popupContent(data));
 		},
 		updatePopup: function() {
