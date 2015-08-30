@@ -12,6 +12,7 @@ define([
 	'views/objects/master',
 	'views/objects/factory',
 	'views/objects/fish',
+	'views/objects/tree',
 	'views/objects/npc',
 	'views/objects/beacon',
 	'views/objects/flag',
@@ -35,6 +36,7 @@ define([
 	MasterView,
 	FactoryView,
 	FishView,
+	TreeView,
 	NpcView,
 	BeaconView,
 	FlagView,
@@ -74,6 +76,7 @@ define([
 						case 'master': new MasterView(params); break;
 						case 'factory': new FactoryView(params); break;
 						case 'fish': new FishView(params); break;
+						case 'tree': new TreeView(params); break;
 						case 'npc': new NpcView(params); break;
 						case 'beacon': new BeaconView(params); break;
 						case 'flag': new FlagView(params); break;
