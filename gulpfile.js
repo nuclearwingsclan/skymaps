@@ -12,6 +12,11 @@ gulp.task('lint', function() {
 		.pipe(jshint({ configPath: 'build/jshintrc.json' }));
 });
 
+gulp.task('public', function() {
+	return gulp.src(['src/**/*', 'src/.htaccess'])
+		.pipe(gulp.dest('dist/'));
+});
+
 gulp.task('compile', function() {
 	gulp.src('dist/assets/require.js').pipe(gulp.dest('dist/'));
 	return gulp.src('dist/{js,assets}/**/*.js', { base: 'dist/js' })
@@ -20,14 +25,21 @@ gulp.task('compile', function() {
 		.pipe(gulp.dest('dist/'));
 });
 
-gulp.task('uglify', function() {
-	return gulp.src('dist/*.js')
-		.pipe(uglify())
+gulp.task('concat:js', function() {
+	return gulp.src('dist/**/*.js')
+		.pipe(concat('app.js'))
 		.pipe(gulp.dest('dist/'));
 });
 
-gulp.task('public', function() {
-	return gulp.src(['src/**/*', 'src/.htaccess'])
+gulp.task('concat:css', function() {
+	return gulp.src('dist/**/*.css')
+		.pipe(concat('app.css'))
+		.pipe(gulp.dest('dist/'));
+});
+
+gulp.task('uglify:js', function() {
+	return gulp.src('dist/**/*.js')
+		.pipe(uglify())
 		.pipe(gulp.dest('dist/'));
 });
 
