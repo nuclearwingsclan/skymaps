@@ -1,5 +1,13 @@
 var gulp = require('gulp'),
+	jscs = require('gulp-jscs'),
+	jshint = require('gulp-jshint'),
 	shell = require('gulp-shell');
+
+gulp.task('lint', function() {
+	return gulp.src('src/**/*.js')
+		.pipe(jscs({ configPath: 'build/jscsrc.json' }))
+		.pipe(jshint({ configPath: 'build/jshintrc.json' }));
+});
 
 gulp.task('assets', function() {
 	return gulp.src([
@@ -14,28 +22,15 @@ gulp.task('assets', function() {
 			'bower_components/rrose/leaflet.rrose.css',
 			'bower_components/underscore/underscore-min.js',
 			'bower_components/tinyscrollbar/lib/jquery.tinyscrollbar.min.js'
-		]).pipe(gulp.dest('public/assets/'));
+		]).pipe(gulp.dest('dist/assets/'));
 });
 
-gulp.task('update', ['fetch'], function() {
+gulp.task('data', function() {
 	return gulp.src('skymaps-data/*/*/mapdata.json')
-		.pipe(gulp.dest('public/maps/'));
+		.pipe(gulp.dest('dist/maps/'));
 });
 
-gulp.task('tiles', ['slice'], function() {
-	return gulp.src('skymaps-data/*/*/{tiles/**/*,minimap.jpg}')
-		.pipe(gulp.dest('public/maps/'));
-});
-
-gulp.task('fetch', shell.task([
-	'php skymaps-data/update.php'
-]));
-
-gulp.task('slice', function() {
-	return gulp.src('skymaps-data/**/map.jpg', { read: false })
-		.pipe(shell([
-			'echo "Processing <%= file.path %>..."',
-			'rm -rf $(dirname <%= file.path %>)/tiles; mkdir $(dirname <%= file.path %>)/tiles',
-			'convert <%= file.path %> -crop 256x256 -set filename:tile "%[fx:page.x/256]-%[fx:page.y/256]" -background none -extent 256x256 "$(dirname <%= file.path %>)/tiles/%[filename:tile].png"'
-		]));
+gulp.task('tiles', function() {
+	return gulp.src('tiles/*/*/{tiles/**/*,minimap.jpg}')
+		.pipe(gulp.dest('dist/maps/'));
 });
