@@ -1,12 +1,27 @@
 var gulp = require('gulp'),
 	jscs = require('gulp-jscs'),
 	jshint = require('gulp-jshint'),
+	amdOptimize = require('amd-optimize'),
+	concat = require('gulp-concat'),
 	shell = require('gulp-shell');
 
 gulp.task('lint', function() {
 	return gulp.src('src/**/*.js')
 		.pipe(jscs({ configPath: 'build/jscsrc.json' }))
 		.pipe(jshint({ configPath: 'build/jshintrc.json' }));
+});
+
+gulp.task('compile', function() {
+	gulp.src('dist/assets/require.js').pipe(gulp.dest('dist/'));
+	return gulp.src('dist/{js,assets}/**/*.js', { base: 'dist/js' })
+		.pipe(amdOptimize('bootstrap', { configFile: 'build/requirejsrc.js' }))
+		.pipe(concat('app.js'))
+		.pipe(gulp.dest('dist/'));
+});
+
+gulp.task('public', function() {
+	return gulp.src(['src/**/*', '.htaccess'])
+		.pipe(gulp.dest('dist/'));
 });
 
 gulp.task('assets', function() {
@@ -26,7 +41,7 @@ gulp.task('assets', function() {
 });
 
 gulp.task('data', function() {
-	return gulp.src('skymaps-data/*/*/mapdata.json')
+	return gulp.src('data/*/*/mapdata.json')
 		.pipe(gulp.dest('dist/maps/'));
 });
 
@@ -34,3 +49,9 @@ gulp.task('tiles', function() {
 	return gulp.src('tiles/*/*/{tiles/**/*,minimap.jpg}')
 		.pipe(gulp.dest('dist/maps/'));
 });
+
+gulp.task('init', ['public', 'assets', 'data', 'tiles']);
+gulp.task('build', ['lint', 'public', 'compile']);
+gulp.task('update', ['data', 'tiles']);
+//gulp.task('optimize', ['uglify', 'concat']);
+//gulp.task('production', ['build', 'optimize', 'deploy']);
