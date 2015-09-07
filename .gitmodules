@@ -1,3 +1,6 @@
-[submodule "skymaps-data"]
-	path = skymaps-data
-	url = https://github.com/nuclearwingsclan/skymaps-data
+[submodule "tiles"]
+	path = tiles
+	url = git@github.com:asleepwalker/skymaps-tiles.git
+[submodule "data"]
+	path = data
+	url = git@github.com:asleepwalker/skymaps-data.git
