@@ -3,6 +3,7 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	amdOptimize = require('amd-optimize'),
 	concat = require('gulp-concat'),
+	uglify = require('gulp-uglify'),
 	shell = require('gulp-shell');
 
 gulp.task('lint', function() {
@@ -19,8 +20,14 @@ gulp.task('compile', function() {
 		.pipe(gulp.dest('dist/'));
 });
 
+gulp.task('uglify', function() {
+	return gulp.src('dist/*.js')
+		.pipe(uglify())
+		.pipe(gulp.dest('dist/'));
+});
+
 gulp.task('public', function() {
-	return gulp.src(['src/**/*', '.htaccess'])
+	return gulp.src(['src/**/*', 'src/.htaccess'])
 		.pipe(gulp.dest('dist/'));
 });
 
