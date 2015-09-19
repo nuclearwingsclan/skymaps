@@ -3,16 +3,16 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 
 	return Backbone.View.extend({
 		initialize: function(options) {
-			var location = this.model.get('location');
+			var region = this.model.get('region');
 			var _this = this;
 			$.ajax({
 				dataType: 'json',
-				url: '/data/locations/' + location.region + '.json',
+				url: '/data/locations/' + region + '.json',
 				success: function(data) {
 					_this.regionData = data;
 					_this.regionLayer = _this.build(data, _this.model);
 					_this.setBounds();
-					_this.center(location.level);
+					_this.center(_this.model.get('level'));
 				}
 			});
 
@@ -37,10 +37,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 				marker.setHint(level.caption);
 
 				marker.on('click', function() {
-					model.set('location', {
-						region: model.get('location').region,
-						level: url
-					});
+					model.open(url);
 				});
 
 				marker.label.on('click', function() { marker.fire('click'); });
@@ -98,8 +95,9 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			this.options.navigator.setMaxBounds(bounds);
 			this.options.navigator.setView([0, 0], 0);
 		},
-		center: function(level) {
+		center: function() {
 			var newNavigatorCenter = [0, 0];
+			var level = this.model.get('level');
 			if (this.regionData.locations[level]) {
 				var levelPosition = this.regionData.locations[level].position;
 				newNavigatorCenter = this.calculateMarkerPosition(levelPosition);
