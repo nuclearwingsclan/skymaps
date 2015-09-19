@@ -16,6 +16,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 				}
 			});
 
+			this.listenTo(this.model, 'change:region', this.destroy);
 			this.options = options;
 		},
 		build: function(data, model) {
@@ -104,6 +105,10 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			}
 			this.options.navigator.panTo(newNavigatorCenter);
 			this.options.navigator.panInsideBounds(this.options.navigator.getBounds());
+		},
+		destroy: function() {
+			this.options.navigator.removeLayer(this.regionLayer);
+			this.remove();
 		}
 	});
 
