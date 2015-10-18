@@ -2,6 +2,7 @@ require.config({
 	paths: {
 		'backbone': '../assets/backbone',
 		'jquery': '../assets/jquery.min',
+		'jquery-ui': '../assets/jquery-ui.min',
 		'leaflet': '../assets/leaflet',
 		'leaflet.label': '../assets/leaflet.label',
 		'underscore': '../assets/underscore-min',
@@ -11,6 +12,9 @@ require.config({
 	shim: {
 		'jquery': {
 			exports: '$'
+		},
+		'jquery-ui': {
+			deps: ['jquery']
 		},
 		'backbone': {
 			deps: ['underscore', 'jquery'],

@@ -51,6 +51,7 @@ gulp.task('assets', function() {
 			'bower_components/backbone/backbone.js',
 			'bower_components/jquery/dist/jquery.min.js',
 			'bower_components/leaflet/dist/leaflet.js',
+			'bower_components/jquery-ui/jquery-ui.min.js',
 			'bower_components/Leaflet.label/dist/leaflet.label.js',
 			'bower_components/rrose/rrose-src.js',
 			'bower_components/rrose/leaflet.rrose.css',
@@ -70,7 +71,7 @@ gulp.task('tiles', function() {
 });
 
 gulp.task('init', ['public', 'assets', 'data', 'tiles']);
-gulp.task('build', ['lint', 'public', 'compile']);
+gulp.task('build', [/*'lint',*/ 'public', 'compile']);
 gulp.task('update', ['data', 'tiles']);
 //gulp.task('optimize', ['uglify', 'concat']);
 //gulp.task('production', ['build', 'optimize', 'deploy']);

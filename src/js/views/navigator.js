@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'views/scheme'], function(_, Backbone, L, SchemeView) {
+define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme'], function(_, Backbone, L, jQueryUI, SchemeView) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -22,6 +22,8 @@ define(['underscore', 'backbone', 'leaflet', 'views/scheme'], function(_, Backbo
 					_this.listenTo(_this.model, 'change:location', _this.check);
 				}
 			});
+
+			this.makeResizable();
 		},
 		check: function() {
 			var location = this.model.get('location');
@@ -55,6 +57,26 @@ define(['underscore', 'backbone', 'leaflet', 'views/scheme'], function(_, Backbo
 		},
 		hide: function() {
 			this.$el.hide();
+		},
+		makeResizable: function() {
+			var _this = this;
+
+			this.$el.resizable({
+				handles: 'n, w, nw',
+				minWidth: 160,
+				minHeight: 200,
+				resize: function() {
+					_this.navigator.invalidateSize();
+				}
+			});
+
+			// Prevent also dragging instead of only resizing
+			$('#navigator .ui-resizable-handle').mouseover(function() {
+				_this.navigator.dragging.disable();
+			});
+			$('#navigator .ui-resizable-handle').mouseout(function() {
+				_this.navigator.dragging.enable();
+			});
 		}
 	});
 
