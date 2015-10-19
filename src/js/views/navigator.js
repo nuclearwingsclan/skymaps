@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme'], function(_, Backbone, L, jQueryUI, SchemeView) {
+define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'collections/regions'], function(_, Backbone, L, jQueryUI, SchemeView, regions) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -12,22 +12,14 @@ define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme'], funct
 				minZoom: 0
 			});
 
-			var _this = this;
-			$.ajax({
-				dataType: 'json',
-				url: '/data/regions.json',
-				success: function(data) {
-					_this.regions = data;
-					_this.check();
-					_this.listenTo(_this.model, 'change:location', _this.check);
-				}
-			});
-
 			this.makeResizable();
+			this.check();
+
+			this.listenTo(this.model, 'change:location', this.check);
 		},
 		check: function() {
 			var location = this.model.get('location');
-			if (location && location.region && this.regions[location.region]) {
+			if (location && location.region && regions.findWhere({ id: location.region })) {
 				if (this.navigatorRegion != location.region) {
 					this.open(location);
 				} else if (this.navigatorLevel != location.level) {
