@@ -1,28 +1,7 @@
 [
-	{
-		"id": "tg",
-		"caption": "Тихая Гавань",
-		"codename": "gavane",
-		"default": "index"
-	}, {
-		"id": "pf",
-		"caption": "Периферия",
-		"codename": "rimland",
-		"default": "index"
-	}, {
-		"id": "pr",
-		"caption": "Поющий Риф",
-		"codename": "reef",
-		"default": "index"
-	}, {
-		"id": "bs",
-		"caption": "Бастион",
-		"codename": "bastion",
-		"default": "index"
-	}, {
-		"id": "os",
-		"caption": "Осколки",
-		"codename": "oskolki",
-		"default": "index"
-	}
+	{ "id": "tg", "caption": "Тихая Гавань", "codename": "gavane", "default": "index" },
+	{ "id": "pf", "caption": "Периферия", "codename": "rimland", "default": "index" },
+	{ "id": "pr", "caption": "Поющий Риф", "codename": "reef", "default": "index" },
+	{ "id": "bs", "caption": "Бастион", "codename": "bastion", "default": "index" },
+	{ "id": "os", "caption": "Осколки", "codename": "oskolki", "default": "index" }
 ]

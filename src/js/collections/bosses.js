@@ -1,6 +1,6 @@
 define(['backbone'], function(Backbone) {
 	'use strict';
 
-	return new Backbone.Collection(window.regionsEmbedData);
+	return new Backbone.Collection(window.bossesEmbedData);
 
 });

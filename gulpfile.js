@@ -28,7 +28,7 @@ gulp.task('compile', ['public'], function() {
 					fileExt = filePath.replace(/^\/(.+\/)*(.+)\.(.+)$/, '$3');
 				switch (fileExt) {
 					case 'tpl': return '<script id="' + fileName + '" type="text/template">' + file.contents.toString('utf8') + '</script>';
-					case 'json': return '<script>var ' + fileName + ' = ' + file.contents.toString('utf8') + ';</script>';
+					case 'json': return '<script>var ' + fileName + 'EmbedData = ' + file.contents.toString('utf8') + ';</script>';
 				}
 			}
 		})).pipe(gulp.dest('dist/'));
