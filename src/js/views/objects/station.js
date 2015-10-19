@@ -14,7 +14,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/dialog'], function(_, Backbo
 		},
 		markerIcon: function(size) {
 			return L.icon({
-				iconUrl: '/i/objects/station.svg',
+				iconUrl: '/img/objects/station.svg',
 				iconSize: [size, size]
 			});
 		},

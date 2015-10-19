@@ -13,7 +13,7 @@ define(['underscore', 'backbone', 'leaflet', 'rrose'], function(_, Backbone, L) 
 		},
 		hintText: 'Подсказка',
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/note.svg',
+			iconUrl: '/img/objects/note.svg',
 			iconSize: [50, 50],
 			iconAnchor: [5, 5],
 			popupAnchor:  [17, 0]

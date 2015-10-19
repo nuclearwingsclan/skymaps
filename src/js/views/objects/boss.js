@@ -18,7 +18,7 @@ define(['underscore', 'backbone', 'leaflet', 'collections/bosses', 'leaflet.labe
 			this.params = params;
 		},
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/boss.svg',
+			iconUrl: '/img/objects/boss.svg',
 			iconSize: [27, 27],
 			iconAnchor: [6, 6]
 		})

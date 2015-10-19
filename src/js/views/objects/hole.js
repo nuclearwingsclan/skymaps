@@ -18,7 +18,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			return 'Вихрь в ' + params.data.caption;
 		},
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/hole.svg',
+			iconUrl: '/img/objects/hole.svg',
 			iconSize: [50, 50],
 			iconAnchor: [7, 7]
 		}),

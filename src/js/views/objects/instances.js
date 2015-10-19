@@ -13,7 +13,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/station'], function(
 			return (!/инстанс/i.test(params.data.caption) ? 'Инстанс ' : '') + '«' + params.data.caption + '»';
 		},
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/instance.svg',
+			iconUrl: '/img/objects/instance.svg',
 			iconSize: [60, 60],
 			iconAnchor: [19, 19],
 			popupAnchor:  [17, 0]

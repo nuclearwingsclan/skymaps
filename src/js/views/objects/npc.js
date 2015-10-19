@@ -6,7 +6,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 			return params.data.caption;
 		},
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/npc.svg',
+			iconUrl: '/img/objects/npc.svg',
 			iconSize: [52, 20],
 			iconAnchor: [7, 20],
 			popupAnchor:  [19, -19]

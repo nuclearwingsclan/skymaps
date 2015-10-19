@@ -6,7 +6,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 			return (!/завод/i.test(params.data.caption) ? 'Завод ' : '') + '«' + params.data.caption + '»';
 		},
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/factory.svg',
+			iconUrl: '/img/objects/factory.svg',
 			iconSize: [58, 58],
 			iconAnchor: [11, 11],
 			popupAnchor:  [19, -4]
