@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 	amdOptimize = require('amd-optimize'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
+	inject = require('gulp-inject'),
 	shell = require('gulp-shell');
 
 gulp.task('lint', function() {
@@ -17,8 +18,20 @@ gulp.task('public', function() {
 		.pipe(gulp.dest('dist/'));
 });
 
-gulp.task('compile', function() {
+gulp.task('compile', ['public'], function() {
 	gulp.src('dist/assets/require.js').pipe(gulp.dest('dist/'));
+	gulp.src('dist/index.html')
+		.pipe(inject(gulp.src(['dist/templates/*.tpl', 'dist/data/*.json']), {
+			removeTags: true,
+			transform: function(filePath, file) {
+				var fileName = filePath.replace(/^\/(.+\/)*(.+)\.(.+)$/, '$2');
+					fileExt = filePath.replace(/^\/(.+\/)*(.+)\.(.+)$/, '$3');
+				switch (fileExt) {
+					case 'tpl': return '<script id="' + fileName + '" type="text/template">' + file.contents.toString('utf8') + '</script>';
+					case 'json': return '<script>var ' + fileName + ' = ' + file.contents.toString('utf8') + ';</script>';
+				}
+			}
+		})).pipe(gulp.dest('dist/'));
 	return gulp.src('dist/{js,assets}/**/*.js', { base: 'dist/js' })
 		.pipe(amdOptimize('bootstrap', { configFile: 'build/requirejsrc.js' }))
 		.pipe(concat('app.js'))
@@ -71,7 +84,7 @@ gulp.task('tiles', function() {
 });
 
 gulp.task('init', ['public', 'assets', 'data', 'tiles']);
-gulp.task('build', [/*'lint',*/ 'public', 'compile']);
+gulp.task('build', [/*'lint',*/ 'compile']);
 gulp.task('update', ['data', 'tiles']);
 //gulp.task('optimize', ['uglify', 'concat']);
 //gulp.task('production', ['build', 'optimize', 'deploy']);
