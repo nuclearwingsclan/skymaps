@@ -17,12 +17,10 @@ define(['backbone'], function(Backbone) {
 			}
 		},
 		open: function(level) {
-			this.app.set({
-				location: {
-					region: this.get('region'),
-					level: level
-				}
-			});
+			this.app.load(this.get('region'), level);
+		},
+		home: function() {
+			this.app.load('index', 'index');
 		}
 	});
 

@@ -12,6 +12,7 @@ define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'colle
 				minZoom: 0
 			});
 			this.makeResizable();
+			this.addHomeButton();
 
 			this.open();
 			this.listenTo(this.model, 'change:region', this.open);
@@ -65,6 +66,12 @@ define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'colle
 			});
 			$('#navigator .ui-resizable-handle').mouseout(function() {
 				_this.navigator.dragging.enable();
+			});
+		},
+		addHomeButton: function() {
+			var model = this.model;
+			this.$el.find('button.home').click(function() {
+				model.home();
 			});
 		}
 	});

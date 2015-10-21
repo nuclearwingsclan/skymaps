@@ -20,6 +20,8 @@ define(['backbone'], function(Backbone) {
 			var location = this.appModel.get('location');
 			if (location.region != 'index') {
 				Backbone.history.navigate(location.region + '/' + location.level + '/');
+			} else {
+				Backbone.history.navigate('/');
 			}
 		}
 	});

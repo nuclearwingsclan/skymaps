@@ -321,6 +321,38 @@ body {
 	right: 30px;
 	width: 160px;
 }
+#navigator button.home {
+	background: rgba(255, 255, 255, 0.5);
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	color: white;
+	cursor: pointer;
+	height: 23px;
+	overflow: hidden;
+	padding-left: 21px;
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	transition: 0.3s;
+	z-index: 1000;
+	white-space: nowrap;
+	width: 0;
+}
+#navigator button.home:before {
+	background: url(img/index-btn.png) no-repeat;
+	content: '';
+	height: 17px;
+	left: 2px;
+	position: absolute;
+	top: 2px;
+	width: 17px;
+}
+#navigator button.home:hover {
+	background: rgba(84, 84, 84, 0.67);
+	border-color: #6F6F6F;
+	padding: 0 4px 0 23px;
+	width: 101px;
+}
 #navigator .ui-resizable-handle {
 	position: absolute;
 }
