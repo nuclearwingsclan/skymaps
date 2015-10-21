@@ -1,7 +1,7 @@
-define(['backbone'], function(Backbone) {
+define(['backbone', 'models/app'], function(Backbone, appModel) {
 	'use strict';
 
-	return Backbone.Router.extend({
+	var Router = Backbone.Router.extend({
 		initialize: function(appModel) {
 			this.appModel = appModel;
 			this.enableHistory();
@@ -34,5 +34,7 @@ define(['backbone'], function(Backbone) {
 			});
 		}
 	});
+
+	return new Router(appModel);
 
 });

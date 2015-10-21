@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], function(_, Backbone, L, TilesView, ObjectsView) {
+define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'views/coordinates'], function(_, Backbone, L, TilesView, ObjectsView, CoordinatesView) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -29,7 +29,12 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 						});
 					_this.configureContainer(params);
 					_this.setMeta(data.meta);
-					
+
+					var coordinatesView = new CoordinatesView({
+						container: _this.container,
+						model: _this.model,
+						size: data.meta.size
+					});
 				}
 			});
 		},

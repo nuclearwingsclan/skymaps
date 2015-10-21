@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'views/objects/wormhole'], function(_, Backbone, L, WormholeView) {
+define(['underscore', 'backbone', 'leaflet', 'models/app', 'views/objects/wormhole'], function(_, Backbone, L, appModel, WormholeView) {
 	'use strict';
 
 	return WormholeView.extend({
@@ -7,7 +7,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/wormhole'], function
 		},
 		onClick: function() {
 			var data = this.params.data;
-			this.params.appModel.load(data.region, data.map, data.goto);
+			appModel.load(data.region, data.map, data.goto);
 			this.params.object.fire('mouseout');
 		},
 		onMouseOver: function() {

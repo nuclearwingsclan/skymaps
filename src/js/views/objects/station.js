@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'views/dialog'], function(_, Backbone, L, DialogView) {
+define(['underscore', 'backbone', 'leaflet', 'models/app', 'views/dialog'], function(_, Backbone, L, appModel, DialogView) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -26,15 +26,14 @@ define(['underscore', 'backbone', 'leaflet', 'views/dialog'], function(_, Backbo
 				$body = $(this.dialogContent(this.params.data));
 
 			if (typeof(this.params.data.list) !== 'undefined') {
-				var $list = $body.find('.streams-list'),
-					app = this.params.appModel;
+				var $list = $body.find('.streams-list');
 
 				_.each(this.params.data.list, function(item) {
 					$('<li>')
 						.html(item.caption)
 						.addClass('icon ' + item.type)
 						.click(function() {
-							app.load(item.region, item.map, { x: item.x, y: item.y });
+							appModel.load(item.region, item.map, { x: item.x, y: item.y });
 							dialog.close();
 						})
 						.hint(item.region + '/' + item.map)

@@ -55,7 +55,6 @@ define([
 			var objects = L.geoJson(options.objects, {
 				onEachFeature: function(item, object) {
 					var params = {
-						appModel: model,
 						container: options.container,
 						data: item.properties,
 						meta: options.meta,

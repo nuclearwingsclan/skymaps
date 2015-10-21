@@ -108,6 +108,17 @@ body {
 #map .caption > button.next:hover {
 	background-position: -20px -15px;
 }
+#map .coordinates {
+	background: rgba(0, 0, 0, 0.5);
+	bottom: 40px;
+	color: white;
+	font: bold 12px 'Helvetica', 'Arial', sans-serif;
+	padding: 6px 14px 6px 20px;
+	position: absolute;
+	z-index: 100000;
+	height: 14px;
+	min-width: 37px;
+}
 #map .meta {
 	background: rgba(0, 0, 0, 0.5);
 	bottom: 10px;
