@@ -1,7 +1,7 @@
-define(['backbone', 'leaflet', 'models/map', 'views/map', 'models/navigator', 'views/navigator'], function(Backbone, L, MapModel, MapView, NavigatorModel, NavigatorView) {
+define(['backbone', 'leaflet', 'models/app', 'models/map', 'views/map', 'models/navigator', 'views/navigator'], function(Backbone, L, appModel, MapModel, MapView, NavigatorModel, NavigatorView) {
 	'use strict';
 
-	return Backbone.View.extend({
+	var AppView = Backbone.View.extend({
 		el: $('#map'),
 		initialize: function() {
 			this.leafletMap = new L.Map('map', {
@@ -30,5 +30,7 @@ define(['backbone', 'leaflet', 'models/map', 'views/map', 'models/navigator', 'v
 			}
 		}
 	});
+
+	return new AppView({ model: appModel });
 
 });

@@ -1,7 +1,7 @@
 define(['backbone'], function(Backbone) {
 	'use strict';
 
-	return Backbone.Model.extend({
+	var AppModel = Backbone.Model.extend({
 		initialize: function() {
 			this.set('defaultCaption', $('title').html());
 		},
@@ -18,5 +18,7 @@ define(['backbone'], function(Backbone) {
 			this.set('center', center);
 		}
 	});
+
+	return new AppModel();
 
 });
