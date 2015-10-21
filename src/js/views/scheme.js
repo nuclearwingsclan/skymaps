@@ -99,7 +99,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 		center: function() {
 			var newNavigatorCenter = [0, 0];
 			var level = this.model.get('level');
-			if (this.regionData.locations[level]) {
+			if (this.regionData && this.regionData.locations[level]) {
 				var levelPosition = this.regionData.locations[level].position;
 				newNavigatorCenter = this.calculateMarkerPosition(levelPosition);
 			}

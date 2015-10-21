@@ -3,8 +3,9 @@ define(['underscore', 'backbone', 'leaflet', 'collections/bosses', 'leaflet.labe
 
 	return Backbone.View.extend({
 		initialize: function(params) {
+			var boss = bosses.findWhere({'class': params.data.class});
 			params.object.setIcon(this.markerIcon);
-			params.object.setHint('Босс класса «' + bosses.findWhere({'class': params.data.class}).get('caption') + '»');
+			params.object.setHint('Босс ' + (boss ? 'класса «' + boss.get('caption') + '»' : 'неизвестного класса'));
 			params.object.bindLabel(params.data.caption, {
 				className: 'boss-label',
 				clickable: true,
