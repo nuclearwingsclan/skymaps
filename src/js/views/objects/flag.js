@@ -8,7 +8,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			this.params = params;
 		},
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/flag.svg',
+			iconUrl: '/img/objects/flag.svg',
 			iconSize: [50, 60],
 			iconAnchor: [15, 20]
 		})

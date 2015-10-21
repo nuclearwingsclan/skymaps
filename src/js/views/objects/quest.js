@@ -6,7 +6,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 			return 'Квест «' + params.data.caption + '»';
 		},
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/quest.svg',
+			iconUrl: '/img/objects/quest.svg',
 			iconSize: [52, 52],
 			iconAnchor: [12, 12],
 			popupAnchor:  [17, 0]

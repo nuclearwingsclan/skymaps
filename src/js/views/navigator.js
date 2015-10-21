@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'views/scheme'], function(_, Backbone, L, SchemeView) {
+define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'collections/regions'], function(_, Backbone, L, jQueryUI, SchemeView, regions) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -11,22 +11,15 @@ define(['underscore', 'backbone', 'leaflet', 'views/scheme'], function(_, Backbo
 				maxZoom: 0,
 				minZoom: 0
 			});
+			this.makeResizable();
 
-			var _this = this;
-			$.ajax({
-				dataType: 'json',
-				url: '/data/regions.json',
-				success: function(data) {
-					_this.regions = data;
-					_this.open();
-					_this.listenTo(_this.model, 'change:region', _this.open);
-					_this.listenTo(_this.model, 'change:level', _this.center);
-				}
-			});
+			this.open();
+			this.listenTo(this.model, 'change:region', this.open);
+			this.listenTo(this.model, 'change:level', this.center);
 		},
 		check: function() {
 			var region = this.model.get('region');
-			if (region && this.regions[region]) {
+			if (region && regions.findWhere({ id: region })) {
 				this.show();
 				return true;
 			} else {
@@ -53,6 +46,26 @@ define(['underscore', 'backbone', 'leaflet', 'views/scheme'], function(_, Backbo
 		},
 		hide: function() {
 			this.$el.hide();
+		},
+		makeResizable: function() {
+			var _this = this;
+
+			this.$el.resizable({
+				handles: 'n, w, nw',
+				minWidth: 160,
+				minHeight: 200,
+				resize: function() {
+					_this.navigator.invalidateSize();
+				}
+			});
+
+			// Prevent also dragging instead of only resizing
+			$('#navigator .ui-resizable-handle').mouseover(function() {
+				_this.navigator.dragging.disable();
+			});
+			$('#navigator .ui-resizable-handle').mouseout(function() {
+				_this.navigator.dragging.enable();
+			});
 		}
 	});
 

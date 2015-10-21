@@ -21,10 +21,10 @@ body {
 	box-sizing: border-box;
 	border-style: solid;
 	border-width: 11px;
-	-moz-border-image: url(i/borders.png) 11 round repeat;
-	-webkit-border-image: url(i/borders.png) 11 round repeat;
-	-o-border-image: url(i/borders.png) 11 round repeat;
-	border-image: url(i/borders.png) 11 fill round repeat;
+	-moz-border-image: url(img/borders.png) 11 round repeat;
+	-webkit-border-image: url(img/borders.png) 11 round repeat;
+	-o-border-image: url(img/borders.png) 11 round repeat;
+	border-image: url(img/borders.png) 11 fill round repeat;
 	position: relative;
 	transition: .35s;
 }
@@ -43,7 +43,7 @@ body {
 }
 
 .corners div {
-	background: url(i/corners.png) no-repeat;
+	background: url(img/corners.png) no-repeat;
 	content: '';
 	height: 33px;
 	position: fixed;
@@ -72,7 +72,7 @@ body {
 }
 
 #map .caption {
-	background: url(i/caption.png) no-repeat;
+	background: url(img/caption.png) no-repeat;
 	color: #111;
 	font: bold 17px 'Helvetica', 'Arial', sans-serif;
 	height: 36px;
@@ -304,10 +304,10 @@ body {
 	width: 19px;
 }
 .streams-list li.icon.station:before {
-	background: url(i/icons/stream-station.png) no-repeat;
+	background: url(img/icons/stream-station.png) no-repeat;
 }
 .streams-list li.icon.sky:before {
-	background: url(i/icons/stream-sky.png) no-repeat;
+	background: url(img/icons/stream-sky.png) no-repeat;
 }
 
 #navigator {
@@ -320,6 +320,35 @@ body {
 	position: absolute;
 	right: 30px;
 	width: 160px;
+}
+#navigator .ui-resizable-handle {
+	position: absolute;
+}
+#navigator .ui-resizable-w {
+	left: -2px;
+	width: 8px;
+	top: 10px;
+	bottom: -2px;
+	cursor: w-resize;
+}
+#navigator .ui-resizable-n {
+	top: -2px;
+	height: 8px;
+	left: 10px;
+	right: -2px;
+	cursor: n-resize;
+}
+#navigator .ui-resizable-nw {
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAB3RJTUUH3woSCCg6Cl6lTwAAAFVJREFUGNONzbkNgEAQBME6XFLCOJOgCIJEyGHTwScAHJB4lmesMUrqYluttUUfEVP2ywGNGLBkv/xBETE36L4QvKZ3BOUPgjR9RWk6Q7f0Ezql3xCsxURBmwK15ZoAAAAASUVORK5CYII=') 2px 2px no-repeat;
+	top: -2px;
+	height: 12px;
+	left: -2px;
+	width: 12px;
+	cursor: nw-resize;
+}
+#navigator.ui-resizable {
+	left: auto !important;
+	top: auto !important;
 }
 .navigator-label {
 	display: block;

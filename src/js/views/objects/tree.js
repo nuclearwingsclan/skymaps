@@ -4,7 +4,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/flag'], function(_, 
 	return FlagView.extend({
 		hintText: 'Дерево',
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/tree.svg',
+			iconUrl: '/img/objects/tree.svg',
 			iconSize: [46, 46],
 			iconAnchor: [1, 0],
 			popupAnchor:  [18, -5]

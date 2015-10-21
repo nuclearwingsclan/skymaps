@@ -24,6 +24,7 @@
     "requirejs": "~2.1.17",
     "Leaflet.label": "~0.2.1",
     "rrose": "asleepwalker/rrose#~0.1.1",
-    "tinyscrollbar": "asleepwalker/tinyscrollbar#~2.1.7"
+    "tinyscrollbar": "asleepwalker/tinyscrollbar#~2.1.7",
+    "jquery-ui": "jqueryui#~1.11.4"
   }
 }

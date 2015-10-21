@@ -4,7 +4,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 	return NoteView.extend({
 		hintText: 'Рыбное место',
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/fish.svg',
+			iconUrl: '/img/objects/fish.svg',
 			iconSize: [42, 42],
 			iconAnchor: [6, 5],
 			popupAnchor:  [16, -3]

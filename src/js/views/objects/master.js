@@ -4,7 +4,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/objects/note'], function(_, 
 	return NoteView.extend({
 		hintText: 'Мастерская',
 		markerIcon: L.icon({
-			iconUrl: '/i/objects/master.svg',
+			iconUrl: '/img/objects/master.svg',
 			iconSize: [68, 68],
 			iconAnchor: [17, 21],
 			popupAnchor:  [18, -16]
