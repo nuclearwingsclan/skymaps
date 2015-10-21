@@ -4,6 +4,7 @@ define(['backbone'], function(Backbone) {
 	return Backbone.Router.extend({
 		initialize: function(appModel) {
 			this.appModel = appModel;
+			this.enableHistory();
 			appModel.on('change:location', this.navigate, this);
 		},
 		routes: {
@@ -23,6 +24,14 @@ define(['backbone'], function(Backbone) {
 			} else {
 				Backbone.history.navigate('/');
 			}
+		},
+		enableHistory: function() {
+			$('#map .caption > button.prev').click(function() {
+				window.history.back();
+			});
+			$('#map .caption > button.next').click(function() {
+				window.history.forward();
+			});
 		}
 	});
 

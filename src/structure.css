@@ -85,6 +85,29 @@ body {
 	width: 450px;
 	z-index: 1000000;
 }
+#map .caption > button.prev,
+#map .caption > button.next {
+	background: url(img/history-btns.png) no-repeat;
+	cursor: pointer;
+	height: 15px;
+	position: absolute;
+	top: 5px;
+	width: 20px;
+}
+#map .caption > button.prev {
+	background-position: 0 0;
+	left: 12px;
+}
+#map .caption > button.prev:hover {
+	background-position: 0 -15px;
+}
+#map .caption > button.next {
+	background-position: -20px 0;
+	right: 12px;
+}
+#map .caption > button.next:hover {
+	background-position: -20px -15px;
+}
 #map .meta {
 	background: rgba(0, 0, 0, 0.5);
 	bottom: 10px;

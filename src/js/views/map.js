@@ -38,7 +38,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects'], fu
 			this.setMapInfo({ author: meta.navigator, date: meta.date });
 		},
 		setCaption: function(caption) {
-			$('#map .caption').text(caption);
+			$('#map .caption > label').text(caption);
 			$('title').html(caption + ' — ' + this.model.get('defaultCaption'));
 		},
 		setMapInfo: function(data) {
