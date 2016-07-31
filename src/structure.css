@@ -34,15 +34,22 @@ body {
 
 .shadow {
 	bottom: 0;
-	-moz-box-shadow: inset 0 0 40px -4px black;
-	-webkit-box-shadow: inset 0 0 40px -4px black;
-	box-shadow: inset 0 0 40px -4px black;
 	left: 0;
 	right: 0;
 	pointer-events: none;
 	position: absolute;
 	top: 0;
 	z-index: 10000;
+}
+#map > .shadow {
+	-moz-box-shadow: inset 0 0 40px -4px black;
+	-webkit-box-shadow: inset 0 0 40px -4px black;
+	box-shadow: inset 0 0 40px -4px black;
+}
+#navigator > .shadow {
+	-moz-box-shadow: inset 0 0 12px -4px black;
+	-webkit-box-shadow: inset 0 0 12px -4px black;
+	box-shadow: inset 0 0 12px -4px black;
 }
 
 .corners div {
@@ -411,8 +418,12 @@ body {
 #navigator {
 	background: rgba(255, 255, 255, 0.8);
 	bottom: 25px;
-	border: 2px solid white;
-	border-radius: 2px;
+	border-style: solid;
+	border-width: 5px;
+	-moz-border-image: url(img/navigator.png) 5 round repeat;
+	-webkit-border-image: url(img/navigator.png) 5 round repeat;
+	-o-border-image: url(img/navigator.png) 5 round repeat;
+	border-image: url(img/navigator.png) 5 fill round repeat;
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
 	height: 200px;
 	position: absolute;
@@ -429,8 +440,8 @@ body {
 	overflow: hidden;
 	padding-left: 21px;
 	position: absolute;
-	right: 2px;
-	top: 2px;
+	right: 4px;
+	top: 3px;
 	transition: 0.3s;
 	z-index: 1000;
 	white-space: nowrap;
@@ -455,26 +466,26 @@ body {
 	position: absolute;
 }
 #navigator .ui-resizable-w {
-	left: -2px;
-	width: 8px;
-	top: 10px;
-	bottom: -2px;
+	bottom: -5px;
 	cursor: w-resize;
+	left: -5px;
+	top: 15px;
+	width: 20px;
 }
 #navigator .ui-resizable-n {
-	top: -2px;
-	height: 8px;
-	left: 10px;
-	right: -2px;
 	cursor: n-resize;
+	height: 20px;
+	left: 15px;
+	right: -5px;
+	top: -5px;
 }
 #navigator .ui-resizable-nw {
-	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAB3RJTUUH3woSCCg6Cl6lTwAAAFVJREFUGNONzbkNgEAQBME6XFLCOJOgCIJEyGHTwScAHJB4lmesMUrqYluttUUfEVP2ywGNGLBkv/xBETE36L4QvKZ3BOUPgjR9RWk6Q7f0Ezql3xCsxURBmwK15ZoAAAAASUVORK5CYII=') 2px 2px no-repeat;
-	top: -2px;
-	height: 12px;
-	left: -2px;
-	width: 12px;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAB3RJTUUH3woSCCg6Cl6lTwAAAFVJREFUGNONzbkNgEAQBME6XFLCOJOgCIJEyGHTwScAHJB4lmesMUrqYluttUUfEVP2ywGNGLBkv/xBETE36L4QvKZ3BOUPgjR9RWk6Q7f0Ezql3xCsxURBmwK15ZoAAAAASUVORK5CYII=') 7px 7px no-repeat;
 	cursor: nw-resize;
+	height: 20px;
+	left: -5px;
+	top: -5px;
+	width: 20px;
 }
 #navigator.ui-resizable {
 	left: auto !important;
@@ -544,7 +555,7 @@ body {
 		border: none;
 	}
 
-	.shadow,
+	#map > .shadow,
 	.corners,
 	#navigator {
 		display: none;
