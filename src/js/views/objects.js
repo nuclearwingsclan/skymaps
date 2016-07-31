@@ -86,6 +86,8 @@ define([
 						case 'instances': new InstancesView(params); break;
 						//case 'mobzone': new MobzoneView(params); break;
 					}
+
+					console.log(item.properties);
 				}
 			}).addTo(options.container);
 

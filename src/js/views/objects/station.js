@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'models/app', 'views/dialog'], function(_, Backbone, L, appModel, DialogView) {
+define(['underscore', 'backbone', 'leaflet', 'models/app', 'views/dialog', 'collections/locations'], function(_, Backbone, L, appModel, DialogView, locations) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -36,7 +36,7 @@ define(['underscore', 'backbone', 'leaflet', 'models/app', 'views/dialog'], func
 							appModel.load(item.region, item.map, { x: item.x, y: item.y });
 							dialog.close();
 						})
-						.hint(item.region + '/' + item.map)
+						.hint(locations.findWhere({url: item.map}).get('caption'))
 						.appendTo($list);
 				});
 			}

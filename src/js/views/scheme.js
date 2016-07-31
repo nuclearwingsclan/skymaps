@@ -1,20 +1,17 @@
-define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
+define(['underscore', 'backbone', 'leaflet', 'collections/locations'], function(_, Backbone, L, locations) {
 	'use strict';
 
 	return Backbone.View.extend({
 		initialize: function(options) {
-			var region = this.model.get('region');
 			var _this = this;
-			$.ajax({
-				dataType: 'json',
-				url: '/data/locations/' + region + '.json',
-				success: function(data) {
+			
+			locations.loadData(this.model.get('region'))
+				.done(function(data) {
 					_this.regionData = data;
 					_this.regionLayer = _this.build(data, _this.model);
 					_this.setBounds();
 					_this.center(_this.model.get('level'));
-				}
-			});
+				});
 
 			this.listenTo(this.model, 'change:region', this.destroy);
 			this.options = options;
