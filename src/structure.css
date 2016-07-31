@@ -28,6 +28,9 @@ body {
 	position: relative;
 	transition: .35s;
 }
+#map .leaflet-overlay-pane > svg {
+	z-index: 1;
+}
 
 .shadow {
 	bottom: 0;
@@ -113,7 +116,8 @@ body {
 	bottom: 40px;
 	color: white;
 	font: bold 12px 'Helvetica', 'Arial', sans-serif;
-	padding: 6px 14px 6px 20px;
+	left: 10px;
+	padding: 6px 12px 6px 9px;
 	position: absolute;
 	z-index: 100000;
 	height: 14px;
@@ -121,10 +125,11 @@ body {
 }
 #map .meta {
 	background: rgba(0, 0, 0, 0.5);
-	bottom: 10px;
+	bottom: 12px;
 	color: white;
 	font: bold 12px 'Helvetica', 'Arial', sans-serif;
-	padding: 6px 14px 6px 20px;
+	left: 10px;
+	padding: 6px 12px 6px 9px;
 	position: absolute;
 	z-index: 100000;
 }
@@ -473,4 +478,17 @@ body {
 	padding: 4px 6px;
 	position: absolute;
 	z-index: 10000000;
+}
+
+@media (max-width: 600px) {
+	#map {
+		border: none;
+	}
+
+	.shadow,
+	.corners,
+	#navigator {
+		display: none;
+		visibility: hidden;
+	}
 }
