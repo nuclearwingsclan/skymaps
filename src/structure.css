@@ -125,6 +125,63 @@ body {
 	width: 50px;
 	z-index: 100000;
 }
+#map .controls {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	bottom: 45px;
+	left: 70px;
+	padding: 2px 4px 3px;
+	position: absolute;
+	z-index: 100000;
+}
+#map .controls:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+#map .controls > button,
+#map .controls > button:before {
+	height: 21px;
+	width: 22px;
+}
+#map .controls > button {
+	background: none;
+	cursor: pointer;
+	float: left;
+	margin-left: 2px;
+	position: relative;
+}
+#map .controls > button:first-child {
+	margin-left: 0;
+}
+#map .controls > button:before,
+#map .controls > button:after {
+	content: '';
+	position: absolute;
+}
+#map .controls > button:before {
+	background: url('img/button.png');
+	left: 0;
+	top: 0;
+}
+#map .controls > button:after {
+	background: url('img/controls.png');
+	height: 12px;
+	width: 12px;
+	transform: translate(-50%, -50%);
+}
+#map .controls > button.search:after {
+	background-position: 0 0;
+}
+#map .controls > button.farm:after {
+	background-position: -12px 0;
+}
+#map .controls > button.edit:after {
+	background-position: -36px 0;
+}
+#map .controls > button.link:after {
+	background-position: -24px 0;
+}
 #map .meta {
 	background: rgba(0, 0, 0, 0.5);
 	bottom: 12px;
