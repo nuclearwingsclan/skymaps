@@ -93,15 +93,16 @@ define(['underscore', 'backbone', 'leaflet', 'collections/locations'], function(
 			this.options.navigator.setMaxBounds(bounds);
 			this.options.navigator.setView([0, 0], 0);
 		},
-		center: function() {
-			var newNavigatorCenter = [0, 0];
+		getCenter: function() {
 			var level = this.model.get('level');
+
 			if (this.regionData && this.regionData.locations[level]) {
 				var levelPosition = this.regionData.locations[level].position;
-				newNavigatorCenter = this.calculateMarkerPosition(levelPosition);
+				var newNavigatorCenter = this.calculateMarkerPosition(levelPosition);
+				return [newNavigatorCenter[0] - 1, newNavigatorCenter[1] + 1];
+			} else {
+				return [0, 0];
 			}
-			this.options.navigator.panTo(newNavigatorCenter);
-			this.options.navigator.panInsideBounds(this.options.navigator.getBounds());
 		},
 		destroy: function() {
 			this.options.navigator.removeLayer(this.regionLayer);

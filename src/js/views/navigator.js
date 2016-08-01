@@ -11,6 +11,9 @@ define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'colle
 				maxZoom: 0,
 				minZoom: 0
 			});
+
+			this.highlight = L.circleMarker([0, 0], { radius: 14, weight: 10 }).addTo(this.navigator);
+
 			this.makeResizable();
 			this.enableHomeButton();
 
@@ -32,15 +35,22 @@ define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'colle
 		open: function() {
 			if (this.check()) {
 				this.scheme = new SchemeView({
+					highlight: this.highlight,
 					navigator: this.navigator,
 					model: this.model
 				});
 			}
 		},
 		center: function() {
+			var newNavigatorCenter = [0, 0];
+
 			if (this.scheme) {
-				this.scheme.center();
+				newNavigatorCenter = this.scheme.getCenter();
 			}
+
+			this.highlight.setLatLng(newNavigatorCenter);
+			this.navigator.panTo(newNavigatorCenter);
+			this.navigator.panInsideBounds(this.navigator.getBounds());
 		},
 		show: function() {
 			this.$el.show();
