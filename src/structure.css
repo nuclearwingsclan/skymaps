@@ -549,6 +549,9 @@ body {
 .navigator-label.active {
     box-shadow: 0 0 12px #CC4900;
 }
+button.open-navigator {
+	display: none;
+}
 
 #hint {
 	background: rgba(0, 0, 0, 0.6);
@@ -620,6 +623,26 @@ body {
 		display: block;
 		left: -250px;
 	}
+
+	button.open-navigator {
+		background: url('img/navigator-btn.png') center no-repeat;
+		background-color: rgba(255, 255, 255, 0.2);
+		bottom: 10px;
+		cursor: pointer;
+		display: block;
+		height: 50px;
+		opacity: 0.8;
+		position: absolute;
+		right: 15px;
+		transition: 0.35s;
+		width: 60px;
+	}
+	button.open-navigator:hover {
+		opacity: 1;
+	}
+	body.navigator button.open-navigator {
+		right: 265px;
+	}
 }
 
 @media (max-width: 479px) {
@@ -667,5 +690,9 @@ body {
 		left: -15px;
 		position: absolute;
 		top: 0;
+	}
+
+	button.open-navigator {
+		display: none;
 	}
 }

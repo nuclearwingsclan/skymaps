@@ -1,7 +1,7 @@
 define(['underscore', 'backbone', 'jquery'], function(_, Backbone, $) {
 	'use strict';
 
-	var $navigatorBtn = $('.caption .controls button.navigator');
+	var $navigatorBtn = $('.caption .controls button.navigator, button.open-navigator');
 	var $navigatorOverlay = $('.navigator-overlay');
 
 	return Backbone.View.extend({
@@ -11,10 +11,12 @@ define(['underscore', 'backbone', 'jquery'], function(_, Backbone, $) {
 		},
 
 		toggleNavigator: function() {
+			console.log('toggle');
 			$('body').toggleClass('navigator');
 		},
 
 		closeNavigator: function() {
+			console.log('cloes');
 			$('body').removeClass('navigator');
 		}		
 	});
