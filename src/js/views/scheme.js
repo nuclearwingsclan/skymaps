@@ -10,7 +10,7 @@ define(['underscore', 'backbone', 'leaflet', 'collections/locations'], function(
 					_this.regionData = data;
 					_this.regionLayer = _this.build(data, _this.model);
 					_this.setBounds();
-					_this.center(_this.model.get('level'));
+					options.center();
 				});
 
 			this.listenTo(this.model, 'change:region', this.destroy);

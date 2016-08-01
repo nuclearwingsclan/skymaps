@@ -35,7 +35,7 @@ define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'colle
 		open: function() {
 			if (this.check()) {
 				this.scheme = new SchemeView({
-					highlight: this.highlight,
+					center: _.bind(this.center, this),
 					navigator: this.navigator,
 					model: this.model
 				});
