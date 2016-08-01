@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'views/coordinates'], function(_, Backbone, L, TilesView, ObjectsView, CoordinatesView) {
+define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'views/meta', 'views/coordinates'], function(_, Backbone, L, TilesView, ObjectsView, metaView, CoordinatesView) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -28,7 +28,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'vi
 							objects: data.objects
 						});
 					_this.configureContainer(params);
-					_this.setMeta(data.meta);
+					metaView.setMeta(data.meta);
 
 					var coordinatesView = new CoordinatesView({
 						container: _this.container,
@@ -37,18 +37,6 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'vi
 					});
 				}
 			});
-		},
-		setMeta: function(meta) {
-			this.setCaption(meta.caption);
-			this.setMapInfo({ author: meta.navigator, date: meta.date });
-		},
-		setCaption: function(caption) {
-			$('#map .caption > label').text(caption);
-			$('title').html(caption + ' — ' + this.model.get('defaultCaption'));
-		},
-		setMapInfo: function(data) {
-			var content = _.template($('#map-meta').html())(data);
-			$('#map .meta').html(content);
 		},
 		processMapParams: function(meta) {
 			var width = meta.size.width,

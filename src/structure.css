@@ -120,6 +120,9 @@ body {
 #map .caption > button.next:hover {
 	background-position: -20px -15px;
 }
+#map .caption > .controls {
+	display: none;
+}
 #map .coordinates {
 	background: url('img/coordinates.png');
 	box-sizing: border-box;
@@ -179,17 +182,20 @@ body {
 	width: 12px;
 	transform: translate(-50%, -50%);
 }
-#map .controls > button.search:after {
+#map .controls > .search:after {
 	background-position: 0 0;
 }
-#map .controls > button.farm:after {
+#map .controls > .farm:after {
 	background-position: -12px 0;
 }
-#map .controls > button.edit:after {
+#map .controls > .edit:after {
 	background-position: -36px 0;
 }
-#map .controls > button.link:after {
+#map .controls > .link:after {
 	background-position: -24px 0;
+}
+#map .controls > .navigator:after {
+	background-position: -48px 0;
 }
 #map .meta {
 	background: rgba(0, 0, 0, 0.5);
@@ -599,6 +605,21 @@ body {
 	body.navigator .corners .bottom-right {
 		right: 250px;
 	}
+
+	.navigator-overlay {
+		background: rgba(255, 255, 255, 0.3);
+		display: none;
+		height: 100%;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1000001;
+	}
+	body.navigator .navigator-overlay {
+		display: block;
+		left: -250px;
+	}
 }
 
 @media (max-width: 479px) {
@@ -624,8 +645,27 @@ body {
 		left: 2.5%;
 		line-height: 22px;
 		margin-left: 0;
-		padding: 5px 10px;
+		overflow: hidden;
+		padding: 5px 60px 5px 10px;
 		text-align: left;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 		width: 95%;
+	}
+	#map .caption > .controls {
+		bottom: 3px;
+		display: block;
+		left: auto;
+		padding: 2px 3px 3px;
+		position: absolute;
+		right: 7px;
+	}
+	#map .caption > .controls:before {
+		border-left: 1px solid #9d9d9d;
+		bottom: 0;
+		content: '';
+		left: -15px;
+		position: absolute;
+		top: 0;
 	}
 }
