@@ -3,6 +3,7 @@ define(['jquery', 'tinyscrollbar'], function($, tinyscrollbar) {
 
 	return function(options) {
 		var $dialog = $('<div class="dialog">'),
+			$overlay = $('<div class="dialog-overlay">').appendTo($dialog),
 			$container = $('<div class="dialog-container">').appendTo($dialog),
 			$caption = $('<div class="dialog-caption">').appendTo($container),
 			$body = $('<div class="dialog-body">').appendTo($container),
@@ -23,17 +24,17 @@ define(['jquery', 'tinyscrollbar'], function($, tinyscrollbar) {
 		};
 
 		this.open = function() {
-			$dialog.appendTo('body');
+			$dialog.add($overlay).appendTo('body');
 			$body.tinyscrollbar();
 			return this;
 		};
 
-		this.close = function() {
-			$dialog.remove();
+		var closeDialog = this.close = function() {
+			$dialog.add($overlay).remove();
 		};
 
-		$closeButton.click(function() {
-			$dialog.remove();
+		$overlay.add($closeButton).click(function() {
+			closeDialog();
 		});
 	};
 
