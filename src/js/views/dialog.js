@@ -25,6 +25,7 @@ define(['jquery', 'tinyscrollbar'], function($, tinyscrollbar) {
 
 		this.open = function() {
 			$dialog.add($overlay).appendTo('body');
+			$dialog.draggable({ cancel: '.dialog-body, .dialog-close-button' });
 			$body.tinyscrollbar();
 			return this;
 		};

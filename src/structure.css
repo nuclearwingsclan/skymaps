@@ -332,6 +332,7 @@ body {
 }
 .dialog-caption {
 	color: #6BFF74;
+	cursor: default;
 	font-size: 16px;
 	height: 20px;
 	margin-bottom: 8px;
