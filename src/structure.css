@@ -7,13 +7,15 @@
 
 html,
 body,
+#wrapper,
 #map {
 	height: 100%;
 	width: 100%;
 }
 
-body {
+#wrapper {
 	overflow: hidden;
+	position: relative;
 }
 
 #map {
