@@ -83,10 +83,12 @@ define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'colle
 			});
 		},
 		enableHomeButton: function() {
+			var $homeBtn = this.$el.find('button.home');
 			var model = this.model;
-			this.$el.find('button.home').click(function() {
+
+			$homeBtn.click(function() {
 				model.home();
-			});
+			}).hint($homeBtn.data('title'));
 		}
 	});
 
