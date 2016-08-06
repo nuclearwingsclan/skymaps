@@ -24,10 +24,10 @@
 				</div>
 				<div class="coordinates"></div>
 				<div class="controls">
-					<button class="search" title="Поиск по базе данных"></button>
-					<button class="farm" title="Добываемые ресурсы"></button>
-					<button class="edit" title="Редактировать карту" onclick="window.open('/editor/')"></button>
-					<button class="link" title="Короткая ссылка"></button>
+					<button class="search" data-title="Поиск по базе данных"></button>
+					<button class="farm" data-title="Добываемые ресурсы"></button>
+					<button class="edit" data-title="Редактировать карту" onclick="window.open('/editor/')"></button>
+					<button class="link" data-title="Короткая ссылка"></button>
 				</div>
 				<div class="meta">
 					<span class="navigator">Навигатор: AS_Super</span>
@@ -43,7 +43,7 @@
 
 			<div id="navigator" style="display: none">
 				<div class="shadow"></div>
-				<button class="home" title="Вернуться на карту Неба">Карта Неба</button>
+				<button class="home" data-title="Вернуться на карту Неба">Карта Неба</button>
 				<div class="resize-handle-left"></div>
 				<div class="resize-handle-top"></div>
 				<div class="resize-handle-corner"></div>

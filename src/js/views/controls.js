@@ -1,6 +1,7 @@
-define(['underscore', 'backbone', 'jquery', 'views/controls/link'], function(_, Backbone, $, LinkView) {
+define(['underscore', 'backbone', 'jquery', 'views/controls/farm', 'views/controls/link', 'views/hint'], function(_, Backbone, $, FarmView, LinkView, hintView) {
 	'use strict';
 
+	var $farmBtn = $('.controls button.farm');
 	var $editBtn = $('.controls button.edit');
 	var $linkBtn = $('.controls button.link');
 
@@ -11,16 +12,24 @@ define(['underscore', 'backbone', 'jquery', 'views/controls/link'], function(_, 
 		initialize: function(options) {
 			this.app = options.app;
 
-			$linkBtn.click(_.bind(this.openLinkDialog, this));
+			$farmBtn.click(_.bind(this.openFarmDialog, this)).hint($farmBtn.data('title'));
+			$linkBtn.click(_.bind(this.openLinkDialog, this)).hint($linkBtn.data('title'));
 			$navigatorBtn.click(_.bind(this.toggleNavigator, this));
 			$navigatorOverlay.on('click mousedown touchdown', _.bind(this.closeNavigator, this));
 
+			$editBtn.hint($editBtn.data('title'));
 			this.listenTo(this.app, 'change:location', this.updateEditorLink);
+		},
+
+		openFarmDialog: function() {
+			var farmView = new FarmView({
+				caption: $farmBtn.data('title')
+			});
 		},
 
 		openLinkDialog: function() {
 			var linkView = new LinkView({
-				caption: $linkBtn.attr('title')
+				caption: $linkBtn.data('title')
 			});
 		},
 
