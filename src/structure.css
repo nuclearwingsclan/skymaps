@@ -455,7 +455,6 @@ body,
 	height: 200px;
 	position: absolute;
 	right: 30px;
-	transition: 0.35s;
 	width: 160px;
 }
 #navigator button.home {
@@ -602,6 +601,7 @@ button.open-navigator {
 		bottom: 0;
 		height: 100%;
 		right: -250px;
+		transition: 0.35s;
 		width: 250px;
 	}
 	#navigator > .shadow {
