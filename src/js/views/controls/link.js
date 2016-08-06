@@ -8,26 +8,29 @@ define(['jquery', 'clipboard', 'views/dialog'], function($, Clipboard, DialogVie
 			$.post('/link/add.php', {
 				link: window.location.href
 			}, function(shortlink) {
-				var dialog = new DialogView(),
-					caption = _this.dialogCaption(),
-					$body = $(_this.dialogContent({ href: shortlink }));
-
-				var clipboard = new Clipboard('.shortlink .href');
-				clipboard.on('success', function() {
-					$('.shortlink .href').addClass('used').text($('.shortlink .href').data('copied'));
-				});
-
-				dialog
-					.setCaption(caption)
-					.setContent($body)
-					.open();
+				_this.buildDialog(params.caption, shortlink);
 			});
-		},
-		dialogCaption: function() {
-			return _.template($('#link-dialog-caption').html())();
 		},
 		dialogContent: function(data) {
 			return _.template($('#link-dialog').html())(data);
+		},
+		buildDialog: function(caption, shortlink) {
+			var dialog = new DialogView(),
+				$body = $(this.dialogContent({ href: shortlink }));
+
+			var $href = $body.find('.href');
+			this.activateClipboard($href);
+
+			dialog
+				.setCaption(caption)
+				.setContent($body)
+				.open();
+		},
+		activateClipboard: function($href) {
+			var clipboard = new Clipboard($href[0]);
+			clipboard.on('success', function() {
+				$href.addClass('used').text($href.data('copied'));
+			});
 		}
 	});
 

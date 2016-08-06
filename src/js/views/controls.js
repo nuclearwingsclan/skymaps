@@ -19,7 +19,9 @@ define(['underscore', 'backbone', 'jquery', 'views/controls/link'], function(_, 
 		},
 
 		openLinkDialog: function() {
-			var linkView = new LinkView();
+			var linkView = new LinkView({
+				caption: $linkBtn.attr('title')
+			});
 		},
 
 		toggleNavigator: function() {
