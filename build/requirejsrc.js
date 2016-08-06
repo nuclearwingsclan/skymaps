@@ -7,7 +7,8 @@ require.config({
 		'leaflet.label': '../assets/leaflet.label',
 		'underscore': '../assets/underscore-min',
 		'tinyscrollbar': '../assets/jquery.tinyscrollbar.min',
-		'rrose': '../assets/rrose-src'
+		'rrose': '../assets/rrose-src',
+		'clipboard': '../assets/clipboard.min'
 	},
 	shim: {
 		'jquery': {
@@ -34,6 +35,9 @@ require.config({
 		},
 		'tinyscrollbar': {
 			deps: ['jquery']
+		},
+		'clipboard': {
+			exports: 'Clipboard'
 		}
 	}
 });

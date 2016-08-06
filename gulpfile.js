@@ -69,7 +69,8 @@ gulp.task('assets', function() {
 			'bower_components/rrose/rrose-src.js',
 			'bower_components/rrose/leaflet.rrose.css',
 			'bower_components/underscore/underscore-min.js',
-			'bower_components/tinyscrollbar/lib/jquery.tinyscrollbar.min.js'
+			'bower_components/tinyscrollbar/lib/jquery.tinyscrollbar.min.js',
+			'bower_components/clipboard/dist/clipboard.min.js'
 		]).pipe(gulp.dest('dist/assets/'));
 });
 
