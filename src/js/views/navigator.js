@@ -49,6 +49,7 @@ define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'colle
 			}
 
 			this.highlight.setLatLng(newNavigatorCenter);
+			this.navigator.invalidateSize();
 			this.navigator.panTo(newNavigatorCenter);
 			this.navigator.panInsideBounds(this.navigator.getBounds());
 		},
@@ -65,8 +66,11 @@ define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'colle
 				handles: 'n, w, nw',
 				minWidth: 160,
 				minHeight: 200,
-				resize: function() {
-					_this.navigator.invalidateSize();
+				resize: _.bind(this.navigator.invalidateSize, this.navigator),
+				stop: function() {
+					setTimeout(function() {
+						_this.navigator.invalidateSize();
+					}, 300);
 				}
 			});
 
