@@ -2,6 +2,8 @@ define(['jquery'], function($) {
 	'use strict';
 
 	var $hint = $('#hint');
+	var offset = [5, 7];
+
 	var addHint = function(text, target) {
 		if (!target) {
 			target = this;
@@ -19,11 +21,20 @@ define(['jquery'], function($) {
 
 		return this;
 	};
+
 	var hintOnMusemove = function(e) {
+		var top = e.originalEvent.clientY;
+		var left = e.originalEvent.clientX;
+		var width = $hint.outerWidth();
+		var height = $hint.outerHeight();
+
+		top += (top + height + offset[0]) < $(window).height() ? offset[0] : -height;
+		left += (left + width + offset[1]) < $(window).width() ? offset[1] : -width;
+
 		$hint.css({
-			top: (e.originalEvent.clientY + 5) + 'px',
-			left: (e.originalEvent.clientX + 7) + 'px'
-		})
+			top: top + 'px',
+			left: left + 'px'
+		});
 	};
 
 	$.extend($.prototype, { hint: addHint });
