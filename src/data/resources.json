@@ -1,0 +1,672 @@
+[
+   {
+      "caption":"Вита-эссенция",
+      "type":"82",
+      "subtype":"42"
+   },
+   {
+      "caption":"Белоснежные пушинки",
+      "type":"81",
+      "subtype":"134"
+   },
+   {
+      "caption":"Протогаз",
+      "type":"81",
+      "subtype":"130"
+   },
+   {
+      "caption":"Электрификат",
+      "type":"81",
+      "subtype":"129"
+   },
+   {
+      "caption":"Отходы производства V",
+      "type":"81",
+      "subtype":"121"
+   },
+   {
+      "caption":"Отходы производства IV",
+      "type":"81",
+      "subtype":"124"
+   },
+   {
+      "caption":"Отходы производства III",
+      "type":"81",
+      "subtype":"123"
+   },
+   {
+      "caption":"Отходы производства II",
+      "type":"81",
+      "subtype":"122"
+   },
+   {
+      "caption":"Идеальный газ",
+      "type":"81",
+      "subtype":"125"
+   },
+   {
+      "caption":"Молоко летающих коров",
+      "type":"81",
+      "subtype":"78"
+   },
+   {
+      "caption":"Электрические угри",
+      "type":"81",
+      "subtype":"76"
+   },
+   {
+      "caption":"Кокосы",
+      "type":"81",
+      "subtype":"72"
+   },
+   {
+      "caption":"Кокосовое молоко",
+      "type":"81",
+      "subtype":"71"
+   },
+   {
+      "caption":"Небесная руда",
+      "type":"81",
+      "subtype":"77"
+   },
+   {
+      "caption":"Алюминиевая руда",
+      "type":"81",
+      "subtype":"73"
+   },
+   {
+      "caption":"Титановая руда",
+      "type":"81",
+      "subtype":"74"
+   },
+   {
+      "caption":"Руда",
+      "type":"81",
+      "subtype":"70"
+   },
+   {
+      "caption":"Эко-Древесина",
+      "type":"81",
+      "subtype":"68"
+   },
+   {
+      "caption":"Р-Древесина",
+      "type":"81",
+      "subtype":"67"
+   },
+   {
+      "caption":"Эво-древо",
+      "type":"81",
+      "subtype":"66"
+   },
+   {
+      "caption":"Древо жизни",
+      "type":"81",
+      "subtype":"65"
+   },
+   {
+      "caption":"Алмазное дерево",
+      "type":"81",
+      "subtype":"64"
+   },
+   {
+      "caption":"Железное дерево",
+      "type":"81",
+      "subtype":"63"
+   },
+   {
+      "caption":"Прочная древесина",
+      "type":"81",
+      "subtype":"62"
+   },
+   {
+      "caption":"Древесина",
+      "type":"81",
+      "subtype":"61"
+   },
+   {
+      "caption":"Мягкая древесина",
+      "type":"81",
+      "subtype":"60"
+   },
+   {
+      "caption":"Эко-Металл",
+      "type":"81",
+      "subtype":"56"
+   },
+   {
+      "caption":"Р-Металл",
+      "type":"81",
+      "subtype":"55"
+   },
+   {
+      "caption":"Победит",
+      "type":"81",
+      "subtype":"54"
+   },
+   {
+      "caption":"Небесное железо",
+      "type":"81",
+      "subtype":"53"
+   },
+   {
+      "caption":"Титан",
+      "type":"81",
+      "subtype":"52"
+   },
+   {
+      "caption":"Алюминий",
+      "type":"81",
+      "subtype":"51"
+   },
+   {
+      "caption":"Железо",
+      "type":"81",
+      "subtype":"50"
+   },
+   {
+      "caption":"Эко-Реагенты",
+      "type":"81",
+      "subtype":"46"
+   },
+   {
+      "caption":"Р-Реагенты",
+      "type":"81",
+      "subtype":"45"
+   },
+   {
+      "caption":"Уникальные реагенты",
+      "type":"81",
+      "subtype":"44"
+   },
+   {
+      "caption":"Экзотические реагенты",
+      "type":"81",
+      "subtype":"43"
+   },
+   {
+      "caption":"Необычные реагенты",
+      "type":"81",
+      "subtype":"42"
+   },
+   {
+      "caption":"Реагенты",
+      "type":"81",
+      "subtype":"41"
+   },
+   {
+      "caption":"Дешевые реагенты",
+      "type":"81",
+      "subtype":"40"
+   },
+   {
+      "caption":"Древние детали",
+      "type":"81",
+      "subtype":"35"
+   },
+   {
+      "caption":"Редкие детали",
+      "type":"81",
+      "subtype":"34"
+   },
+   {
+      "caption":"Хорошие детали",
+      "type":"81",
+      "subtype":"33"
+   },
+   {
+      "caption":"Детали",
+      "type":"81",
+      "subtype":"32"
+   },
+   {
+      "caption":"Старые детали",
+      "type":"81",
+      "subtype":"31"
+   },
+   {
+      "caption":"Обломки",
+      "type":"81",
+      "subtype":"30"
+   },
+   {
+      "caption":"Летан-98",
+      "type":"81",
+      "subtype":"24"
+   },
+   {
+      "caption":"Летан-95",
+      "type":"81",
+      "subtype":"23"
+   },
+   {
+      "caption":"Летан-92",
+      "type":"81",
+      "subtype":"22"
+   },
+   {
+      "caption":"Летан-80",
+      "type":"81",
+      "subtype":"21"
+   },
+   {
+      "caption":"Летан-76",
+      "type":"81",
+      "subtype":"20"
+   },
+   {
+      "caption":"Алые пушинки",
+      "type":"81",
+      "subtype":"17"
+   },
+   {
+      "caption":"Золотые пушинки",
+      "type":"81",
+      "subtype":"16"
+   },
+   {
+      "caption":"Кромешные пушинки",
+      "type":"81",
+      "subtype":"15"
+   },
+   {
+      "caption":"Чёрные пушинки",
+      "type":"81",
+      "subtype":"14"
+   },
+   {
+      "caption":"Лиловые пушинки",
+      "type":"81",
+      "subtype":"13"
+   },
+   {
+      "caption":"Розовые пушинки",
+      "type":"81",
+      "subtype":"12"
+   },
+   {
+      "caption":"Оранжевые пушинки",
+      "type":"81",
+      "subtype":"11"
+   },
+   {
+      "caption":"Зеленые пушинки",
+      "type":"81",
+      "subtype":"10"
+   },
+   {
+      "caption":"Деликатесы",
+      "type":"81",
+      "subtype":"5"
+   },
+   {
+      "caption":"Дорогая еда",
+      "type":"81",
+      "subtype":"4"
+   },
+   {
+      "caption":"Хорошая еда",
+      "type":"81",
+      "subtype":"3"
+   },
+   {
+      "caption":"Еда",
+      "type":"81",
+      "subtype":"2"
+   },
+   {
+      "caption":"Простая еда",
+      "type":"81",
+      "subtype":"1"
+   },
+   {
+      "caption":"Линзоскоп",
+      "type":"82",
+      "subtype":"7"
+   },
+   {
+      "caption":"Энергосфера",
+      "type":"82",
+      "subtype":"30"
+   },
+   {
+      "caption":"Лазурный кристалл",
+      "type":"82",
+      "subtype":"33"
+   },
+   {
+      "caption":"Модулятор IV",
+      "type":"82",
+      "subtype":"1001"
+   },
+   {
+      "caption":"Алый кристалл",
+      "type":"82",
+      "subtype":"34"
+   },
+   {
+      "caption":"Лиловый кристалл",
+      "type":"82",
+      "subtype":"35"
+   },
+   {
+      "caption":"Изумрудный кристалл",
+      "type":"82",
+      "subtype":"36"
+   },
+   {
+      "caption":"Сталлюлоза",
+      "type":"82",
+      "subtype":"41"
+   },
+   {
+      "caption":"Древний механизм",
+      "type":"82",
+      "subtype":"40"
+   },
+   {
+      "caption":"Биогар",
+      "type":"82",
+      "subtype":"39"
+   },
+   {
+      "caption":"Паросплав",
+      "type":"82",
+      "subtype":"38"
+   },
+   {
+      "caption":"Пирос",
+      "type":"82",
+      "subtype":"37"
+   },
+   {
+      "caption":"Сплав низушников",
+      "type":"82",
+      "subtype":"29"
+   },
+   {
+      "caption":"Кусок брони",
+      "type":"82",
+      "subtype":"28"
+   },
+   {
+      "caption":"Клейкомасса",
+      "type":"82",
+      "subtype":"27"
+   },
+   {
+      "caption":"Полезный агрегат",
+      "type":"82",
+      "subtype":"26"
+   },
+   {
+      "caption":"Масло небесных незабудок",
+      "type":"82",
+      "subtype":"19"
+   },
+   {
+      "caption":"Сломанный прибор",
+      "type":"82",
+      "subtype":"24"
+   },
+   {
+      "caption":"Желчь",
+      "type":"82",
+      "subtype":"25"
+   },
+   {
+      "caption":"Маховик",
+      "type":"82",
+      "subtype":"23"
+   },
+   {
+      "caption":"Паровой узел",
+      "type":"82",
+      "subtype":"22"
+   },
+   {
+      "caption":"Кусок обшивки",
+      "type":"82",
+      "subtype":"21"
+   },
+   {
+      "caption":"Пиратское орудие",
+      "type":"82",
+      "subtype":"20"
+   },
+   {
+      "caption":"Сломанное орудие",
+      "type":"82",
+      "subtype":"18"
+   },
+   {
+      "caption":"Часовой механизм",
+      "type":"82",
+      "subtype":"17"
+   },
+   {
+      "caption":"Хитрая пружина",
+      "type":"82",
+      "subtype":"16"
+   },
+   {
+      "caption":"Турбина",
+      "type":"82",
+      "subtype":"15"
+   },
+   {
+      "caption":"Механизм подачи снарядов",
+      "type":"82",
+      "subtype":"14"
+   },
+   {
+      "caption":"Александрит",
+      "type":"82",
+      "subtype":"13"
+   },
+   {
+      "caption":"Аквамарин",
+      "type":"82",
+      "subtype":"43"
+   },
+   {
+      "caption":"Сапфир",
+      "type":"82",
+      "subtype":"12"
+   },
+   {
+      "caption":"Рубин",
+      "type":"82",
+      "subtype":"11"
+   },
+   {
+      "caption":"Изумруд",
+      "type":"82",
+      "subtype":"10"
+   },
+   {
+      "caption":"Топаз",
+      "type":"82",
+      "subtype":"9"
+   },
+   {
+      "caption":"Хитрый клапан",
+      "type":"82",
+      "subtype":"8"
+   },
+   {
+      "caption":"Обсидиан",
+      "type":"82",
+      "subtype":"32"
+   },
+   {
+      "caption":"Охладительный узел",
+      "type":"82",
+      "subtype":"6"
+   },
+   {
+      "caption":"Яд мусорога",
+      "type":"82",
+      "subtype":"5"
+   },
+   {
+      "caption":"Химикаты",
+      "type":"82",
+      "subtype":"31"
+   },
+   {
+      "caption":"Токсичные растения",
+      "type":"82",
+      "subtype":"4"
+   },
+   {
+      "caption":"Шкура чёрного хамелероя",
+      "type":"82",
+      "subtype":"3"
+   },
+   {
+      "caption":"Шкура золотого хамелероя",
+      "type":"82",
+      "subtype":"2"
+   },
+   {
+      "caption":"Крепкая шкура хамелероя",
+      "type":"82",
+      "subtype":"1"
+   },
+   {
+      "caption":"Затвор Дрэда VI",
+      "type":"82",
+      "subtype":"1033"
+   },
+   {
+      "caption":"Затвор Дрэда V",
+      "type":"82",
+      "subtype":"1032"
+   },
+   {
+      "caption":"Затвор Дрэда IV",
+      "type":"82",
+      "subtype":"1031"
+   },
+   {
+      "caption":"Затвор Дрэда III",
+      "type":"82",
+      "subtype":"1030"
+   },
+   {
+      "caption":"Обойма Хокинса VI",
+      "type":"82",
+      "subtype":"1028"
+   },
+   {
+      "caption":"Обойма Хокинса V",
+      "type":"82",
+      "subtype":"1027"
+   },
+   {
+      "caption":"Обойма Хокинса IV",
+      "type":"82",
+      "subtype":"1026"
+   },
+   {
+      "caption":"Обойма Хокинса III",
+      "type":"82",
+      "subtype":"1025"
+   },
+   {
+      "caption":"Трассометр VI",
+      "type":"82",
+      "subtype":"1023"
+   },
+   {
+      "caption":"Трассометр V",
+      "type":"82",
+      "subtype":"1022"
+   },
+   {
+      "caption":"Трассометр IV",
+      "type":"82",
+      "subtype":"1021"
+   },
+   {
+      "caption":"Трассометр III",
+      "type":"82",
+      "subtype":"1020"
+   },
+   {
+      "caption":"Девиатор VI",
+      "type":"82",
+      "subtype":"1018"
+   },
+   {
+      "caption":"Девиатор V",
+      "type":"82",
+      "subtype":"1017"
+   },
+   {
+      "caption":"Девиатор IV",
+      "type":"82",
+      "subtype":"1016"
+   },
+   {
+      "caption":"Девиатор III",
+      "type":"82",
+      "subtype":"1015"
+   },
+   {
+      "caption":"Экспрессор VI",
+      "type":"82",
+      "subtype":"1013"
+   },
+   {
+      "caption":"Экспрессор V",
+      "type":"82",
+      "subtype":"1012"
+   },
+   {
+      "caption":"Экспрессор IV",
+      "type":"82",
+      "subtype":"1011"
+   },
+   {
+      "caption":"Экспрессор III",
+      "type":"82",
+      "subtype":"1010"
+   },
+   {
+      "caption":"Х-Кластер VI",
+      "type":"82",
+      "subtype":"1008"
+   },
+   {
+      "caption":"Х-Кластер V",
+      "type":"82",
+      "subtype":"1007"
+   },
+   {
+      "caption":"Х-Кластер IV",
+      "type":"82",
+      "subtype":"1006"
+   },
+   {
+      "caption":"Х-Кластер III",
+      "type":"82",
+      "subtype":"1005"
+   },
+   {
+      "caption":"Модулятор VI",
+      "type":"82",
+      "subtype":"1003"
+   },
+   {
+      "caption":"Модулятор V",
+      "type":"82",
+      "subtype":"1002"
+   },
+   {
+      "caption":"Модулятор III",
+      "type":"82",
+      "subtype":"1000"
+   }
+]

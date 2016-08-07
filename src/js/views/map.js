@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'views/meta', 'views/coordinates'], function(_, Backbone, L, TilesView, ObjectsView, metaView, CoordinatesView) {
+define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'views/meta', 'views/coordinates', 'models/meta'], function(_, Backbone, L, TilesView, ObjectsView, metaView, CoordinatesView, metaModel) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -27,8 +27,8 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'vi
 							model: _this.model,
 							objects: data.objects
 						});
+					metaModel.setMeta(data.meta);
 					_this.configureContainer(params);
-					metaView.setMeta(data.meta);
 
 					var coordinatesView = new CoordinatesView({
 						container: _this.container,

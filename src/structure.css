@@ -442,7 +442,15 @@ body,
 	background: url('img/icons/stream-sky.png') no-repeat;
 }
 
-.shortlink .href {
+.dialog .farm {
+	margin-top: 5px;
+}
+.dialog .farm > img {
+	height: 44px;
+	width: 44px;
+}
+
+.dialog .shortlink .href {
 	background: rgba(255,255,255,0.05);
 	border: 1px solid rgba(255, 255, 255, 0.15);
 	cursor: pointer;
@@ -450,13 +458,13 @@ body,
 	margin-top: 5px;
 	padding: 5px 8px;
 }
-.shortlink .href:hover {
+.dialog .shortlink .href:hover {
 	background: rgba(255,255,255,0.07);
 }
-.shortlink .href.used {
+.dialog .shortlink .href.used {
 	background: rgba(49, 141, 255, 0.35);
 }
-.shortlink .note {
+.dialog .shortlink .note {
 	color: #FFA600;
 	font-size: 11px;
 	font-weight: 500;

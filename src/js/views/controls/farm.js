@@ -1,21 +1,37 @@
-define(['jquery', 'views/dialog'], function($, DialogView) {
+define(['jquery', 'views/dialog', 'models/meta', 'collections/resources'], function($, DialogView, metaModel, resourcesCollection) {
 	'use strict';
 
 	return Backbone.View.extend({
 		initialize: function(params) {
-			this.buildDialog(params.caption);
+			var drop = this.processDropList(metaModel.get('drop'));
+			this.buildDialog(params.caption, drop);
 		},
 		dialogContent: function(data) {
 			return _.template($('#farm-dialog').html())(data);
 		},
-		buildDialog: function(caption) {
+		buildDialog: function(caption, drop) {
 			var dialog = new DialogView(),
-				$body = $(this.dialogContent());
+				$body = $(this.dialogContent({ drop: drop }));
+
+			$body.find('img').each(function() {
+				$(this).hint($(this).data('caption'));
+			});
 
 			dialog
 				.setCaption(caption)
 				.setContent($body)
 				.open();
+		},
+		processDropList: function(drop) {
+			return drop.map(function(item) {
+				var id = item.split('_');
+				var resource = {
+					type: id[0],
+					subtype: id[1]
+				};
+				resource.caption = resourcesCollection.findWhere(resource).get('caption');
+				return resource;
+			});
 		}
 	});
 

@@ -1,4 +1,4 @@
-define(['backbone', 'leaflet', 'models/app', 'models/map', 'views/map', 'models/navigator', 'views/navigator', 'views/controls'], function(Backbone, L, appModel, MapModel, MapView, NavigatorModel, NavigatorView, ControlsView) {
+define(['backbone', 'leaflet', 'models/app', 'models/map', 'models/meta', 'views/map', 'models/navigator', 'views/navigator', 'views/controls', 'views/meta'], function(Backbone, L, appModel, MapModel, metaModel, MapView, NavigatorModel, NavigatorView, ControlsView, metaView) {
 	'use strict';
 
 	var AppView = Backbone.View.extend({
@@ -11,8 +11,8 @@ define(['backbone', 'leaflet', 'models/app', 'models/map', 'views/map', 'models/
 			});
 
 			var navigatorModel = new NavigatorModel({ app: this.model });
-			this.navigator = new NavigatorView({ model: navigatorModel });
-			this.controls = new ControlsView({ app: this.model });
+			var nagivatorView = new NavigatorView({ model: navigatorModel });
+			var controlsView = new ControlsView({ app: this.model });
 
 			this.listenTo(this.model, 'change:location', this.open);
 			this.listenTo(this.model, 'change:center', this.center);
