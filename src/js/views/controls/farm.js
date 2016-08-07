@@ -23,6 +23,10 @@ define(['jquery', 'views/dialog', 'models/meta', 'collections/resources'], funct
 				.open();
 		},
 		processDropList: function(drop) {
+			if (typeof drop == 'undefined' || !drop.length) {
+				return [];
+			}
+
 			return drop.map(function(item) {
 				var id = item.split('_');
 				var resource = {
