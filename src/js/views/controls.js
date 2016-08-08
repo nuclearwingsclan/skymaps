@@ -1,7 +1,7 @@
 define(['underscore', 'backbone', 'jquery', 'models/search', 'views/controls/search', 'views/controls/farm', 'views/controls/link', 'views/hint'], function(_, Backbone, $, SearchModel, SearchView, FarmView, LinkView, hintView) {
 	'use strict';
 
-	var $container = $('.controls');
+	var $container = $('#map > .controls');
 	var $searchBtn = $('button.search', $container);
 	var $farmBtn = $('button.farm', $container);
 	var $editBtn = $('button.edit', $container);
