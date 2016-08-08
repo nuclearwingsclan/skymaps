@@ -1,6 +1,7 @@
-define(['underscore', 'backbone', 'jquery', 'views/controls/farm', 'views/controls/link', 'views/hint'], function(_, Backbone, $, FarmView, LinkView, hintView) {
+define(['underscore', 'backbone', 'jquery', 'views/controls/search', 'views/controls/farm', 'views/controls/link', 'views/hint'], function(_, Backbone, $, SearchView, FarmView, LinkView, hintView) {
 	'use strict';
 
+	var $searchBtn = $('.controls button.search');
 	var $farmBtn = $('.controls button.farm');
 	var $editBtn = $('.controls button.edit');
 	var $linkBtn = $('.controls button.link');
@@ -12,6 +13,7 @@ define(['underscore', 'backbone', 'jquery', 'views/controls/farm', 'views/contro
 		initialize: function(options) {
 			this.app = options.app;
 
+			$searchBtn.click(_.bind(this.openSearchDialog, this)).hint($searchBtn.data('title'));
 			$farmBtn.click(_.bind(this.openFarmDialog, this)).hint($farmBtn.data('title'));
 			$linkBtn.click(_.bind(this.openLinkDialog, this)).hint($linkBtn.data('title'));
 			$navigatorBtn.click(_.bind(this.toggleNavigator, this));
@@ -19,6 +21,12 @@ define(['underscore', 'backbone', 'jquery', 'views/controls/farm', 'views/contro
 
 			$editBtn.hint($editBtn.data('title'));
 			this.listenTo(this.app, 'change:location', this.updateEditorLink);
+		},
+
+		openSearchDialog: function() {
+			var searchView = new SearchView({
+				caption: $searchBtn.data('title')
+			});
 		},
 
 		openFarmDialog: function() {
