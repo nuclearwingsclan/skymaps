@@ -1,10 +1,11 @@
 define(['underscore', 'backbone', 'jquery', 'models/search', 'views/controls/search', 'views/controls/farm', 'views/controls/link', 'views/hint'], function(_, Backbone, $, SearchModel, SearchView, FarmView, LinkView, hintView) {
 	'use strict';
 
-	var $searchBtn = $('.controls button.search');
-	var $farmBtn = $('.controls button.farm');
-	var $editBtn = $('.controls button.edit');
-	var $linkBtn = $('.controls button.link');
+	var $container = $('.controls');
+	var $searchBtn = $('button.search', $container);
+	var $farmBtn = $('button.farm', $container);
+	var $editBtn = $('button.edit', $container);
+	var $linkBtn = $('button.link', $container);
 
 	var $navigatorBtn = $('.caption .controls button.navigator, button.open-navigator');
 	var $navigatorOverlay = $('.navigator-overlay');
@@ -16,11 +17,23 @@ define(['underscore', 'backbone', 'jquery', 'models/search', 'views/controls/sea
 			$searchBtn.click(_.bind(this.openSearchDialog, this)).hint($searchBtn.data('title'));
 			$farmBtn.click(_.bind(this.openFarmDialog, this)).hint($farmBtn.data('title'));
 			$linkBtn.click(_.bind(this.openLinkDialog, this)).hint($linkBtn.data('title'));
+
 			$navigatorBtn.click(_.bind(this.toggleNavigator, this));
 			$navigatorOverlay.on('click mousedown touchdown', _.bind(this.closeNavigator, this));
 
 			$editBtn.hint($editBtn.data('title'));
 			this.listenTo(this.app, 'change:location', this.updateEditorLink);
+
+			this.listenTo(this.app, 'change:location', this.turnControls);
+		},
+
+		turnControls: function() {
+			var location = this.app.get('location');
+			if (location.region == 'index') {
+				$container.hide();
+			} else {
+				$container.show();
+			}
 		},
 
 		openSearchDialog: function() {
