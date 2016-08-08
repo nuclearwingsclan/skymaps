@@ -2,15 +2,14 @@
 	{ "id": "npc", "caption": "NPC" },
 	{ "id": "boss", "caption": "Босс" },
 	{ "id": "hole", "caption": "Вихрь" },
-	{ "id": "city", "caption": "Город" },
 	{ "id": "tree", "caption": "Дерево" },
 	{ "id": "factory", "caption": "Завод" },
-	{ "id": "note", "caption": "Заметка" },
+	{ "id": "label", "caption": "Заметка" },
 	{ "id": "instance", "caption": "Инстанс" },
 	{ "id": "quest", "caption": "Квест" },
 	{ "id": "master", "caption": "Мастерская" },
 	{ "id": "beacon", "caption": "Пиратский маяк" },
 	{ "id": "station", "caption": "Платформа" },
-	{ "id": "fish", "caption": "Рыбное место" },
+	{ "id": "riba", "caption": "Рыбное место" },
 	{ "id": "flager", "caption": "Флягеры" }
 ]

@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'jquery', 'views/controls/search', 'views/controls/farm', 'views/controls/link', 'views/hint'], function(_, Backbone, $, SearchView, FarmView, LinkView, hintView) {
+define(['underscore', 'backbone', 'jquery', 'models/search', 'views/controls/search', 'views/controls/farm', 'views/controls/link', 'views/hint'], function(_, Backbone, $, SearchModel, SearchView, FarmView, LinkView, hintView) {
 	'use strict';
 
 	var $searchBtn = $('.controls button.search');
@@ -24,8 +24,10 @@ define(['underscore', 'backbone', 'jquery', 'views/controls/search', 'views/cont
 		},
 
 		openSearchDialog: function() {
+			var searchModel = new SearchModel();
 			var searchView = new SearchView({
-				caption: $searchBtn.data('title')
+				caption: $searchBtn.data('title'),
+				model: searchModel
 			});
 		},
 
