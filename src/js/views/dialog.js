@@ -24,6 +24,9 @@ define(['jquery', 'tinyscrollbar'], function($, tinyscrollbar) {
 		};
 
 		this.setSize = function(width, height) {
+			width = width + 30 < $(window).width() ? width : $(window).width() - 30;
+			height = height + 30 < $(window).height() ? height : $(window).height() - 30;
+
 			$dialog.css({
 				width: width + 'px',
 				height: height + 'px',
