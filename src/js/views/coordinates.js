@@ -5,8 +5,6 @@ define(['underscore', 'backbone', 'leaflet', 'models/app'], function(_, Backbone
 
 	return Backbone.View.extend({
 		initialize: function(options) {
-			$coordinates.show();
-
 			this.container = options.container;
 			this.size = options.size;
 
@@ -30,7 +28,6 @@ define(['underscore', 'backbone', 'leaflet', 'models/app'], function(_, Backbone
 		},
 
 		destroy: function() {
-			$coordinates.hide();
 			this.container.off('mousemove mouseout mouseleave');
 			this.clear();
 			this.remove();
