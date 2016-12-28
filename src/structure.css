@@ -97,7 +97,7 @@ body,
 	top: 20px;
 	transition: .35s;
 	width: 450px;
-	z-index: 1000000;
+	z-index: 100000;
 }
 #map .caption > button.prev,
 #map .caption > button.next {
@@ -444,8 +444,23 @@ body,
 
 .dialog .search {
 	margin-top: 8px;
+	transition: margin-left 0.35s;
+	width: 200%;
 }
-.dialog .search input {
+.dialog .search:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+.dialog .search.list {
+	margin-left: -100%;
+}
+.dialog .search form,
+.dialog .search .results {
+	float: left;
+	width: 50%;
+}
+.dialog .search input.query {
 	background: rgba(255,255,255,0.05);
 	border: 1px solid rgba(255, 255, 255, 0.15);
 	box-sizing: border-box;
@@ -474,13 +489,13 @@ body,
 	margin-left: 3%;
 	width: 52%;
 }
-.dialog .search .local {
+.dialog .search .keywords {
 	float: left;
 	font-size: 12px;
 	font-weight: normal;
-	margin-top: 16px;
+	margin-top: 22px;
 }
-.dialog .search .local > input {
+.dialog .search .keywords > input {
 	margin-right: 2px;
 	vertical-align: top;
 }
@@ -494,6 +509,195 @@ body,
 }
 .dialog .search button:hover {
 	background: #1F43A7;
+}
+.dialog .search button[disabled],
+.dialog .search button[disabled]:hover {
+	background: #484E54;
+	color: #888;
+	cursor: default;
+}
+.dialog .search .results .intro {
+	color: #FFFE00;
+	margin-bottom: 5px;
+}
+.dialog .search .results ul {
+	list-style: none;
+}
+.dialog .search .results .map > label {
+	cursor: pointer;
+	display: inline-block;
+	max-width: 90%;
+	overflow: hidden;
+	padding: 3px 14px 3px 21px;
+	position: relative;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.dialog .search .results .map > label:before {
+	background: url('img/search/map.png') no-repeat;
+	content: '';
+	height: 17px;
+	left: 0;
+	margin-top: -9px;
+	position: absolute;
+	top: 50%;
+	width: 17px;
+}
+.dialog .search .results .map > label:after {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid white;
+	content: '';
+	margin-top: -1px;
+	opacity: 0.8;
+	position: absolute;
+	right: 0;
+	top: 50%;
+}
+.dialog .search .results .map > label.ui-state-active:after {
+	border-bottom: 4px solid white;
+	border-top: none;
+	margin-top: -2px;
+}
+.dialog .search .results .map > label .caption {
+	color: #23A8FF;
+}
+.dialog .search .results .map > label .total {
+	color: #ddd;
+	font-size: 11px;
+	margin-left: 2px;
+}
+.dialog .search .results .map > label:hover .caption {
+	color: #51BAFF;
+}
+.dialog .search .results .map > label:hover .total {
+	color: #eee;
+}
+.dialog .search .results .map .items { 
+    padding: 2px 15px 18px;
+}
+.dialog .search .results .map .item {
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 3px;
+	padding-left: 18px;
+	position: relative;
+}
+.dialog .search .results .map .item:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+}
+.dialog .search .results .map .item.boss:before {
+	background: url('img/search/boss.png') no-repeat;
+	height: 12px;
+	left: 2px;
+	margin-top: -7px;
+	width: 10px;
+}
+.dialog .search .results .map .item.hole:before,
+.dialog .search .results .map .item.maphole:before {
+	background: url('img/search/hole.png') no-repeat;
+	height: 14px;
+	left: -1px;
+	margin-top: -8px;
+	width: 11px;
+}
+.dialog .search .results .map .item.instance:before,
+.dialog .search .results .map .item.turn:before {
+	background: url('img/search/instance.png') no-repeat;
+	height: 12px;
+	left: 0;
+	margin-top: -6px;
+	width: 14px;
+}
+.dialog .search .results .map .item.station:before {
+	background: url('img/search/station.png') no-repeat;
+	height: 13px;
+	left: 0;
+	margin-top: -7px;
+	width: 13px;
+}
+.dialog .search .results .map .item.factory:before {
+	background: url('img/search/factory.png') no-repeat;
+	height: 13px;
+	left: 0;
+	margin-top: -7px;
+	width: 13px;
+}
+.dialog .search .results .map .item.master:before {
+	background: url('img/search/master.png') no-repeat;
+	height: 13px;
+	left: 0;
+	margin-top: -8px;
+	width: 13px;
+}
+.dialog .search .results .map .item.flager:before {
+	background: url('img/search/flager.png') no-repeat;
+	height: 15px;
+	left: 0;
+	margin-top: -8px;
+	width: 13px;
+}
+.dialog .search .results .map .item.beacon:before {
+	background: url('img/search/beacon.png') no-repeat;
+	height: 11px;
+	left: 1px;
+	margin-top: -6px;
+	width: 11px;
+}
+.dialog .search .results .map .item.barrier:before {
+	background: url('img/search/barrier.png') no-repeat;
+	height: 8px;
+	left: 3px;
+	margin-top: -4px;
+	width: 9px;
+}
+.dialog .search .results .map .item.quest:before {
+	background: url('img/search/quest.png') no-repeat;
+	height: 14px;
+	left: 1px;
+	margin-top: -7px;
+	width: 14px;
+}
+.dialog .search .results .map .item.label:before {
+	background: url('img/search/label.png') no-repeat;
+	height: 15px;
+	left: 0;
+	margin-top: -8px;
+	width: 15px;
+}
+.dialog .search .results .map .item.tree:before {
+	background: url('img/search/tree.png') no-repeat;
+	height: 13px;
+	left: 0;
+	margin-top: -7px;
+	width: 12px;
+}
+.dialog .search .results .map .item.riba:before {
+	background: url('img/search/riba.png') no-repeat;
+	height: 9px;
+	left: -1px;
+	margin-top: -5px;
+	width: 13px;
+}
+.dialog .search .results .map .item.npc:before {
+	background: url('img/search/npc.png') no-repeat;
+	height: 13px;
+	left: 1px;
+	margin-top: -7px;
+	width: 10px;
+}
+.dialog .search .results .map .items .caption {
+	border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+}
+.dialog .search .results .map .items .coordinates {
+	color: #E8DF86;
+	font-size: 11px;
+}
+.dialog .search button.back {
+	float: none;
 }
 
 .dialog .farm {

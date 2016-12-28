@@ -23,11 +23,30 @@ define(['jquery', 'tinyscrollbar'], function($, tinyscrollbar) {
 			return this;
 		};
 
+		this.setSize = function(width, height) {
+			width = width + 30 < $(window).width() ? width : $(window).width() - 30;
+			height = height + 30 < $(window).height() ? height : $(window).height() - 30;
+
+			$dialog.css({
+				width: width + 'px',
+				height: height + 'px',
+				marginLeft: -(width / 2) + 'px',
+				marginTop: -(height / 2) + 'px'
+			});
+			$body.css({
+				height: (height - 70) + 'px'
+			});
+		};
+
 		this.open = function() {
 			$dialog.add($overlay).appendTo('body');
 			$dialog.draggable({ cancel: '.dialog-body, .dialog-close-button' });
 			$body.tinyscrollbar();
 			return this;
+		};
+
+		this.update = function() {
+			$body.data('plugin_tinyscrollbar').update();
 		};
 
 		var closeDialog = this.close = function() {

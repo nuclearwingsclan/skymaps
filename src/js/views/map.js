@@ -30,11 +30,13 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'vi
 					metaModel.setMeta(data.meta);
 					_this.configureContainer(params);
 
-					var coordinatesView = new CoordinatesView({
-						container: _this.container,
-						model: _this.model,
-						size: data.meta.size
-					});
+					if (location.region != 'index') {
+						var coordinatesView = new CoordinatesView({
+							container: _this.container,
+							model: _this.model,
+							size: data.meta.size
+						});
+					}
 				}
 			});
 		},

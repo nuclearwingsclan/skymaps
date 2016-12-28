@@ -18,10 +18,9 @@ gulp.task('public', function() {
 		.pipe(gulp.dest('dist/'));
 });
 
-gulp.task('compile', ['public'], function() {
-	gulp.src('dist/assets/require.js').pipe(gulp.dest('dist/'));
-	gulp.src('dist/index.html')
-		.pipe(inject(gulp.src(['dist/templates/*.tpl', 'dist/data/*.json']), {
+gulp.task('inject', ['public'], function() {
+	return gulp.src('dist/index.html')
+		.pipe(inject(gulp.src(['dist/templates/*.tpl', 'dist/data/*.json', 'dist/js/utils/analytics.js']), {
 			removeTags: true,
 			transform: function(filePath, file) {
 				var fileName = filePath.replace(/^\/(.+\/)*(.+)\.(.+)$/, '$2');
@@ -29,9 +28,14 @@ gulp.task('compile', ['public'], function() {
 				switch (fileExt) {
 					case 'tpl': return '<script id="' + fileName + '" type="text/template">' + file.contents.toString('utf8') + '</script>';
 					case 'json': return '<script>var ' + fileName + 'EmbedData = ' + file.contents.toString('utf8') + ';</script>';
+					case 'js': return '<script>' + file.contents.toString('utf8') + '</script>';
 				}
 			}
 		})).pipe(gulp.dest('dist/'));
+});
+
+gulp.task('compile', ['public', 'inject'], function() {
+	gulp.src('dist/assets/require.js').pipe(gulp.dest('dist/'));
 	return gulp.src('dist/{js,assets}/**/*.js', { base: 'dist/js' })
 		.pipe(amdOptimize('bootstrap', { configFile: 'build/requirejsrc.js' }))
 		.pipe(concat('app.js'))
@@ -39,7 +43,7 @@ gulp.task('compile', ['public'], function() {
 });
 
 gulp.task('concat:js', function() {
-	return gulp.src('dist/**/*.js')
+	return gulp.src(['dist/**/*.js', '!dist/js/utils/*.js'])
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest('dist/'));
 });

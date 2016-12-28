@@ -2,7 +2,6 @@
 	<input class="query" name="query" placeholder="Поиск...">
 	<div class="filters">
 		<select class="region" name="region">
-			<option value="">Все регионы</option>
 			<% if (typeof(regions) !== 'undefined' && regions.length) { %>
 				<% _.each(regions, function(item) { %>
 					<option value="<%= item.id %>"><%= item.caption %></option>
@@ -18,9 +17,9 @@
 			<% } %>
 		</select>
 	</div>
-	<label class="local">
-		<input type="checkbox" name="local" value="true">
-		На этой карте
+	<label class="keywords">
+		<input type="checkbox" name="use_keywords" value="true" checked>
+		Распознавание классов
 	</label>
-	<button type="submit">Найти</button>
+	<button class="submit" type="submit">Найти</button>
 </form>
