@@ -182,6 +182,23 @@
 			"abbr": "ЖО",
 			"position": [-2, 0],
 			"features": ["flagers"]
+		},
+		"zapovednik1": {
+			"caption": "Заповедник, ур.1",
+			"abbr": "З1",
+			"position": [6, 1],
+			"features": ["station"]
+		},
+		"zapovednik2": {
+			"caption": "Заповедник, ур.2",
+			"abbr": "З2",
+			"position": [6, 3]
+		},
+		"zapovednik3": {
+			"caption": "Заповедник, ур.3",
+			"abbr": "З3",
+			"position": [6, 5],
+			"features": ["station"]
 		}
 	},
 	"holes": [
@@ -219,7 +236,9 @@
 		["labr", "labt"],
 		["laby", "labt"],
 		["labp", "labu"],
-		["labt", "labf"]
+		["labt", "labf"],
+		["zapovednik1", "zapovednik2"],
+		["zapovednik2", "zapovednik3"]
 	],
 	"streams": [
 		["index", "buhta"],
@@ -227,6 +246,7 @@
 		["index", "bezdna2"],
 		["index", "labb"],
 		["index", "labv"],
+		["index", "zapovednik1"],
 		["bezdna2", "labk"],
 		["bezdna2", "labl"],
 		["labb", "labzh"],
@@ -237,6 +257,7 @@
 		["labl", "labp"],
 		["labi", "labr"],
 		["labb", "labzh"],
-		["labzh", "labr"]
+		["labzh", "labr"],
+		["zapovednik1", "zapovednik3"]
 	]
 }
