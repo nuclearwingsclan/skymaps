@@ -867,6 +867,14 @@ button.open-navigator {
 	z-index: 10000000;
 }
 
+.briefly {
+	left: 0;
+	opacity: 0.1;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
 @media (max-width: 599px), (max-height: 599px) {
 	#map {
 		border: none;
