@@ -27,7 +27,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'vi
 							model: _this.model,
 							objects: data.objects
 						});
-					metaModel.setMeta(data.meta);
+					metaModel.setMeta(data.meta, location.region == 'index');
 					_this.configureContainer(params);
 
 					if (location.region != 'index') {

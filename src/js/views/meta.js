@@ -15,7 +15,7 @@ define(['underscore', 'jquery', 'models/meta'], function(_, $, metaModel) {
 		setCaption: function() {
 			var caption = metaModel.get('caption');
 			$caption.text(caption);
-			$title.html(caption + ' — ' + siteTitle);
+			$title.html((!metaModel.get('top') ? caption + ' — ' : '') + siteTitle);
 		},
 
 		setMapInfo: function() {
