@@ -4,3 +4,6 @@
 [submodule "data"]
 	path = data
 	url = git@github.com:nuclearwingsclan/skymaps-data.git
+[submodule "resources"]
+	path = resources
+	url = git@github.com:nuclearwingsclan/skymaps-resources.git

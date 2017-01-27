@@ -88,8 +88,15 @@ gulp.task('tiles', function() {
 		.pipe(gulp.dest('dist/maps/'));
 });
 
-gulp.task('init', ['public', 'assets', 'data', 'tiles']);
+gulp.task('resources', function() {
+	gulp.src('resources/resources.json')
+		.pipe(gulp.dest('dist/data/'));
+	return gulp.src('resources/resources/*.jpg')
+		.pipe(gulp.dest('dist/img/resources/'));
+});
+
+gulp.task('init', ['public', 'assets', 'update']);
 gulp.task('build', [/*'lint',*/ 'compile']);
-gulp.task('update', ['data', 'tiles']);
+gulp.task('update', ['data', 'tiles', 'resources']);
 //gulp.task('optimize', ['uglify', 'concat']);
 //gulp.task('production', ['build', 'optimize', 'deploy']);
