@@ -4,6 +4,7 @@ require.config({
 		'jquery': '../assets/jquery.min',
 		'jquery-ui': '../assets/jquery-ui.min',
 		'leaflet': '../assets/leaflet',
+		'leaflet.hardbounds': '../assets/leaflet.hardbounds',
 		'leaflet.label': '../assets/leaflet.label',
 		'underscore': '../assets/underscore-min',
 		'tinyscrollbar': '../assets/jquery.tinyscrollbar.min',
@@ -26,6 +27,9 @@ require.config({
 		},
 		'leaflet': {
 			exports: 'L'
+		},
+		'leaflet.hardbounds': {
+			deps: ['leaflet']
 		},
 		'leaflet.label': {
 			deps: ['leaflet']

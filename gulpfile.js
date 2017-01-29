@@ -69,6 +69,7 @@ gulp.task('assets', function() {
 			'bower_components/jquery/dist/jquery.min.js',
 			'bower_components/leaflet/dist/leaflet.js',
 			'bower_components/jquery-ui/jquery-ui.min.js',
+			'bower_components/leaflet.hardbounds/lib/leaflet.hardbounds.js',
 			'bower_components/Leaflet.label/dist/leaflet.label.js',
 			'bower_components/rrose/rrose-src.js',
 			'bower_components/rrose/leaflet.rrose.css',

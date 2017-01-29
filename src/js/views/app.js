@@ -1,4 +1,4 @@
-define(['backbone', 'leaflet', 'models/app', 'models/map', 'models/meta', 'views/map', 'models/navigator', 'views/navigator', 'views/controls', 'views/meta'], function(Backbone, L, appModel, MapModel, metaModel, MapView, NavigatorModel, NavigatorView, ControlsView, metaView) {
+define(['backbone', 'leaflet', 'leaflet.hardbounds', 'models/app', 'models/map', 'models/meta', 'views/map', 'models/navigator', 'views/navigator', 'views/controls', 'views/meta'], function(Backbone, L, hardBounds, appModel, MapModel, metaModel, MapView, NavigatorModel, NavigatorView, ControlsView, metaView) {
 	'use strict';
 
 	var AppView = Backbone.View.extend({
@@ -9,6 +9,7 @@ define(['backbone', 'leaflet', 'models/app', 'models/map', 'models/meta', 'views
 				crs: L.CRS.Simple,
 				zoomControl: false
 			});
+			this.leafletMap.addHardBounds();
 
 			var navigatorModel = new NavigatorModel({ app: this.model });
 			var nagivatorView = new NavigatorView({ model: navigatorModel });

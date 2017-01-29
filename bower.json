@@ -26,6 +26,7 @@
     "rrose": "asleepwalker/rrose#~0.1.1",
     "tinyscrollbar": "asleepwalker/tinyscrollbar#~2.1.7",
     "jquery-ui": "jqueryui#~1.11.4",
-    "clipboard": "^1.5.12"
+    "clipboard": "^1.5.12",
+    "leaflet.hardbounds": "~1.0.0"
   }
 }

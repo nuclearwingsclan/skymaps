@@ -54,15 +54,6 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'vi
 			var container = this.container;
 			container.setMaxBounds(params.bounds);
 			container.setView(params.center, 0, { reset: true, animate: false });
-
-			// Weird stuff to avaid panning out of bounds
-			var hardBoundsFunc = function() {
-				container.panInsideBounds(params.bounds, { animate: false });
-			};
-			container.on('drag', hardBoundsFunc);
-			this.listenTo(this.model, 'change:location', function() {
-				container.off('drag', hardBoundsFunc);
-			});
 		},
 		destroy: function() {
 			this.remove();
