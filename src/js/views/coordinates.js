@@ -14,7 +14,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			options.container.on('mousemove', _.bind(this.update, this));
 			options.container.on('mouseout mouseleave', _.bind(this.clean, this));
 
-			this.listenTo(this.model, 'change:location', this.destroy);
+			this.listenTo(this.model, 'destroy', this.destroy);
 		},
 
 		update: function(event) {

@@ -4,7 +4,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	return Backbone.View.extend({
 		initialize: function(options) {
 			var tiles = L.tileLayer('/maps/' + options.location.region + '/' + options.location.level + '/tiles/{x}-{y}.png', {
-				bounds: options.params.bounds,
+				bounds: options.meta.bounds,
 				maxZoom: 0,
 				minZoom: 0,
 				continuousWorld: true,
@@ -13,7 +13,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 
 			this.options = options;
 			this.tilesLayer = tiles;
-			this.listenTo(this.model, 'change:location', this.destroy);
+			this.listenTo(this.model, 'destroy', this.destroy);
 		},
 		destroy: function() {
 			this.options.container.removeLayer(this.tilesLayer);

@@ -91,7 +91,7 @@ define([
 
 			this.options = options;
 			this.objectsLayer = objects;
-			this.listenTo(this.model, 'change:location', this.destroy);
+			this.listenTo(this.model, 'destroy', this.destroy);
 		},
 		destroy: function() {
 			this.options.container.removeLayer(this.objectsLayer);

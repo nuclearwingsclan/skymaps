@@ -4,56 +4,46 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'vi
 	return Backbone.View.extend({
 		initialize: function(options) {
 			this.container = options.container;
-			this.load(this.model.get('location'));
-
-			this.listenTo(this.model, 'change:location', this.destroy);
+			this.location = options.location;
+			this.listenTo(this.model, 'change:meta', this.configure);
+			this.listenTo(this.model, 'change:objects', this.renderObjects);
 		},
-		load: function(location) {
-			var _this = this;
-			$.ajax({
-				dataType: 'json',
-				url: '/maps/' + location.region + '/' + location.level + '/mapdata.json',
-				success: function(data) {
-					var params = _this.processMapParams(data.meta),
-						tiles = new TilesView({
-							container: _this.container,
-							location: location,
-							model: _this.model,
-							params: params
-						}),
-						objects = new ObjectsView({
-							container: _this.container,
-							meta: data.meta,
-							model: _this.model,
-							objects: data.objects
-						});
-					metaModel.setMeta(data.meta, location.region == 'index');
-					_this.configureContainer(params);
-
-					if (location.region != 'index') {
-						var coordinatesView = new CoordinatesView({
-							container: _this.container,
-							model: _this.model,
-							size: data.meta.size
-						});
-					}
-				}
+		configure: function() {
+			var meta = this.meta = this.model.get('meta');
+			this.createTilesLayer(meta);
+			this.configureContainer(meta);
+			metaModel.setMeta(meta, location);
+			this.configureCoordinates(meta);
+		},
+		createTilesLayer: function(meta) {
+			return new TilesView({
+				container: this.container,
+				location: this.location,
+				model: this.model,
+				meta: this.meta
 			});
 		},
-		processMapParams: function(meta) {
-			var width = meta.size.width,
-				height = meta.size.height,
-				center = this.model.get('center') || meta.center || { x: width / 2, y: height / 2 };
-
-			return {
-				bounds: L.latLngBounds([[-height, width], [0, 0]]),
-				center: [ -center.y, center.x ]
-			};
+		renderObjects: function() {
+			var objects = this.model.get('objects');
+			return new ObjectsView({
+				container: this.container,
+				meta: this.meta,
+				model: this.model,
+				objects: objects
+			});
 		},
-		configureContainer: function(params) {
-			var container = this.container;
-			container.setMaxBounds(params.bounds);
-			container.setView(params.center, 0, { reset: true, animate: false });
+		configureCoordinates: function(meta) {
+			if (location.region != 'index') {
+				var coordinatesView = new CoordinatesView({
+					container: this.container,
+					model: this.model,
+					size: meta.size
+				});
+			}
+		},
+		configureContainer: function(meta) {
+			this.container.setMaxBounds(meta.bounds);
+			this.container.setView(meta.prjCenter, 0, { reset: true, animate: false });
 		},
 		destroy: function() {
 			this.remove();
