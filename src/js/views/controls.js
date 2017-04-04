@@ -21,7 +21,8 @@ define(function(require) {
 
 	return Backbone.View.extend({
 		initialize: function(options) {
-			this.app = options.app;
+			this.appModel = options.app;
+			this.metaModel = options.meta;
 
 			$searchBtn.click(_.bind(this.openSearchDialog, this)).hint($searchBtn.data('title'));
 			$farmBtn.click(_.bind(this.openFarmDialog, this)).hint($farmBtn.data('title'));
@@ -31,13 +32,13 @@ define(function(require) {
 			$navigatorOverlay.on('click mousedown touchdown', _.bind(this.closeNavigator, this));
 
 			$editBtn.hint($editBtn.data('title'));
-			this.listenTo(this.app, 'change:location', this.updateEditorLink);
+			this.listenTo(this.appModel, 'change:location', this.updateEditorLink);
 
-			this.listenTo(this.app, 'change:location', this.turnControls);
+			this.listenTo(this.appModel, 'change:location', this.turnControls);
 		},
 
 		turnControls: function() {
-			var location = this.app.get('location');
+			var location = this.appModel.get('location');
 			if (location.region == 'index') {
 				$container.hide();
 			} else {
@@ -47,7 +48,7 @@ define(function(require) {
 
 		openSearchDialog: function() {
 			var searchModel = new SearchModel({
-				app: this.app
+				app: this.appModel
 			});
 			var searchView = new SearchView({
 				caption: $searchBtn.data('title'),
@@ -57,7 +58,8 @@ define(function(require) {
 
 		openFarmDialog: function() {
 			var farmView = new FarmView({
-				caption: $farmBtn.data('title')
+				caption: $farmBtn.data('title'),
+				drop: this.metaModel.get('drop')
 			});
 		},
 
@@ -76,7 +78,7 @@ define(function(require) {
 		},
 
 		updateEditorLink: function() {
-			var location = this.app.get('location');
+			var location = this.appModel.get('location');
 			$editBtn.attr('onclick', 'window.open("/editor/?map=' + location.region + '/' + location.level + '")');
 		}	
 	});

@@ -7,9 +7,9 @@ define(function(require) {
 	var MapView = require('views/map');
 	var NavigatorModel = require('models/navigator');
 	var NavigatorView = require('views/navigator');
-	var ControlsView = require('views/controls');
 	var MetaModel = require('models/meta');
 	var MetaView = require('views/meta');
+	var ControlsView = require('views/controls');
 	require('leaflet.hardbounds');
 
 	return Backbone.View.extend({
@@ -24,9 +24,9 @@ define(function(require) {
 
 			var navigatorModel = new NavigatorModel({ app: this.model });
 			var nagivatorView = new NavigatorView({ model: navigatorModel });
-			var controlsView = new ControlsView({ app: this.model });
 			var metaModel = this.metaModel = new MetaModel();
 			var metaView = new MetaView({ model: metaModel });
+			var controlsView = new ControlsView({ app: this.model, meta: metaModel });
 
 			this.listenTo(this.model, 'change:location', this.open);
 			this.listenTo(this.model, 'change:center', this.center);

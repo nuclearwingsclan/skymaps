@@ -8,7 +8,7 @@ define(function(require) {
 
 	return Backbone.View.extend({
 		initialize: function(params) {
-			var drop = this.processDropList(metaModel.get('drop'));
+			var drop = this.processDropList(params.drop);
 			this.buildDialog(params.caption, drop);
 		},
 		dialogContent: function(data) {
