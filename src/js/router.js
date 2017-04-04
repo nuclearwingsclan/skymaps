@@ -9,16 +9,20 @@ define(['backbone'], function(Backbone) {
 			Backbone.history.start({ pushState: true, root: '/' });
 			this.model.on('change:location', this.navigate, this);
 		},
+
 		routes: {
 			'': 'index',
 			':region/:map/': 'loadMap'
 		},
+
 		index: function() {
 			this.loadMap('index', 'index');
 		},
+
 		loadMap: function(region, level) {
 			this.model.load(region, level);
 		},
+
 		navigate: function() {
 			var location = this.model.get('location');
 			if (location.region != 'index') {
@@ -27,6 +31,7 @@ define(['backbone'], function(Backbone) {
 				Backbone.history.navigate('/');
 			}
 		},
+
 		enableHistoryBtns: function() {
 			if (window.history) {
 				$('#map .caption > button.prev').click(function() {

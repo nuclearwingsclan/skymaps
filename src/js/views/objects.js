@@ -68,6 +68,7 @@ define(function(require) {
 			this.objectsLayer = objects;
 			this.listenTo(this.model, 'destroy', this.destroy);
 		},
+
 		destroy: function() {
 			this.options.container.removeLayer(this.objectsLayer);
 			this.remove();

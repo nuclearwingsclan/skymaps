@@ -21,6 +21,7 @@ define(function(require) {
 			this.listenTo(this.model, 'change:region', this.destroy);
 			this.options = options;
 		},
+
 		build: function(data, model) {
 			var holes = [];
 			var locations = [];
@@ -68,9 +69,11 @@ define(function(require) {
 
 			return L.featureGroup([holesLayer, locationsLayer, streamsLayer]).addTo(this.options.navigator);
 		},
+
 		calculateMarkerPosition: function(position) {
 			return [-position[1] * 20, position[0] * 20];
 		},
+
 		makeNavigatorMarker: function(position, caption, featuresClass) {
 			var marker = L.marker(this.calculateMarkerPosition(position));
 			marker.setIcon(this.markerIcon);
@@ -82,10 +85,12 @@ define(function(require) {
 			});
 			return marker;
 		},
+
 		markerIcon: L.icon({
 			iconUrl: '/i/spacer.svg',
 			iconSize: [1, 1]
 		}),
+
 		setBounds: function(navigator, regionLayer) {
 			var bounds = this.regionLayer.getLayers()[1].getBounds();
 
@@ -98,6 +103,7 @@ define(function(require) {
 			this.options.navigator.setMaxBounds(bounds);
 			this.options.navigator.setView([0, 0], 0);
 		},
+
 		getCenter: function() {
 			var level = this.model.get('level');
 
@@ -109,6 +115,7 @@ define(function(require) {
 				return [0, 0];
 			}
 		},
+
 		destroy: function() {
 			this.options.navigator.removeLayer(this.regionLayer);
 			this.remove();

@@ -8,6 +8,7 @@ define(function(require) {
 
 	return FlagView.extend({
 		hintText: 'Дерево',
+
 		markerIcon: L.icon({
 			iconUrl: '/img/objects/tree.svg',
 			iconSize: [46, 46],

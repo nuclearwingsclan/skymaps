@@ -11,6 +11,7 @@ define(['backbone'], function(Backbone) {
 				center: center
 			});
 		},
+
 		center: function(center) {
 			this.set('center', center);
 		}

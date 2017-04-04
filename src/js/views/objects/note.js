@@ -16,13 +16,16 @@ define(function(require) {
 
 			this.params = params;
 		},
+
 		hintText: 'Подсказка',
+
 		markerIcon: L.icon({
 			iconUrl: '/img/objects/note.svg',
 			iconSize: [50, 50],
 			iconAnchor: [5, 5],
 			popupAnchor:  [17, 0]
 		}),
+
 		popup: function(data) {
 			return new L.Rrose({
 				autoPan: false,
@@ -32,15 +35,18 @@ define(function(require) {
 				minWidth: 130
 			}).setContent(this.popupContent(data));
 		},
+
 		updatePopup: function() {
 			var popup = this.params.object.getPopup();
 			if (popup._isOpen) {
 				popup.updateDirection();
 			}
 		},
+
 		popupContent: function(data) {
 			return _.template($('#note-popup').html())(data);
 		},
+
 		onClick: function() {
 			this.params.object.openPopup();
 		}

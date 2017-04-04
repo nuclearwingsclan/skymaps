@@ -8,6 +8,7 @@ define(function(require) {
 
 	return FlagView.extend({
 		hintText: 'Барьер (вешает сеть в корму)',
+
 		markerIcon: L.icon({
 			iconUrl: '/img/objects/barrier.svg',
 			iconSize: [20, 20],

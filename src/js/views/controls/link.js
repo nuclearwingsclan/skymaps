@@ -11,9 +11,11 @@ define(['jquery', 'clipboard', 'views/dialog'], function($, Clipboard, DialogVie
 				_this.buildDialog(params.caption, shortlink);
 			});
 		},
+
 		dialogContent: function(data) {
 			return _.template($('#link-dialog').html())(data);
 		},
+
 		buildDialog: function(caption, shortlink) {
 			var dialog = new DialogView(),
 				$body = $(this.dialogContent({ href: shortlink }));
@@ -26,6 +28,7 @@ define(['jquery', 'clipboard', 'views/dialog'], function($, Clipboard, DialogVie
 				.setContent($body)
 				.open();
 		},
+
 		activateClipboard: function($href) {
 			var clipboard = new Clipboard($href[0]);
 			clipboard.on('success', function() {

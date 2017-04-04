@@ -10,12 +10,14 @@ define(function(require) {
 		hintText: function(params) {
 			return 'Квест «' + params.data.caption + '»';
 		},
+
 		markerIcon: L.icon({
 			iconUrl: '/img/objects/quest.svg',
 			iconSize: [52, 52],
 			iconAnchor: [12, 12],
 			popupAnchor:  [17, 0]
 		}),
+
 		popupContent: function(data) {
 			return _.template($('#quest-popup').html())(data);
 		}

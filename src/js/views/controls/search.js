@@ -11,6 +11,7 @@ define(function(require) {
 			this.buildDialog(params.caption);
 			this.model = params.model;
 		},
+
 		buildDialog: function(caption) {
 			var _this = this;
 			var dialog = this.dialog = new DialogView();
@@ -22,6 +23,7 @@ define(function(require) {
 				.setContent($body)
 				.open();
 		},
+
 		buildForm: function() {
 			var _this = this;
 			var $form = this.$form = $(_.template($('#search-dialog-form').html())({
@@ -45,11 +47,13 @@ define(function(require) {
 
 			return $form.appendTo(this.$body);
 		},
+
 		validateForm: function() {
 			var query = this.$form.find('input.query').val();
 			var type = this.$form.find('select.class').val();
 			this.$form.find('button.submit').prop('disabled', !(query || type));
 		},
+
 		getResults: function(request) {
 			var _this = this;
 			this.$form.find('button.submit').prop('disabled', true);
@@ -78,9 +82,11 @@ define(function(require) {
 				$results.find('button.back').click(_.bind(_this.closeResults, _this));
 			});
 		},
+
 		buildResults: function(data) {
 			return _.template($('#search-dialog-results').html())(data);
 		},
+
 		closeResults: function() {
 			this.$body.removeClass('list');
 			this.$results.remove();

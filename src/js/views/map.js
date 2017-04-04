@@ -6,22 +6,24 @@ define(function(require) {
 	var _ = require('underscore');
 	var TilesView = require('views/tiles');
 	var ObjectsView = require('views/objects');
-	var CoordinatesView = require('views/coordinates');
 
 	return Backbone.View.extend({
 		initialize: function(options) {
 			this.appModel = options.app;
 			this.container = options.container;
+			this.coordinates = options.coordinates;
 			this.location = options.location;
 			this.listenTo(this.model, 'change:meta', this.configure);
 			this.listenTo(this.model, 'change:objects', this.renderObjects);
 		},
+
 		configure: function() {
 			var meta = this.meta = this.model.get('meta');
 			this.createTilesLayer(meta);
 			this.configureContainer(meta);
 			this.configureCoordinates(meta);
 		},
+
 		createTilesLayer: function(meta) {
 			return new TilesView({
 				container: this.container,
@@ -30,6 +32,7 @@ define(function(require) {
 				meta: this.meta
 			});
 		},
+
 		renderObjects: function() {
 			var objects = this.model.get('objects');
 			return new ObjectsView({
@@ -40,19 +43,21 @@ define(function(require) {
 				objects: objects
 			});
 		},
+
 		configureCoordinates: function(meta) {
-			if (location.region != 'index') {
-				var coordinatesView = new CoordinatesView({
-					container: this.container,
-					model: this.model,
-					size: meta.size
+			if (this.location.region != 'index') {
+				this.coordinates.connect({
+					size: meta.size,
+					model: this.model
 				});
 			}
 		},
+
 		configureContainer: function(meta) {
 			this.container.setMaxBounds(meta.bounds);
 			this.container.setView(meta.prjCenter, 0, { reset: true, animate: false });
 		},
+		
 		destroy: function() {
 			this.remove();
 		}

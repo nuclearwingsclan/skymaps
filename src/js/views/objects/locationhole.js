@@ -10,6 +10,7 @@ define(function(require) {
 		hintText: function(params) {
 			return 'Регион «' + params.data.caption + '»';
 		},
+
 		markerIcon: L.icon({
 			iconUrl: '/img/objects/locationhole.svg',
 			iconSize: [100, 100],

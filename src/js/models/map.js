@@ -12,6 +12,7 @@ define(['backbone'], function(Backbone) {
 			this.listenTo(this, 'change:meta', this.setMeta);
 			this.listenTo(appModel, 'change:location', this.destroy);
 		},
+
 		load: function(location) {
 			var _this = this;
 			$.ajax({
@@ -23,6 +24,7 @@ define(['backbone'], function(Backbone) {
 				}
 			});
 		},
+
 		processMapMeta: function(meta) {
 			var width = meta.size.width,
 				height = meta.size.height,
@@ -33,6 +35,7 @@ define(['backbone'], function(Backbone) {
 				prjCenter: [ -center.y, center.x ]
 			};
 		},
+
 		setMeta: function() {
 			var meta = this.get('meta');
 			var location = this.appModel.get('location');

@@ -8,9 +8,11 @@ define(function(require) {
 
 	return HoleView.extend({
 		hintText: 'Червиный вихрь на эту же карту',
+
 		onClick: function() {
 			this.params.appModel.center(this.params.data.goto);
 		},
+
 		onMouseOver: function() {
 			this.holeArrow = L.polyline([
 					new L.LatLng(this.params.position[1] - 17, this.params.position[0] + 17),
@@ -23,6 +25,7 @@ define(function(require) {
 				})
 				.addTo(this.params.container);
 		},
+
 		onMouseOut: function(params) {
 			if (typeof this.holeArrow != 'undefined') {
 				this.params.container.removeLayer(this.holeArrow);

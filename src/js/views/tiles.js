@@ -15,6 +15,7 @@ define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 			this.tilesLayer = tiles;
 			this.listenTo(this.model, 'destroy', this.destroy);
 		},
+
 		destroy: function() {
 			this.options.container.removeLayer(this.tilesLayer);
 			this.remove();

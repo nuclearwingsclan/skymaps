@@ -11,9 +11,11 @@ define(function(require) {
 			var drop = this.processDropList(params.drop);
 			this.buildDialog(params.caption, drop);
 		},
+
 		dialogContent: function(data) {
 			return _.template($('#farm-dialog').html())(data);
 		},
+
 		buildDialog: function(caption, drop) {
 			var dialog = new DialogView(),
 				$body = $(this.dialogContent({ drop: drop }));
@@ -27,6 +29,7 @@ define(function(require) {
 				.setContent($body)
 				.open();
 		},
+
 		processDropList: function(drop) {
 			if (typeof drop == 'undefined' || !drop.length) {
 				return [];

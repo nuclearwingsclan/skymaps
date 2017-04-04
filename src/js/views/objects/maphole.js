@@ -10,11 +10,13 @@ define(function(require) {
 		hintText: function(params) {
 			return '«Червиный» вихрь в ' + params.data.caption;
 		},
+
 		onClick: function() {
 			var data = this.params.data;
 			this.params.appModel.load(data.region, data.map, data.goto);
 			this.params.object.fire('mouseout');
 		},
+
 		onMouseOver: function() {
 			var minimapUrl = '/maps/' + this.params.data.region + '/' + this.params.data.map + '/minimap.jpg',
 				minimapScale = 8,

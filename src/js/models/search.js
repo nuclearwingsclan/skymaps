@@ -5,9 +5,11 @@ define(['backbone'], function(Backbone) {
 		initialize: function(options) {
 			this.appModel = options.app;
 		},
+
 		open: function(region, level, center) {
 			this.appModel.load(region, level, center);
 		},
+
 		getRegion: function() {
 			return this.appModel.get('location').region;
 		}

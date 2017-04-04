@@ -15,18 +15,22 @@ define(function(require) {
 
 			this.params = params;
 		},
+
 		hintText: function(params) {
 			return (!/платформа/i.test(params.data.caption) ? 'Платформа ' : '') + '«' + params.data.caption + '»';
 		},
+
 		markerIcon: function(size) {
 			return L.icon({
 				iconUrl: '/img/objects/station.svg',
 				iconSize: [size, size]
 			});
 		},
+
 		dialogContent: function(data) {
 			return _.template($('#station-dialog').html())(data);
 		},
+
 		onClick: function() {
 			var dialog = new DialogView(this.params.data.caption, $body),
 				$body = $(this.dialogContent(this.params.data)),

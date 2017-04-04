@@ -25,6 +25,7 @@ define(function(require) {
 
 			this.params = params;
 		},
+
 		markerIcon: L.icon({
 			iconUrl: '/img/objects/boss.svg',
 			iconSize: [27, 27],
