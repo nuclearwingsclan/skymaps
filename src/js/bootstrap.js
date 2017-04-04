@@ -1,6 +1,8 @@
-require(['backbone', 'models/app', 'views/app', 'router'], function(Backbone, appModel, appView, router) {
+require(['models/app', 'views/app', 'router'], function(AppModel, AppView, Router) {
 	'use strict';
 
-	Backbone.history.start({ pushState: true, root: '/' });
+	var appModel = new AppModel();
+	var appView = new AppView({ model: appModel });
+	var router = new Router({ model: appModel });
 
 });

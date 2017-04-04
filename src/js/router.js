@@ -1,11 +1,13 @@
-define(['backbone', 'models/app'], function(Backbone, appModel) {
+define(['backbone'], function(Backbone) {
 	'use strict';
 
-	var Router = Backbone.Router.extend({
-		initialize: function(appModel) {
-			this.appModel = appModel;
-			this.enableHistory();
-			appModel.on('change:location', this.navigate, this);
+	return Backbone.Router.extend({
+		initialize: function(options) {
+			this.model = options.model;
+			this.enableHistoryBtns();
+
+			Backbone.history.start({ pushState: true, root: '/' });
+			this.model.on('change:location', this.navigate, this);
 		},
 		routes: {
 			'': 'index',
@@ -15,26 +17,28 @@ define(['backbone', 'models/app'], function(Backbone, appModel) {
 			this.loadMap('index', 'index');
 		},
 		loadMap: function(region, level) {
-			this.appModel.load(region, level);
+			this.model.load(region, level);
 		},
 		navigate: function() {
-			var location = this.appModel.get('location');
+			var location = this.model.get('location');
 			if (location.region != 'index') {
 				Backbone.history.navigate(location.region + '/' + location.level + '/');
 			} else {
 				Backbone.history.navigate('/');
 			}
 		},
-		enableHistory: function() {
-			$('#map .caption > button.prev').click(function() {
-				window.history.back();
-			});
-			$('#map .caption > button.next').click(function() {
-				window.history.forward();
-			});
+		enableHistoryBtns: function() {
+			if (window.history) {
+				$('#map .caption > button.prev').click(function() {
+					window.history.back();
+				});
+				$('#map .caption > button.next').click(function() {
+					window.history.forward();
+				});
+			} else {
+				$('#map .caption').find('button.prev, button.next').hide();
+			}
 		}
 	});
-
-	return new Router(appModel);
 
 });

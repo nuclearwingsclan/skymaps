@@ -1,5 +1,12 @@
-define(['underscore', 'backbone', 'leaflet', 'jquery-ui', 'views/scheme', 'collections/regions'], function(_, Backbone, L, jQueryUI, SchemeView, regions) {
+define(function(require) {
 	'use strict';
+
+	var Backbone = require('backbone');
+	var L = require('leaflet');
+	var _ = require('underscore');
+	var SchemeView = require('views/scheme');
+	var regions = require('collections/regions');
+	require('jquery-ui')
 
 	return Backbone.View.extend({
 		el: $('#navigator'),

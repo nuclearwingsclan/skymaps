@@ -1,53 +1,29 @@
-define([
-	'underscore', 'backbone', 'leaflet',
-	'views/objects/hole',
-	'views/objects/wormhole',
-	'views/objects/maphole',
-	'views/objects/locationhole',
-	'views/objects/instance',
-	'views/objects/boss',
-	'views/objects/note',
-	'views/objects/quest',
-	'views/objects/flager',
-	'views/objects/master',
-	'views/objects/factory',
-	'views/objects/fish',
-	'views/objects/tree',
-	'views/objects/npc',
-	'views/objects/beacon',
-	'views/objects/flag',
-	'views/objects/barrier',
-	'views/objects/stream',
-	'views/objects/station',
-	'views/objects/city',
-	'views/objects/instances',
-	'views/objects/mobzone'
-], function(
-	_, Backbone, L,
-	HoleView,
-	WormholeView,
-	MapholeView,
-	LocationholeView,
-	InstanceView,
-	BossView,
-	NoteView,
-	QuestView,
-	FlagerView,
-	MasterView,
-	FactoryView,
-	FishView,
-	TreeView,
-	NpcView,
-	BeaconView,
-	FlagView,
-	BarrierView,
-	StreamView,
-	StationView,
-	CityView,
-	InstancesView,
-	MobzoneView
-) {
+define(function(require) {
 	'use strict';
+
+	var Backbone = require('backbone');
+	var L = require('leaflet');
+	var _ = require('underscore');
+	var HoleView = require('views/objects/hole');
+	var WormholeView = require('views/objects/wormhole');
+	var MapholeView = require('views/objects/maphole');
+	var LocationholeView = require('views/objects/locationhole');
+	var InstanceView = require('views/objects/instance');
+	var BossView = require('views/objects/boss');
+	var NoteView = require('views/objects/note');
+	var QuestView = require('views/objects/quest');
+	var FlagerView = require('views/objects/flager');
+	var MasterView = require('views/objects/master');
+	var FactoryView = require('views/objects/factory');
+	var FishView = require('views/objects/fish');
+	var TreeView = require('views/objects/tree');
+	var NpcView = require('views/objects/npc');
+	var BeaconView = require('views/objects/beacon');
+	var FlagView = require('views/objects/flag');
+	var BarrierView = require('views/objects/barrier');
+	var StationView = require('views/objects/station');
+	var CityView = require('views/objects/city');
+	var InstancesView = require('views/objects/instances');
 
 	return Backbone.View.extend({
 		initialize: function(options) {
@@ -55,6 +31,7 @@ define([
 			var objects = L.geoJson(options.objects, {
 				onEachFeature: function(item, object) {
 					var params = {
+						appModel: options.appModel,
 						container: options.container,
 						data: item.properties,
 						meta: options.meta,
@@ -80,11 +57,9 @@ define([
 						case 'beacon': new BeaconView(params); break;
 						case 'flag': new FlagView(params); break;
 						case 'barrier': new BarrierView(params); break;
-						//case 'stream': new StreamView(params); break;
 						case 'station': new StationView(params); break;
 						case 'city': new CityView(params); break;
 						case 'instances': new InstancesView(params); break;
-						//case 'mobzone': new MobzoneView(params); break;
 					}
 				}
 			}).addTo(options.container);

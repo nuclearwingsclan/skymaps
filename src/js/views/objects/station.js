@@ -1,5 +1,11 @@
-define(['underscore', 'backbone', 'leaflet', 'models/app', 'views/dialog', 'collections/locations'], function(_, Backbone, L, appModel, DialogView, locations) {
+define(function(require) {
 	'use strict';
+
+	var Backbone = require('backbone');
+	var L = require('leaflet');
+	var _ = require('underscore');
+	var DialogView = require('views/dialog');
+	var locations = require('collections/locations');
 
 	return Backbone.View.extend({
 		initialize: function(params) {
@@ -23,7 +29,8 @@ define(['underscore', 'backbone', 'leaflet', 'models/app', 'views/dialog', 'coll
 		},
 		onClick: function() {
 			var dialog = new DialogView(this.params.data.caption, $body),
-				$body = $(this.dialogContent(this.params.data));
+				$body = $(this.dialogContent(this.params.data)),
+				appModel = this.params.appModel;
 
 			if (typeof(this.params.data.list) !== 'undefined') {
 				var $list = $body.find('.streams-list');

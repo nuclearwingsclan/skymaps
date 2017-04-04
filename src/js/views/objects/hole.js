@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'leaflet', 'models/app'], function(_, Backbone, L, appModel) {
+define(['underscore', 'backbone', 'leaflet'], function(_, Backbone, L) {
 	'use strict';
 
 	return Backbone.View.extend({
@@ -24,7 +24,7 @@ define(['underscore', 'backbone', 'leaflet', 'models/app'], function(_, Backbone
 		}),
 		onClick: function() {
 			var data = this.params.data;
-			appModel.load(data.region, data.map, data.goto);
+			this.params.appModel.load(data.region, data.map, data.goto);
 		}
 	});
 

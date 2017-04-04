@@ -1,7 +1,7 @@
 define(['backbone'], function(Backbone) {
 	'use strict';
 
-	var MetaModel = Backbone.Model.extend({
+	return Backbone.Model.extend({
 		setMeta: function(meta, location) {
 			this.set({
 				caption: meta.caption,
@@ -14,7 +14,5 @@ define(['backbone'], function(Backbone) {
 			});
 		}
 	});
-
-	return new MetaModel();
 
 });

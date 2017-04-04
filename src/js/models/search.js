@@ -1,12 +1,15 @@
-define(['backbone', 'models/app'], function(Backbone, appModel) {
+define(['backbone'], function(Backbone) {
 	'use strict';
 
 	return Backbone.Model.extend({
+		initialize: function(options) {
+			this.appModel = options.app;
+		},
 		open: function(region, level, center) {
-			appModel.load(region, level, center);
+			this.appModel.load(region, level, center);
 		},
 		getRegion: function() {
-			return appModel.get('location').region;
+			return this.appModel.get('location').region;
 		}
 	});
 

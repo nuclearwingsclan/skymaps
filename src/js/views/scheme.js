@@ -1,5 +1,10 @@
-define(['underscore', 'backbone', 'leaflet', 'collections/locations'], function(_, Backbone, L, locations) {
+define(function(require) {
 	'use strict';
+
+	var Backbone = require('backbone');
+	var L = require('leaflet');
+	var _ = require('underscore');
+	var locations = require('collections/locations');
 
 	return Backbone.View.extend({
 		initialize: function(options) {

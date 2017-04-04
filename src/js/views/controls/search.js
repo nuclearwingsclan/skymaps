@@ -1,5 +1,10 @@
-define(['jquery', 'views/dialog', 'collections/regions', 'collections/objects'], function($, DialogView, regionsCollection, objectsCollection) {
+define(function(require) {
 	'use strict';
+
+	var $ = require('jquery');
+	var DialogView = require('views/dialog');
+	var regionsCollection = require('collections/regions');
+	var objectsCollection = require('collections/objects');
 
 	return Backbone.View.extend({
 		initialize: function(params) {

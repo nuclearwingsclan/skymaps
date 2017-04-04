@@ -1,5 +1,10 @@
-define(['underscore', 'backbone', 'leaflet', 'views/objects/flag'], function(_, Backbone, L, FlagView) {
+define(function(require) {
 	'use strict';
+
+	var Backbone = require('backbone');
+	var L = require('leaflet');
+	var _ = require('underscore');
+	var FlagView = require('views/objects/flag');
 
 	return FlagView.extend({
 		hintText: 'Дерево',

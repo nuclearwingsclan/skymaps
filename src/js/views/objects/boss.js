@@ -1,5 +1,12 @@
-define(['underscore', 'backbone', 'leaflet', 'collections/bosses', 'leaflet.label', 'views/hint'], function(_, Backbone, L, bosses) {
+define(function(require) {
 	'use strict';
+
+	var Backbone = require('backbone');
+	var L = require('leaflet');
+	var _ = require('underscore');
+	var bosses = require('collections/bosses');
+	require('leaflet.label');
+	require('views/hint');
 
 	return Backbone.View.extend({
 		initialize: function(params) {

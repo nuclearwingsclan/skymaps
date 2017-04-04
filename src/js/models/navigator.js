@@ -1,22 +1,23 @@
-define(['backbone', 'models/app'], function(Backbone, appModel) {
+define(['backbone'], function(Backbone) {
 	'use strict';
 
 	return Backbone.Model.extend({
 		initialize: function(options) {
+			this.appModel = options.app;
 			this.updateLocation();
-			this.listenTo(appModel, 'change:location', this.updateLocation);
+			this.listenTo(this.appModel, 'change:location', this.updateLocation);
 		},
 		updateLocation: function() {
-			var location = appModel.get('location');
+			var location = this.appModel.get('location');
 			if (location) {
 				this.set(location);
 			}
 		},
 		open: function(level) {
-			appModel.load(this.get('region'), level);
+			this.appModel.load(this.get('region'), level);
 		},
 		home: function() {
-			appModel.load('index', 'index');
+			this.appModel.load('index', 'index');
 		}
 	});
 

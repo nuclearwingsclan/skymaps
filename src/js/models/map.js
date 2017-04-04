@@ -3,11 +3,14 @@ define(['backbone'], function(Backbone) {
 
 	return Backbone.Model.extend({
 		initialize: function(options) {
-			var app = this.app = options.app;
+			var appModel = this.appModel = options.app;
+			this.metaModel = options.metaModel;
+
 			var location = this.location = options.location;
 			this.load(location);
 
-			this.listenTo(app, 'change:location', this.destroy);
+			this.listenTo(this, 'change:meta', this.setMeta);
+			this.listenTo(appModel, 'change:location', this.destroy);
 		},
 		load: function(location) {
 			var _this = this;
@@ -23,12 +26,17 @@ define(['backbone'], function(Backbone) {
 		processMapMeta: function(meta) {
 			var width = meta.size.width,
 				height = meta.size.height,
-				center = this.app.get('center') || meta.center || { x: width / 2, y: height / 2 };
+				center = this.appModel.get('center') || meta.center || { x: width / 2, y: height / 2 };
 
 			return {
 				bounds: L.latLngBounds([[-height, width], [0, 0]]),
 				prjCenter: [ -center.y, center.x ]
 			};
+		},
+		setMeta: function() {
+			var meta = this.get('meta');
+			var location = this.appModel.get('location');
+			this.metaModel.setMeta(meta, location);
 		}
 	});
 

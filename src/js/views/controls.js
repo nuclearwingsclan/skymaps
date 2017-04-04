@@ -1,5 +1,14 @@
-define(['underscore', 'backbone', 'jquery', 'models/search', 'views/controls/search', 'views/controls/farm', 'views/controls/link', 'views/hint'], function(_, Backbone, $, SearchModel, SearchView, FarmView, LinkView, hintView) {
+define(function(require) {
 	'use strict';
+
+	var Backbone = require('backbone');
+	var _ = require('underscore');
+	var $ = require('jquery');
+	var SearchModel = require('models/search');
+	var SearchView = require('views/controls/search');
+	var FarmView = require('views/controls/farm');
+	var LinkView = require('views/controls/link');
+	var hintView = require('views/hint');
 
 	var $container = $('#map > .controls');
 	var $searchBtn = $('button.search', $container);
@@ -37,7 +46,9 @@ define(['underscore', 'backbone', 'jquery', 'models/search', 'views/controls/sea
 		},
 
 		openSearchDialog: function() {
-			var searchModel = new SearchModel();
+			var searchModel = new SearchModel({
+				app: this.app
+			});
 			var searchView = new SearchView({
 				caption: $searchBtn.data('title'),
 				model: searchModel

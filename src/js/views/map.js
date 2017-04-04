@@ -1,8 +1,16 @@
-define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'views/meta', 'views/coordinates', 'models/meta'], function(_, Backbone, L, TilesView, ObjectsView, metaView, CoordinatesView, metaModel) {
+define(function(require) {
 	'use strict';
+
+	var Backbone = require('backbone');
+	var L = require('leaflet');
+	var _ = require('underscore');
+	var TilesView = require('views/tiles');
+	var ObjectsView = require('views/objects');
+	var CoordinatesView = require('views/coordinates');
 
 	return Backbone.View.extend({
 		initialize: function(options) {
+			this.appModel = options.app;
 			this.container = options.container;
 			this.location = options.location;
 			this.listenTo(this.model, 'change:meta', this.configure);
@@ -12,7 +20,6 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'vi
 			var meta = this.meta = this.model.get('meta');
 			this.createTilesLayer(meta);
 			this.configureContainer(meta);
-			metaModel.setMeta(meta, location);
 			this.configureCoordinates(meta);
 		},
 		createTilesLayer: function(meta) {
@@ -28,6 +35,7 @@ define(['underscore', 'backbone', 'leaflet', 'views/tiles', 'views/objects', 'vi
 			return new ObjectsView({
 				container: this.container,
 				meta: this.meta,
+				appModel: this.appModel,
 				model: this.model,
 				objects: objects
 			});

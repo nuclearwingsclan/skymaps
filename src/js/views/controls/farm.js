@@ -1,5 +1,10 @@
-define(['jquery', 'views/dialog', 'models/meta', 'collections/resources'], function($, DialogView, metaModel, resourcesCollection) {
+define(function(require) {
 	'use strict';
+
+	var $ = require('jquery');
+	var DialogView = require('views/dialog');
+	var metaModel = require('models/meta');
+	var resourcesCollection = require('collections/resources');
 
 	return Backbone.View.extend({
 		initialize: function(params) {

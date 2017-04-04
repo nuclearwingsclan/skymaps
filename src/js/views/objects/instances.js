@@ -1,5 +1,10 @@
-define(['underscore', 'backbone', 'leaflet', 'views/objects/station'], function(_, Backbone, L, StationView) {
+define(function(require) {
 	'use strict';
+
+	var Backbone = require('backbone');
+	var L = require('leaflet');
+	var _ = require('underscore');
+	var StationView = require('views/objects/station');
 
 	return StationView.extend({
 		initialize: function(params) {

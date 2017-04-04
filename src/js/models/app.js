@@ -1,7 +1,7 @@
 define(['backbone'], function(Backbone) {
 	'use strict';
 
-	var AppModel = Backbone.Model.extend({
+	return Backbone.Model.extend({
 		load: function(region, level, center) {
 			this.set({
 				location: {
@@ -15,7 +15,5 @@ define(['backbone'], function(Backbone) {
 			this.set('center', center);
 		}
 	});
-
-	return new AppModel();
 
 });
