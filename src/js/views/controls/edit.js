@@ -4,15 +4,14 @@ define(function(require) {
 	var Backbone = require('backbone');
 	var _ = require('underscore');
 	var $ = require('jquery');
-	var FarmView = require('views/farm');
+	var LinkView = require('views/link');
 	require('views/hint');
 
 	return Backbone.View.extend({
-		el: $('#map > .controls button.farm'),
+		el: $('#map > .controls button.link'),
 
 		initialize: function(options) {
 			this.appModel = options.app;
-			this.metaModel = options.meta;
 			this.$el.click(_.bind(this.openDialog, this)).hint(this.$el.data('title'));
 			this.listenTo(this.appModel, 'change:location', this.updateControl);
 		},
@@ -27,9 +26,9 @@ define(function(require) {
 		},
 
 		openDialog: function() {
-			var farmView = new FarmView({
+			var linkView = new LinkView({
 				caption: this.$el.data('title'),
-				drop: this.metaModel.get('drop')
+				url: window.location.href
 			});
 		}
 	});

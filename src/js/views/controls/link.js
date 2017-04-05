@@ -1,40 +1,25 @@
-define(['jquery', 'clipboard', 'views/dialog'], function($, Clipboard, DialogView) {
+define(function(require) {
 	'use strict';
 
+	var Backbone = require('backbone');
+	var _ = require('underscore');
+	var $ = require('jquery');
+	require('views/hint');
+
 	return Backbone.View.extend({
-		initialize: function(params) {
-			var _this = this;
+		el: $('#map > .controls button.edit'),
 
-			$.post('/link/add.php', {
-				link: window.location.href
-			}, function(shortlink) {
-				_this.buildDialog(params.caption, shortlink);
-			});
+		initialize: function(options) {
+			this.appModel = options.app;
+			this.$el.hint(this.$el.data('title'));
+			this.listenTo(this.appModel, 'change:location', this.updateLink);
 		},
 
-		dialogContent: function(data) {
-			return _.template($('#link-dialog').html())(data);
-		},
-
-		buildDialog: function(caption, shortlink) {
-			var dialog = new DialogView(),
-				$body = $(this.dialogContent({ href: shortlink }));
-
-			var $href = $body.find('.href');
-			this.activateClipboard($href);
-
-			dialog
-				.setCaption(caption)
-				.setContent($body)
-				.open();
-		},
-
-		activateClipboard: function($href) {
-			var clipboard = new Clipboard($href[0]);
-			clipboard.on('success', function() {
-				$href.addClass('used').text($href.data('copied'));
-			});
-		}
+		updateLink: function() {
+			var location = this.appModel.get('location');
+			var path = location.region != 'index' ? '?map=' + location.region + '/' + location.level : '';
+			this.$el.attr('onclick', 'window.open("/editor/' + path + '")');
+		}	
 	});
 
 });
