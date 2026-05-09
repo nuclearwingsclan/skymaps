@@ -1,8 +1,8 @@
 # Sky Maps
 
-Game maps of russian MMORPG [Sky2Fly](http://sky2fly.ru/). Made as Flash app as part of [Nuclear Wings Clan Project](http://nuclearwings.ru/) in 2011, completely rewritten in 2015.
+Game maps of russian MMORPG [Sky2Fly](http://sky2fly.ru/). Made as Flash app as part of [Nuclear Wings Clan Project](http://nuclearwings.ru/) in 2011, completely rewritten into JavaScript + Backbone.js in 2015.
 
-Try it now: http://maps.nuclearwings.ru/
+Try it now: https://maps.nuclearwings.ru/
 
 ## Quick start
 
